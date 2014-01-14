@@ -1,0 +1,12 @@
+// ============================================================================
+//  Paragraphs
+// ============================================================================
+
+    p {
+        @include rem(margin-bottom, $half-space);
+    }
+
+    small {
+        @include rem(font-size, $micro-size);
+        color: $color-subtext;
+    }

@@ -1,0 +1,50 @@
+// =============================================================================
+//  Nav
+// =============================================================================
+
+//  Turns ul and ols into horizontal mode, for use in navs, breadcrumbs, etc.
+//
+//  E.g.
+//
+//  <ul class="nav">
+//      <li><a href=#>Home</a></li>
+//      <li><a href=#>About</a></li>
+//      <li><a href=#>Portfolio</a></li>
+//      <li><a href=#>Contact</a></li>
+//  </ul>
+
+    .nav {
+        list-style: none;
+        margin-left: 0;
+        @extend %cf;
+
+        > .nav__item {
+
+            &,
+            > .nav__link {
+                @extend %ib;
+            }
+        }
+    }
+
+//  For vertical navs, we can extend .nav  with .nav--stacked
+//
+//  E.g.
+//
+//  <ul class="nav  nav--stacked">
+//      <li><a href=#>Home</a></li>
+//      <li><a href=#>About</a></li>
+//      <li><a href=#>Portfolio</a></li>
+//      <li><a href=#>Contact</a></li>
+//  </ul>
+
+    .nav--stacked{
+
+        > .nav__item {
+            display: list-item;
+
+            > .nav__link {
+                display: block;
+            }
+        }
+    }

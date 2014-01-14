@@ -1,0 +1,87 @@
+// ============================================================================
+//  Base
+// ============================================================================
+
+//  A few base styles on top of normalise.css
+
+//  Box model
+// ----------------------------------------------------------------------------
+    
+    @if $global-border-box == true {
+        //  Set box-sizing to border-box on all elements
+        * {
+            &,
+            &:before,
+            &:after {
+                box-sizing: border-box;
+            }
+        }
+    }
+
+
+//  Selected text
+// ----------------------------------------------------------------------------
+    
+    ::-moz-selection {
+        background: $color-selection-bg;
+        color: $color-selection;
+    }
+
+    ::selection {
+        background: $color-selection-bg;
+        color: $color-selection;
+        }
+    
+    
+
+//  Base spacings
+// ----------------------------------------------------------------------------
+
+//  Borrowed from inuit.css: Set margin bottom to the base line-height to 
+//  allow for a consistent vertical rhythm.
+
+//  As per: csswizardry.com/2012/06/single-direction-margin-declarations
+
+
+    h1,h2,h3,h4,h5,h6,hgroup,
+    ul,ol,dl,
+    blockquote,p,address,
+    table,
+    fieldset,figure,
+    pre,
+    %standard-margin-bottom {
+        margin-top: 0;
+        @include rem(margin-bottom, $base-space);
+    }
+
+
+//  Doubled up 'margin-bottom' helper class.
+
+    .landmark {
+        @include rem(margin-bottom, $double-space);
+    }
+
+
+//  'hr' elements only take up a few pixels, so we need to give them special
+//  treatment regarding vertical rhythm.
+
+    hr {
+        @include rem(margin-bottom, $base-space - 2px);
+    }
+
+
+//  Indent certain elements by a consistent amount.
+
+    ul, ol, dd {
+        padding: 0;
+        @include rem(margin-left, $double-space);
+    }
+
+
+//  Suppress the focus outline on links that cannot be accessed via keyboard.
+//  This prevents an unwanted focus outline from appearing around elements that
+//  might still respond to pointer events.
+
+    [tabindex="-1"] {
+        outline: none;
+    }

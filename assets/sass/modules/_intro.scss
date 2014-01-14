@@ -1,0 +1,43 @@
+// ============================================================================
+//  Intro
+// ============================================================================
+
+    .intro {
+        text-align: center;
+
+        @include breakpoint($large) {
+            text-align: left;
+        }
+    }
+
+        .intro__heading {
+            color: #fff;  //                        <----  Abstract
+            @include pimlico;
+            font-weight: normal;
+            @include rem(font-size, $uber-size);
+            line-height: $ratio * 0.7;
+            @include rem(margin-bottom, $base-space);
+
+            @include breakpoint($large) {
+                @include rem(margin-bottom, $mid-space);
+            }
+        }
+
+        .intro__btn {
+            @include rem(margin, $half-space, $quarter-space, 0, 0);
+
+            @include breakpoint($small) {
+                display: block;
+                text-align: center;
+                @include rem(margin-bottom, $half-space);
+                margin-right: 0;
+            }
+        }
+
+    .main-illustration {
+        @include rem(margin-bottom, $mid-space);
+
+        @include breakpoint($large) {
+            margin-bottom: 0;
+        }
+    }

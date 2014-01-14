@@ -1,0 +1,7 @@
+#   These are always ignored
+    
+.sass-cache/
+.DS_Store
+bower_components
+bower_modules
+node_modules

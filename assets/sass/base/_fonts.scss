@@ -1,0 +1,42 @@
+// ============================================================================
+//  Fonts
+// ============================================================================
+
+//  Here is where we define the fonts used in our project.
+
+//  Font stacks
+// ----------------------------------------------------------------------------
+
+    $pimlico            : "FS Pimlico Web Regular", 'Trebuchet MS', sans-serif;
+    $pimlico-bold       : "FS Pimlico Web Bold", 'Trebuchet MS', sans-serif;
+    $pimlico-black      : "FS Pimlico Web Black", 'Trebuchet MS', sans-serif;
+    $ptsans             : "PT Sans Regular", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
+
+
+//  Mixins
+// ----------------------------------------------------------------------------
+
+    @mixin pimlico {
+        font-family: "FS Pimlico Web Regular", 'Trebuchet MS', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @mixin pimlico-bold {
+        font-family: "FS Pimlico Web Bold", 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @mixin pimlico-black {
+        font-family: "FS Pimlico Web Black", 'Trebuchet MS', sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    @mixin ptsans {
+        font-family: "PT Sans Regular", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
+        font-size-adjust: 0.5;
+        font-weight: normal;
+        font-style: normal;
+    }

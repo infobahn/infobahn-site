@@ -1,0 +1,35 @@
+// ============================================================================
+//  Typography
+// ============================================================================
+
+//  Set up type sizes breakpoints
+
+    html {
+        @include percentage-font-size(16px);
+
+        @include breakpoint($small) {
+            @include percentage-font-size(14px);
+        }
+
+        // @include breakpoint($medium) {
+        //     @include percentage-font-size($base-font-size);
+        // }
+
+        // @include breakpoint($large) {
+        //     @include percentage-font-size($base-font-size);
+        // }
+
+        @include breakpoint($larger) {
+            @include percentage-font-size($base-font-size);
+        }
+
+        @include breakpoint($xl) {
+            @include percentage-font-size($base-font-size);
+        }
+    }
+
+    body {
+        @include rem(font-size, $base-font-size);
+        color: $color-text;
+        background-color: $color-body;
+    }

@@ -1,0 +1,16 @@
+// ============================================================================
+//  Footer
+// ============================================================================
+
+    .footer {
+        @include rem(padding-bottom, $base-space);
+
+        // @include breakpoint($small) {
+            // text-align: left;
+        // }
+    }
+
+    .disclaimer {
+        line-height: $base-line-height * 0.75;
+        @include rem(margin-top, $super-space);
+    }

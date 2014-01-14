@@ -1,0 +1,44 @@
+// ============================================================================
+//  Headings
+// ============================================================================
+
+//  Borrowed from inuit.css, as per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+//  
+//  When we define a heading we also define a corresponding class to go with it.
+//  This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+//  heading hierarchy.
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-heading;
+        @include pimlico-bold;
+    }
+
+    h1 {
+        @include rem(font-size, $h1-size);
+        @include rem(margin-bottom, $quarter-space);
+    }
+
+    h2 {
+        @include rem(font-size, $h2-size);
+        @include rem(margin-bottom, $half-space);
+    }
+
+    h3 {
+        @include rem(font-size, $h3-size);
+
+    }
+
+    h4 {
+        @include rem(font-size, $h4-size);
+
+    }
+
+    h5 {
+        @include rem(font-size, $h5-size);
+
+    }
+
+    h6 {
+        @include rem(font-size, $h6-size);
+
+    }

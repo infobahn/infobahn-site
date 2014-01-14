@@ -1,0 +1,45 @@
+// ============================================================================
+//  Header
+// ============================================================================
+
+    .header {
+        @extend %cf;
+    }
+
+        .site-name {
+            float: left;
+            @include pimlico-bold;
+            color: $pink;
+            @include rem(font-size, $h2-size);
+            @include rem(margin-top, $threequarter-space);
+            @include rem(margin-bottom, $threequarter-space);
+
+            @include breakpoint($small) {
+                @include rem(margin-top, $half-space);
+                @include rem(margin-bottom, $half-space);
+            }
+        }
+
+        .site-nav {
+
+        }
+
+            .nav--main {
+                float: right;
+                display: none;
+                @include rem(margin, $base-space, 0);
+
+                @include breakpoint($medium) {
+                    display: block;
+                }
+            
+                .nav__item {
+                    @include rem(margin-left, $half-space);
+                }
+
+                    .nav__link {
+                        // @include pimlico;
+                        @include rem(font-size, $mini-size);
+                        @include rem(padding, 0, $quarter-space);
+                    }
+            }

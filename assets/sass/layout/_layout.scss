@@ -1,0 +1,163 @@
+// =============================================================================
+//  Layout
+// =============================================================================
+
+//  Set up the various templates and layout options the project needs
+
+//  General layout rules
+// -----------------------------------------------------------------------------
+
+    .wrapper {
+        position: relative;
+        @include rem(margin, 0, $mid-space);
+        @include rem(max-width, 1250px);
+
+        @include breakpoint($small) {
+            @include rem(margin, 0, $base-space);
+        }
+
+        @include breakpoint($medium) {
+            @include rem(margin, 0, $double-space);
+        }
+
+        @include breakpoint($large) {
+            // @include rem(margin, 0, $super-space);
+        }
+
+        @include breakpoint($larger) {
+            margin: 0 10.5537%;
+        }
+
+        @include breakpoint($xl) {
+            margin: 0 17.0763%;
+        }
+    }
+
+    .stripe__content {
+        @include gs-span(c, all);
+
+        @include breakpoint($large) {
+            @include gs-span(c, 2, 4);
+        }
+    }
+
+
+//  Intro
+// -----------------------------------------------------------------------------
+
+    .main-illustration {
+        clear: none;
+        @include gs-span(c, all);
+
+        @include breakpoint($large) {
+            @include gs-span(c, 4, 5);
+        }
+    }
+
+    .intro {
+        clear: left;
+        @include gs-span(c, all);
+
+        @include breakpoint($large) {
+            clear: none;
+            @include gs-span(c, 1, 2);
+        }
+    }
+
+
+//  Work
+// -----------------------------------------------------------------------------
+
+    .case-study__screenshot {
+        width: 100%;
+    }
+
+    .case-study__description {
+
+    }
+
+    .nav--projects {
+    }
+
+        .project-1 {
+            @include gs-span(c, 1, 2);
+
+            @include breakpoint($large) {
+                @include gs-span(cb, 1);
+            }
+        }
+
+        .project-2 {
+            @include gs-span(c, 4, 5);
+
+            @include breakpoint($large) {
+                @include gs-span(cb, 3);
+            }
+        }
+
+        .project-3 {
+            @include gs-span(c, 1, 2);
+            clear: left;
+
+            @include breakpoint($large) {
+                clear: none;
+                @include gs-span(cb, 5);
+            }
+        }
+
+        .project-4 {
+            @include gs-span(c, 4, 5);
+
+            @include breakpoint($large) {
+                clear: left;
+                @include gs-span(cb, 1);
+            }
+        }
+
+        .project-5 {
+            @include gs-span(c, 1, 2);
+            clear: left;
+
+            @include breakpoint($large) {
+                clear: none;
+                @include gs-span(cb, 3);
+            }
+        }
+
+        .project-6 {
+            @include gs-span(c, 4, 5);
+
+            @include breakpoint($large) {
+                @include gs-span(cb, 5);
+            }
+        }
+
+        .project-1,
+        .project-2,
+        .project-3,
+        .project-4,
+        .project-5,
+        .project-6 {
+            @include breakpoint($small) {
+                @include gs-span(c, all);
+            }
+        }
+
+
+//  About
+// -----------------------------------------------------------------------------
+
+    .person--james {
+        @include gs-span(c, 1, 2);
+    }
+
+    .person--sam {
+        @include gs-span(c, 4, 5);
+    }
+
+    .person--james,
+    .person--sam {
+        @include breakpoint($small) {
+            @include gs-span(c, all);
+        }
+    }

@@ -1,0 +1,10 @@
+// ============================================================================
+//  Em value
+// ============================================================================
+
+//  Take a pixel value and convert it to ems
+
+    @function em-value($value, $base: 16px) {
+        $em-value: ($value / $base) * 1em;
+        @return $em-value;
+    }

@@ -1,0 +1,44 @@
+// =============================================================================
+//  Media
+// =============================================================================
+
+//  Place image and content alongside each other. E.g.:
+//
+//  <div class=media>
+//     <img src=http://placekitten.com/200/300 alt="" class=media__img>
+//     <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+//     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+//  </div>
+//
+//  By Nicole Sullivan,
+//  stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code,
+//  via inuit.css
+
+    .media {
+        display: block;
+        @extend %cf;
+    }
+        .media__img {
+            float: left;
+            margin-right: $base-space;
+        }
+
+    //  Reversed image location (right instead of left).
+        .media__img--rev {
+            float: right;
+            margin-left: $base-space;
+        }
+
+            .media__img img,
+            .media__img--rev img {
+                display: block;
+            }
+
+        .media__bd {
+            overflow: hidden;
+        }
+
+            .media__bd,
+            .media__bd > :last-child {
+                margin-bottom: 0;
+            }

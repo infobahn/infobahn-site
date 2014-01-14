@@ -1,0 +1,24 @@
+// ============================================================================
+//  Links
+// ============================================================================
+
+    a {
+        color: $color-link;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: $color-link-visited;
+    }
+
+    a:hover {
+        color: $color-link-hover;
+    }
+
+    a:focus {
+        color: $color-link-focus;
+    }
+
+    a:active {
+      color: $color-link-active;  
+    }

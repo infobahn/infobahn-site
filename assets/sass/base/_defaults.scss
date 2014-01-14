@@ -1,0 +1,75 @@
+// ============================================================================
+//  Defaults
+// ============================================================================
+
+//  Modular scale
+// ----------------------------------------------------------------------------
+
+//  Ratio used to calculate a modular scale. This helps us to calculate a base
+//  line-height, on which all our font-sizes and spacings are built.
+//
+//  E.g. $base-font-size: 16px * $ratio: 1.5 = $base-line-height: 24px
+
+    $ratio                              : 1.618;
+
+
+//  Base values
+// ----------------------------------------------------------------------------
+
+    $base-font-size                     : 18px;
+    $base-line-height                   : $ratio;
+
+    $base-font-family                   : $ptsans;
+    
+    $base-duration                      : .4s;
+
+
+//  Font sizes
+// ----------------------------------------------------------------------------
+
+    $uber-size                          : $base-font-size * ($ratio * 2);
+    $super-size                         : $base-font-size * ($ratio * 1.5);
+
+    $h1-size                            : $base-font-size * ($ratio * 1.25);
+    $sub-h1-size                        : $base-font-size * $ratio;
+    $h2-size                            : $base-font-size * $ratio;
+    $h3-size                            : $base-font-size * ($ratio * 0.75);
+    $h4-size                            : $base-font-size;
+    $h5-size                            : $base-font-size;
+    $h6-size                            : $base-font-size;
+
+    $mini-size                          : $base-font-size / ($ratio * 0.65);
+    $micro-size                         : $base-font-size / ($ratio * 0.85);
+
+
+//  Spacing
+// ----------------------------------------------------------------------------
+
+//  Values to use for vertical and horizontal spacing, based around the base
+//  line-height value. Can be tweaked to use a modular scale.
+
+    $base-space                         : $base-line-height;
+
+    $quarter-space                      : $base-space * 0.25;
+    $half-space                         : $base-space * 0.5;
+    $threequarter-space                 : $base-space * 0.75;
+    $mid-space                          : $base-space * 1.5;
+    $double-space                       : $base-space * 2;
+    $super-space                        : $base-space * 3;
+
+    $line-height-ratio                  : $base-line-height / $base-font-size;
+    
+    $border-radius                      : $base-line-height / 6;
+
+
+//  Breakpoints
+// ----------------------------------------------------------------------------
+
+//  Values to pass to Breakpoint for use in media queries. Browsers that don't
+//  support media queries will receive $large styles by default.
+
+    $small                              : max-width 24em;
+    $medium                             : 35.5em;
+    $large                              : 64em;
+    $larger                             : 80em, 'no-query' '.no-mq';
+    $xl                                 : 91em;

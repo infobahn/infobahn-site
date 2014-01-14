@@ -1,0 +1,21 @@
+{
+  "name": "sass-starter",
+  "version": "1.0.0",
+  "authors": [
+    "Sam Roberts <sam@infobahndesign.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "scut": "~0.4.1",
+    "html-inspector": "~0.7.0"
+  }
+}

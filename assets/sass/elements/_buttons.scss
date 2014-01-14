@@ -1,0 +1,51 @@
+// ============================================================================
+//  Buttons
+// ============================================================================
+
+    .btn,
+    button,
+    input[type=submit] {
+        @extend %ib;
+        background: $color-btn-bg;
+        color: $color-btn !important;
+        border: 0 !important;
+        @include rem(border-radius, $border-radius * 4);
+        @include rem(padding, $quarter-space / 1.25, $threequarter-space);
+        transition: background-color $base-duration ease;
+
+        &:hover {
+            background: $color-btn-hover-bg;
+            color: $color-btn-hover;
+            transition: background-color $base-duration ease;
+        }
+
+        &:focus {
+            background: $color-btn-focus-bg;
+            color: $color-btn-focus;
+        }
+
+        &:active {
+            background: $color-btn-active-bg;
+            color: $color-btn-active;
+        }
+    }
+
+    .btn--rev {
+        background: $color-btn-rev-bg !important;
+        color: $color-btn-rev !important;
+
+        &:hover {
+            background: $color-btn-rev-hover-bg;
+            color: $color-btn-rev-hover;
+        }
+
+        &:focus {
+            background: $color-btn-rev-focus-bg;
+            color: $color-btn-rev-focus;
+        }
+
+        &:active {
+            background: $color-btn-rev-active-bg;
+            color: $color-btn-rev-active;
+        }
+    }

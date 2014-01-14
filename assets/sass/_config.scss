@@ -1,0 +1,26 @@
+// =============================================================================
+//  Config
+// =============================================================================
+
+//  Global settings
+// -----------------------------------------------------------------------------
+
+//  Sets box-sizing to border-box on all elements
+    $global-border-box: true;
+
+
+//  Breakpoint settings
+// -----------------------------------------------------------------------------
+
+//  Prints media queries as ems
+    $breakpoint-to-ems: true;
+
+//  Will print No Query Fallbacks
+    $breakpoint-no-query-fallbacks: true;
+
+
+//  Compass legacy browser support
+// -----------------------------------------------------------------------------
+
+    $legacy-support-for-ie6: false;
+    $legacy-support-for-ie7: false;

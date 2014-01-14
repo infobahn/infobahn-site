@@ -1,0 +1,30 @@
+// =============================================================================
+//  Box
+// =============================================================================
+
+//  Basic box for grouping content. Has required body element and optional 
+//  header and footer.
+//
+//  E.g.
+//
+//  <div class="box">
+//      <div class="box__hd">Header content</div>
+//      <div class="box__bd">Main box content content</div>
+//      <div class="box__ft">Footer content</div>
+//  </div>
+
+    .box {
+        position: relative;
+        @extend %cf;
+        @extend %standard-margin-bottom;
+    }
+
+        .box__hd,
+        .box__ft {
+            @extend %cf;
+            padding: 0 $base-space;
+        }
+
+        .box__bd {
+            padding: 0 $base-space;
+        }

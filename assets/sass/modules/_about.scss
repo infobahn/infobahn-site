@@ -1,0 +1,53 @@
+// =============================================================================
+//  About
+// =============================================================================
+
+    .person {
+        @include rem(margin-top, $half-space);
+
+        @include breakpoint($small) {
+            @include rem(margin-top, $base-space);
+
+            &:last-child {
+                @include rem(margin-top, $double-space);
+            }
+        }
+    }
+
+        .person__img {
+            @include rem(padding, 0, $mid-space);
+
+            @include breakpoint($large) {
+                @include rem(padding, 0, $super-space);
+            }
+        }
+
+        .person__name {
+            @include pimlico;
+            @include rem(margin-top, $base-space);
+
+            @include breakpoint($small) {
+                @include rem(margin-top, $threequarter-space);
+            }
+        }
+
+
+    .and {
+        position: absolute;
+        display: block;
+        width: 100%;
+        text-align: center;
+        @include rem(font-size, $base-font-size*7);
+        @include rem(margin-top, $base-space);
+        @include pimlico-bold;
+        color: rgba(white, 0.25);
+
+        @include breakpoint($small) {
+            display: none;
+        }
+
+        @include breakpoint($large) {
+            @include rem(font-size, $base-font-size*10);
+            margin-top: 0;
+        }
+    }

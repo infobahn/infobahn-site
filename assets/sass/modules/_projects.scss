@@ -1,0 +1,307 @@
+// =============================================================================
+//  Projects
+// =============================================================================
+
+    .projects__intro {
+        @include rem(margin-bottom, $base-space);
+    }
+
+    .nav--projects {
+        clear: both;
+    }
+
+        .project {
+            @include rem(margin-bottom, $base-space);
+        }
+
+            .project__link {
+                display: block;
+                border: 1px solid transparent;
+                @include rem(margin, -$quarter-space);
+                @include rem(padding, $quarter-space);
+                @include rem(border-radius, $border-radius);
+                transition: all $base-duration ease;
+
+                &:hover {
+                    background-color: rgba(#efeee4, 0.4);
+                    border-color: $color-divider;
+                    border-color: #eee;
+                    transition: all $base-duration ease;
+                }
+
+                @include breakpoint($small) {
+                    text-align: center;
+                }
+            }
+
+            .project__link--is-selected {
+                background-color: rgba(#efeee4, 0.4);
+                border-color: $color-divider;
+                border-color: #eee;
+                transition: all $base-duration ease;
+            }
+
+                .project__img {
+                    
+                }
+
+                .project__title {
+                    text-align: left;
+                    @include pimlico;
+                    @include rem(margin, $quarter-space, 0, 0, $quarter-space);
+                }
+
+                .project__tagline {
+                    text-align: left;
+                    color: $color-subtext;
+                    // @include pimlico;
+                    @include ptsans;
+                    @include rem(font-size, $mini-size);
+                    @include rem(margin-bottom, $quarter-space);
+                    @include rem(margin-left, $quarter-space);
+                }
+
+
+//  Case studies
+// ----------------------------------------------------------------------------
+    
+    .case-study {
+        // max-height: 0;
+        background-color: $color-case-study-bg;
+        border-color: #ddd;
+        border-style: solid;
+        border-width: 1px 0;
+        // overflow: hidden;
+        @include rem(padding, $super-space, 0);
+        // @include rem(margin-bottom, $double-space);
+        // transition: all $base-duration ease;
+    }
+
+    // .case-study--is-visible {
+    //     max-height: 4000px;
+    //     border-width: 1px 0;
+    //     @include rem(padding, $super-space, 0);
+    //     @include rem(margin-bottom, $double-space);
+    //     transition: all $base-duration ease;
+    // }
+
+        .case-study__screenshot {
+            float: left;
+            clear: both;
+            // @include rem(margin-bottom, $threequarter-space);
+            box-shadow: 0 1px 12px 0 rgba(black, 0.2);
+        }
+
+        .case-study__title {
+            @include rem(margin-bottom, 0);
+        }
+
+        .case-study__url {
+            display: block;
+            @include rem(margin-bottom, $base-space);
+            @include rem(font-size, $base-font-size);
+        }
+
+        .case-study__divider {
+            @include rem(width, $super-space);
+            background-color: $color-divider;
+            height: 2px;
+            @include rem(margin, 0, auto, $base-space, auto);
+            border: 0;
+        }
+
+        .case-study__description {
+            @include rem(margin-bottom, $mid-space);
+        }
+
+    //  Next and previous links on project pages
+
+        .case-study__prev,
+        .case-study__next {
+            position: relative;
+            display: inline-block;
+            height: 44px;
+            line-height: 44px;
+            @include rem(margin-top, $half-space);
+            border-radius: 0;
+
+            &:hover {
+                // background-color: $blue;
+                // color: white !important;
+            }
+        }
+
+        .case-study__prev {
+            float: left;
+            @include rem(padding, 0, $base-space, 0, $threequarter-space);
+
+            &:before {
+                left: 0;
+                border-color: $color-case-study-bg;
+                border-right: 1px solid $color-btn-bg;
+            }
+
+            &:after {
+                right: 0;
+                border-color: $color-btn-bg;
+                border-right: 1px solid $color-case-study-bg;
+            }
+
+            &:before,
+            &:after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                @include rem(border-width, 22px, $half-space, 22px, 0);
+                transition: border-color $base-duration ease;
+            }
+
+            &:hover {
+                &:before {
+                    border-right: 1px solid $color-btn-hover-bg;
+                }
+
+                &:after {
+                    border-color: $color-btn-hover-bg;
+                    border-right: 1px solid $color-case-study-bg;
+                }
+
+                &:before,
+                &:after {
+                    @include rem(border-width, 22px, $half-space, 22px, 0);
+                    transition: border-color $base-duration ease;
+                }
+            }
+        }
+
+        .case-study__next {
+            float: right;
+            @include rem(padding, 0, $threequarter-space, 0, $base-space);
+
+            &:before {
+                right: 0;
+                border-color: $color-case-study-bg;
+                border-left: 1px solid $color-btn-bg;
+            }
+
+            &:after {
+                left: 0;
+                border-color: $color-btn-bg;
+                border-left: 1px solid $color-case-study-bg;
+            }
+
+            &:before,
+            &:after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                @include rem(border-width, 22px, 0, 22px, $half-space);
+                transition: border-color $base-duration ease;
+            }
+
+            &:hover {
+                &:before {
+                    border-left: 1px solid $color-btn-hover-bg;
+                }
+
+                &:after {
+                    border-color: $color-btn-hover-bg;
+                    border-left: 1px solid $color-case-study-bg;
+                }
+
+                &:before,
+                &:after {
+                    @include rem(border-width, 22px, 0, 22px, $half-space);
+                    transition: border-color $base-duration ease;
+                }
+            }
+        }
+
+
+        .chevron-left {
+            float: left;
+            position: relative;
+            // margin-top: 12px;
+            height: 20px;
+            width: 7px;
+            @include rem(margin, 12px, $threequarter-space, 0, 0);
+        }
+
+        .chevron-left:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 51%;
+            width: 100%;
+            background: white;
+            -webkit-transform: skew(-30deg, 0deg);
+            -moz-transform: skew(-30deg, 0deg);
+            -ms-transform: skew(-30deg, 0deg);
+            -o-transform: skew(-30deg, 0deg);
+            transform: skew(-30deg, 0deg);
+        }
+
+        .chevron-left:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 50%;
+            width: 100%;
+            background: white;
+            -webkit-transform: skew(30deg, 0deg);
+            -moz-transform: skew(30deg, 0deg);
+            -ms-transform: skew(30deg, 0deg);
+            -o-transform: skew(30deg, 0deg);
+            transform: skew(30deg, 0deg);
+        }
+
+        .chevron-right {
+            float: right;
+            position: relative;
+            // margin-top: 12px;
+            height: 20px;
+            width: 7px;
+            @include rem(margin, 12px, 0, 0, $threequarter-space);
+        }
+
+        .chevron-right:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 51%;
+            width: 100%;
+            background: white;
+            -webkit-transform: skew(30deg, 0deg);
+            -moz-transform: skew(30deg, 0deg);
+            -ms-transform: skew(30deg, 0deg);
+            -o-transform: skew(30deg, 0deg);
+            transform: skew(30deg, 0deg);
+        }
+
+        .chevron-right:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 50%;
+            width: 100%;
+            background: white;
+            -webkit-transform: skew(-30deg, 0deg);
+            -moz-transform: skew(-30deg, 0deg);
+            -ms-transform: skew(-30deg, 0deg);
+            -o-transform: skew(-30deg, 0deg);
+            transform: skew(-30deg, 0deg);
+        }
+
+

@@ -4,7 +4,7 @@ require "breakpoint"
 require "autoprefixer-rails"
 require "csso"
 
-css_dir = "build/css"
+css_dir = "wp-content/themes/infobahn"
 sass_dir = "assets/sass"
 images_dir = "assets/img"
 javascripts_dir = "assets/js"

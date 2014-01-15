@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: 'assets/js/production.js',
-                dest: 'build/js/production.min.js'
+                dest: 'wp-content/themes/infobahn/build/js/production.min.js'
             }
         },
     //  Compress images
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'assets/img/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'build/img/'
+                    dest: 'wp-content/themes/infobahn/build/img/'
                 }]
             }
         },
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'assets/svg',
                         src: ['*.svg', '*.png'],
-                        dest: "build/svg"
+                        dest: "wp-content/themes/infobahn/build/svg"
                     }],
                 options: {
               }

@@ -7,6 +7,7 @@
 
         @include breakpoint($large) {
             text-align: left;
+            @include rem(margin, $super-space, 0);
         }
     }
 
@@ -39,5 +40,6 @@
 
         @include breakpoint($large) {
             margin-bottom: 0;
+            @include rem(margin-top, $double-space);
         }
     }

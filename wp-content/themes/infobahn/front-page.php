@@ -95,7 +95,7 @@ get_header(); ?>
 
                 <div class="person person--james">
 
-                    <img src="assets/svg/loading.svg" data-echo="build/img/people/james.png" alt="James Burnett" class="person__img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" alt="James Burnett" class="person__img">
 
                     <h2 class="person__name"><?php the_field('james-heading'); ?></h2>
 
@@ -107,7 +107,7 @@ get_header(); ?>
 
                 <div class="person person--sam">
 
-                    <img src="assets/svg/loading.svg" data-echo="build/img/people/sam.png" alt="Sam Roberts" class="person__img">
+                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" alt="Sam Roberts" class="person__img">
 
                     <h2 class="person__name"><?php the_field('sam-heading'); ?></h2>
 

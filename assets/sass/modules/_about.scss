@@ -16,6 +16,7 @@
 
         .person__img {
             @include rem(padding, 0, $mid-space);
+            border-radius: 50%;
 
             @include breakpoint($large) {
                 @include rem(padding, 0, $super-space);

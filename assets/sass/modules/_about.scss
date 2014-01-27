@@ -15,11 +15,15 @@
     }
 
         .person__img {
-            @include rem(padding, 0, $mid-space);
-            border-radius: 50%;
+            @include rem(margin, 0, $mid-space);
 
             @include breakpoint($large) {
-                @include rem(padding, 0, $super-space);
+                @include rem(margin, 0, $super-space);
+            }
+
+            img {
+                border-radius: 50%;
+                // clip-path: circle(50%, 50%, 50%);
             }
         }
 
@@ -36,12 +40,16 @@
     .and {
         position: absolute;
         display: block;
-        width: 100%;
+        left: 50%;
+        width: 4em;
+        margin-left: -2em;
         text-align: center;
         @include rem(font-size, $base-font-size*7);
         @include rem(margin-top, $base-space);
         @include pimlico-bold;
         color: rgba(white, 0.25);
+        color: #4EB5C5\9;
+        *display: none;
 
         @include breakpoint($small) {
             display: none;

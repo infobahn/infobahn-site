@@ -32,6 +32,7 @@
                 @if $val == 0 { @return $val }
                 @else { @return $val+rem };
             } @else { @return ($val / $base-font-size) * 1rem };
+            // } @else { @return $val };
         }
     }
 
@@ -46,7 +47,6 @@
 // 
 //  Usage:
 //  @include px-and-rem([property], [multiplier | explicit value] [, ...]);
-
 
     @mixin rem($prop, $val...) {
         $n: length($val);

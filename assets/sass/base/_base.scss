@@ -9,11 +9,13 @@
     
     @if $global-border-box == true {
         //  Set box-sizing to border-box on all elements
+        //  Add polyfill for IE6/7
         * {
             &,
             &:before,
             &:after {
                 box-sizing: border-box;
+                // *behavior: url(http://localhost/infobahn/wp-content/themes/infobahn/build/js/boxsizing.htc);
             }
         }
     }

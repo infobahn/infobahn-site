@@ -7,12 +7,12 @@
 
         @include breakpoint($large) {
             text-align: left;
-            @include rem(margin, $super-space, 0);
+            @include rem(margin-top, $super-space*1.25);
         }
     }
 
         .intro__heading {
-            color: #fff;  //                        <----  Abstract
+            // color: #fff;  //                        <----  Abstract
             @include pimlico;
             font-weight: normal;
             @include rem(font-size, $uber-size);
@@ -26,6 +26,9 @@
 
         .intro__btn {
             @include rem(margin, $half-space, $quarter-space, 0, 0);
+            *padding-top: 0;
+            *padding-bottom: 0;
+            *line-height: 2.427;
 
             @include breakpoint($small) {
                 display: block;
@@ -33,6 +36,11 @@
                 @include rem(margin-bottom, $half-space);
                 margin-right: 0;
             }
+        }
+
+        .ctatext {
+        //  This is for IE7
+            *line-height: 2.427;
         }
 
     .main-illustration {

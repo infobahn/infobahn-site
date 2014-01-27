@@ -8,6 +8,7 @@
 
     .nav--projects {
         clear: both;
+        @extend %cf;
     }
 
         .project {
@@ -112,18 +113,21 @@
 
         .case-study__description {
             @include rem(margin-bottom, $mid-space);
+            *float: left;
+            *clear: both;
         }
 
     //  Next and previous links on project pages
 
         .case-study__prev,
         .case-study__next {
-            position: relative;
-            display: inline-block;
+            position: absolute;
+            @extend %ib;
             height: 44px;
             line-height: 44px;
             @include rem(margin-top, $half-space);
             border-radius: 0;
+            *display: none;
 
             &:hover {
                 // background-color: $blue;
@@ -132,7 +136,7 @@
         }
 
         .case-study__prev {
-            float: left;
+            left: 0;
             @include rem(padding, 0, $base-space, 0, $threequarter-space);
 
             &:before {
@@ -156,7 +160,7 @@
                 width: 0;
                 height: 0;
                 border-style: solid;
-                @include rem(border-width, 22px, $half-space, 22px, 0);
+                border-width: 22px 11px 22px 0;
                 transition: border-color $base-duration ease;
             }
 
@@ -172,14 +176,14 @@
 
                 &:before,
                 &:after {
-                    @include rem(border-width, 22px, $half-space, 22px, 0);
+                    border-width: 22px 11px 22px 0;
                     transition: border-color $base-duration ease;
                 }
             }
         }
 
         .case-study__next {
-            float: right;
+            right: 0;
             @include rem(padding, 0, $threequarter-space, 0, $base-space);
 
             &:before {
@@ -203,7 +207,7 @@
                 width: 0;
                 height: 0;
                 border-style: solid;
-                @include rem(border-width, 22px, 0, 22px, $half-space);
+                border-width: 22px 0 22px 11px;
                 transition: border-color $base-duration ease;
             }
 
@@ -219,7 +223,7 @@
 
                 &:before,
                 &:after {
-                    @include rem(border-width, 22px, 0, 22px, $half-space);
+                    border-width: 22px 0 22px 11px;
                     transition: border-color $base-duration ease;
                 }
             }
@@ -233,6 +237,8 @@
             height: 20px;
             width: 7px;
             @include rem(margin, 12px, $threequarter-space, 0, 0);
+            *display: none;
+            display: none\9;
         }
 
         .chevron-left:before {
@@ -272,6 +278,8 @@
             height: 20px;
             width: 7px;
             @include rem(margin, 12px, 0, 0, $threequarter-space);
+            *display: none;
+            display: none\9;
         }
 
         .chevron-right:before {

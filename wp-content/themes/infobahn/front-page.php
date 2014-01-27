@@ -93,25 +93,29 @@ get_header(); ?>
             
                 <h1 class="section-heading"><?php the_field('about-heading'); ?></h1>
 
-                <div class="person person--james">
-
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" alt="James Burnett" class="person__img">
-
-                    <h2 class="person__name"><?php the_field('james-heading'); ?></h2>
-
-                    <?php the_field('james-bio'); ?>
-
-                </div>
-
                 <span class="and">&amp;</span>
 
                 <div class="person person--sam">
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" alt="Sam Roberts" class="person__img">
+                    <div class="person__img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" alt="Sam Roberts">
+                    </div>
 
                     <h2 class="person__name"><?php the_field('sam-heading'); ?></h2>
 
                     <?php the_field('sam-bio'); ?>
+
+                </div>
+
+                <div class="person person--james">
+
+                    <div class="person__img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" alt="James Burnett">
+                    </div>
+
+                    <h2 class="person__name"><?php the_field('james-heading'); ?></h2>
+
+                    <?php the_field('james-bio'); ?>
 
                 </div>
 

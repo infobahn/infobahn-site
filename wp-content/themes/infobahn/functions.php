@@ -67,7 +67,7 @@ function infobahn_scripts() {
 	wp_enqueue_style( 'infobahn-styles', get_stylesheet_uri() );
 
 	// Load main script
-	wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
+	// wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
 }
 add_action( 'wp_enqueue_scripts', 'infobahn_scripts' );
 

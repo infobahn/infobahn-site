@@ -48,10 +48,7 @@ get_header(); ?>
                  
                     <?php while( have_rows('images') ): the_row(); ?>
                  
-                        <img src="../build/img/loading.svg" data-echo="<?php the_sub_field('image'); ?>" alt="<?php the_title(); ?>" class="case-study__screenshot icon-loading">
-                        <noscript>
-                            <img src="<?php the_sub_field('image'); ?>" alt="<?php the_title(); ?>" class="case-study__screenshot">
-                        </noscript>
+                        <img src="<?php the_sub_field('image'); ?>" alt="<?php the_title(); ?>" class="case-study__screenshot">
 
                     <?php endwhile; ?>
 

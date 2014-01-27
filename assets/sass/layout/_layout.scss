@@ -12,6 +12,7 @@
         position: relative;
         @include rem(margin, 0, $mid-space);
         @include rem(max-width, 1250px);
+        @extend %cf;
 
         @include breakpoint($small) {
             @include rem(margin, 0, $base-space);
@@ -23,6 +24,8 @@
 
         @include breakpoint($large) {
             // @include rem(margin, 0, $super-space);
+            *margin: 0 7.5%;
+            *width: 85%;
         }
 
         @include breakpoint($larger) {
@@ -35,10 +38,14 @@
     }
 
     .stripe__content {
-        @include gs-span(c, all);
+        // @include gs-span(c, all);
+        float: left;
+        width: 100%;
 
         @include breakpoint($large) {
-            @include gs-span(c, 2, 4);
+            // @include gs-span(c, 2, 4);
+            width: gs-width(c, 2, 4, false, true);
+            margin-left: gs-marginleft(c, 2, false, true);
         }
     }
 
@@ -47,8 +54,8 @@
 // -----------------------------------------------------------------------------
 
     .main-illustration {
-        clear: none;
         @include gs-span(c, all);
+        clear: none;
 
         @include breakpoint($large) {
             @include gs-span(c, 4, 5);
@@ -60,8 +67,8 @@
         @include gs-span(c, all);
 
         @include breakpoint($large) {
-            clear: none;
             @include gs-span(c, 1, 2);
+            clear: none;
         }
     }
 
@@ -80,56 +87,77 @@
     .nav--projects {
     }
 
-        .project-1 {
-            @include gs-span(c, 1, 2);
+        .project {
+            float: left;
+            width: gs-width(c, 1, 2, false, true);
 
             @include breakpoint($large) {
-                @include gs-span(cb, 1);
+                width: gs-width(cb, 1, 1, false, true);
+            }
+        }
+
+        .project-1 {
+            // @include gs-span(c, 1, 2);
+            margin-left: gs-marginleft(c, 1, false, true);
+
+            @include breakpoint($large) {
+                // @include gs-span(cb, 1);
+                margin-left: gs-marginleft(cb, 1, false, true);
             }
         }
 
         .project-2 {
-            @include gs-span(c, 4, 5);
+            // @include gs-span(c, 4, 5);
+            margin-left: gs-width(c, 3, 3, false, true);
 
             @include breakpoint($large) {
-                @include gs-span(cb, 3);
+                // @include gs-span(cb, 3);
+                margin-left: gs-width(cb, 2, 2, false, true);
             }
         }
 
         .project-3 {
-            @include gs-span(c, 1, 2);
+            // @include gs-span(c, 1, 2);
+            margin-left: gs-marginleft(c, 1, false, true);
             clear: left;
 
             @include breakpoint($large) {
+                margin-left: gs-width(cb, 2, 2, false, true);
                 clear: none;
-                @include gs-span(cb, 5);
+                // @include gs-span(cb, 5);
             }
         }
 
         .project-4 {
-            @include gs-span(c, 4, 5);
+            // @include gs-span(c, 4, 5);
+            margin-left: gs-width(c, 3, 3, false, true);
 
             @include breakpoint($large) {
+                // @include gs-span(cb, 1);
+                margin-left: gs-marginleft(cb, 1, false, true);
                 clear: left;
-                @include gs-span(cb, 1);
             }
         }
 
         .project-5 {
-            @include gs-span(c, 1, 2);
+            // @include gs-span(c, 1, 2);
+            margin-left: gs-marginleft(c, 1, false, true);
             clear: left;
 
             @include breakpoint($large) {
                 clear: none;
-                @include gs-span(cb, 3);
+                margin-left: gs-width(cb, 2, 2, false, true);
+                // @include gs-span(cb, 3);
             }
         }
 
         .project-6 {
-            @include gs-span(c, 4, 5);
+            // @include gs-span(c, 4, 5);
+            margin-left: gs-width(c, 3, 3, false, true);
 
             @include breakpoint($large) {
-                @include gs-span(cb, 5);
+                // @include gs-span(cb, 5);
+                margin-left: gs-width(cb, 2, 2, false, true);
             }
         }
 
@@ -148,11 +176,11 @@
 //  About
 // -----------------------------------------------------------------------------
 
-    .person--james {
+    .person--sam {
         @include gs-span(c, 1, 2);
     }
 
-    .person--sam {
+    .person--james {
         @include gs-span(c, 4, 5);
     }
 

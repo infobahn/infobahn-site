@@ -66,4 +66,4 @@
         hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
     };
 
-    btnshowsidebar.onclick = addClass(sidebar, 'sidebar--is-visible');
+    btnshowsidebar.onclick = function()  { toggleClass(sidebar, 'sidebar--is-visible'); };

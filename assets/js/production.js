@@ -170,7 +170,6 @@ ragadjust = function (s, method) {
  
     toggleClass = function (el, cl) {
         hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
-        return false;
     };
 
-    btnshowsidebar.onclick = addClass(sidebar, 'sidebar--is-visible');
+    btnshowsidebar.onclick = function()  { toggleClass(sidebar, 'sidebar--is-visible'); };

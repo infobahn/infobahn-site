@@ -11,7 +11,10 @@
     $pimlico-bold       : "FS Pimlico Web Bold", 'Trebuchet MS', sans-serif;
     $pimlico-black      : "FS Pimlico Web Black", 'Trebuchet MS', sans-serif;
     $ptsans             : "PT Sans Regular", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
-    // $ptsans             : "Brokman Regular", Verdana, sans-serif;
+    // $ptsans             : "freight-text-pro",sans-serif;
+    $ptsans             : "freight-sans-pro",sans-serif;
+    $ptsans-italic      : "PT Sans Italic", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
+    $ptsans-bold        : "PT Sans Bold", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
 
 
 //  Mixins
@@ -36,8 +39,34 @@
     }
 
     @mixin ptsans {
-        font-family: "PT Sans Regular", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
+        // font-family: "PT Sans Regular", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
+        // font-size-adjust: 0.5;
+        // font-weight: normal;
+        // font-style: normal;
+
+        // font-family: "freight-text-pro",sans-serif;
+        // font-style: normal;
+        // font-weight: 400;
+
+        font-family: "freight-sans-pro",sans-serif;
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    @mixin ptsans-italic {
+        // font-family: "PT Sans Italic", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
+        // font-size-adjust: 0.5;
+        // font-weight: normal;
+        // font-style: italic;
+
+        font-family: "freight-sans-pro",sans-serif;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    @mixin ptsans-bold {
+        font-family: "PT Sans Bold", 'Arial Unicode', 'Lucida Sans Unicode', Arial, sans-serif;
         font-size-adjust: 0.5;
-        font-weight: normal;
+        font-weight: bold;
         font-style: normal;
     }

@@ -142,10 +142,35 @@ ragadjust = function (s, method) {
 
 
 //  Lazy load images
-    Echo.init({
-        offset: 100,
-        throttle: 250
-    });
+    // Echo.init({
+    //     offset: 100,
+    //     throttle: 250
+    // });
 
 //  Clean up typography
     ragadjust('p', 'all');
+
+//  Expand sidebar
+    var btnshowsidebar = document.getElementById('btnShowSidebar'),
+    sidebar = document.getElementById('sidebar'),
+     
+    hasClass = function (el, cl) {
+        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+        return !!el.className.match(regex);
+    },
+ 
+    addClass = function (el, cl) {
+        el.className += ' ' + cl;
+    },
+ 
+    removeClass = function (el, cl) {
+        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+        el.className = el.className.replace(regex, ' ');
+    },
+ 
+    toggleClass = function (el, cl) {
+        hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
+        return false;
+    };
+
+    btnshowsidebar.onclick = addClass(sidebar, 'sidebar--is-visible');

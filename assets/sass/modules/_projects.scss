@@ -133,6 +133,10 @@
                 // background-color: $blue;
                 // color: white !important;
             }
+
+            @include breakpoint($small) {
+                display: none;
+            }
         }
 
         .case-study__prev {
@@ -311,5 +315,3 @@
             -o-transform: skew(-30deg, 0deg);
             transform: skew(-30deg, 0deg);
         }
-
-

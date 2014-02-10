@@ -20,13 +20,13 @@
     }
         .media__img {
             float: left;
-            margin-right: $base-space;
+            @include rem(margin-right, $base-space);
         }
 
     //  Reversed image location (right instead of left).
         .media__img--rev {
             float: right;
-            margin-left: $base-space;
+            @include rem(margin-left, $base-space);
         }
 
             .media__img img,

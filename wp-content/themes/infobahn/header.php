@@ -20,11 +20,33 @@
         <meta name="description" content="We are James Burnett and Sam Roberts, more commonly known as Infobahn. We design and build websites from our homes in the UK and the Isle of Man.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        
+        <link rel="shortcut icon" href="<?php echo esc_url( home_url( '/' ) ); ?>favicon.ico">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-152x152-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-120x120-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-76x76-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( home_url( '/' ) ); ?>apple-touch-icon-precomposed.png">
+        <meta name="msapplication-TileImage" content="<?php echo esc_url( home_url( '/' ) ); ?>win8-pinned.png"/>
+        <meta name="msapplication-TileColor" content="#cb1f41"/>
 
-        <link rel="stylesheet" href="//f.fontdeck.com/s/css/PMeUiPSaOnK4Pgo4RhhzvZAtiDw/localhost/21405.css" type="text/css" />
+        <!-- <link rel="stylesheet" href="//f.fontdeck.com/s/css/lBC1FIj9YT14YAKkFNY9gaIn880/<?php echo $_SERVER['SERVER_NAME']; ?>/21405.css" type="text/css" /> -->
 
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
         <script type="text/javascript">
             document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+
+            WebFont.load({
+                fontdeck: {
+                    id: '21405'
+                },
+                typekit: {
+                    id: 'kld7erk'
+                }
+            });
 
             /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
             window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};

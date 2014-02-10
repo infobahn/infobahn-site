@@ -16,11 +16,11 @@
 
 get_header(); ?>
 
-<div id="main-content" class="main-content">
+<div class="stripe stripe--blog">
 
+    <div class="wrapper">
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+        <div class="articles">
 
 		<?php
 			if ( have_posts() ) :
@@ -35,8 +35,6 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 
 				endwhile;
-				// Previous/next post navigation.
-				infobahn_paging_nav();
 
 			else :
 				// If no content, include the "No posts found" template.
@@ -45,11 +43,12 @@ get_header(); ?>
 			endif;
 		?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
-	<?php get_sidebar( 'content' ); ?>
-</div><!-- #main-content -->
+		</div>
 
-<?php
-get_sidebar();
-get_footer();
+        <?php get_sidebar(); ?>
+
+    </div>
+
+</div>
+
+<?php get_footer(); ?>

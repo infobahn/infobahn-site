@@ -66,7 +66,7 @@
 // -----------------------------------------------------------------------------
 
     // @import "objects/box";
-    // @import "objects/media";
+    @import "objects/media";
     @import "objects/nav";
 
 
@@ -88,8 +88,16 @@
     @import "modules/projects";
     @import "modules/about";
     @import "modules/footer";
+    @import "modules/blog";
+    @import "modules/sidebar";
 
 
 //  Vendor styles
 //  Styles from plugins and the like
 // -----------------------------------------------------------------------------
+
+
+//  Print styles
+// -----------------------------------------------------------------------------
+
+    @import "layout/print";

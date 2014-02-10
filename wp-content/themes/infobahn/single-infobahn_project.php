@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the home page
+ * The template for displaying a project page
  *
  * @package WordPress
  * @subpackage Infobahn

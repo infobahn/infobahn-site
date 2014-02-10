@@ -28,6 +28,10 @@
             *width: 85%;
         }
 
+        @include breakpoint($large) {
+            margin: 0 5.2525%;
+        }
+
         @include breakpoint($larger) {
             margin: 0 10.5537%;
         }
@@ -190,3 +194,35 @@
             @include gs-span(c, all);
         }
     }
+
+
+//  Blog
+// -----------------------------------------------------------------------------
+
+    .articles {
+        @include gs-span(cb, all);
+
+        @include breakpoint($medium) {
+            @include gs-span(c, 2, 4);
+        }
+
+        @include breakpoint($large) {
+            @include gs-span(c, 2, 4);
+        }
+    }
+
+    // .sidebar {
+    //     @include gs-span(c, all);
+
+    //     @include breakpoint($medium) {
+    //         @include gs-span(cb, 5);
+    //     }
+
+    //     @include breakpoint($mid) {
+    //         padding-left: 0;
+    //     }
+
+    //     @include breakpoint($large) {
+    //         @include gs-span(cb, 5);
+    //     }
+    // }

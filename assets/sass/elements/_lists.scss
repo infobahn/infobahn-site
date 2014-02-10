@@ -2,6 +2,14 @@
 //  Lists
 // ============================================================================
 
+    ul, ol {
+        @include rem(margin, $threequarter-space, 0, $threequarter-space, $mid-space);
+    }
+
+    li {
+        @include rem(margin-bottom, $quarter-space);
+    }
+
 //  Remove vertical spacing from nested lists
 
     li {

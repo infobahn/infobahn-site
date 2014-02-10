@@ -1,3 +1,17 @@
 // ============================================================================
 //  Forms
 // ============================================================================
+
+    input[type=text] {
+        @include ptsans;
+        border: 1px solid $color-divider;
+        @include rem(padding, $quarter-space/1.5, $quarter-space);
+        color: $color-subtext;
+        @include rem(border-radius, $border-radius);
+
+        &:focus {
+            color: $color-text;
+            outline: none;
+            border: 1px solid $blue;
+        }
+    }

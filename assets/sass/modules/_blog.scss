@@ -1,0 +1,50 @@
+// ============================================================================
+//  Blog
+// ============================================================================
+
+    .stripe--blog {
+        background-color: #f8f8f8;
+        border-top: 1px solid $color-divider;
+        text-align: left;
+        padding: 0;
+    }
+
+    .article {
+        @include rem(padding, $mid-space + $base-space, $double-space);
+    }
+
+        .article__title {
+            @include pimlico;
+            text-align: center;
+        }
+
+            .article__permalink {
+
+            }
+
+        .article__meta {
+            display: block;
+            @include ptsans;
+            @include rem(font-size, $mini-size);
+            color: $color-subtext;
+            @include rem(margin, -$quarter-space, 0, $base-space, 0);
+            text-align: center;
+        }
+
+            .article__category {
+                text-transform: lowercase;
+            }
+
+        .article__content {
+            text-align: left;
+        }
+
+        .article__footer {
+
+        }
+
+        .article__comment-request {
+            @include rem(padding-top, $half-space);
+            @include rem(margin-top, $mid-space);
+            border-top: 2px solid $color-divider;
+        }

@@ -15,9 +15,9 @@
         //     @include percentage-font-size($base-font-size);
         // }
 
-        // @include breakpoint($large) {
-        //     @include percentage-font-size($base-font-size);
-        // }
+        @include breakpoint($large) {
+            @include percentage-font-size(17px);
+        }
 
         @include breakpoint($larger) {
             @include percentage-font-size($base-font-size);

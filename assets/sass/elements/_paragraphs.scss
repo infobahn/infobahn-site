@@ -10,3 +10,12 @@
         @include rem(font-size, $micro-size);
         color: $color-subtext;
     }
+
+    blockquote {
+        @include ptsans-italic;
+        border-style: solid;
+        border-color: $color-divider;
+        @include rem(border-width, 0, 0, 0, $quarter-space / 1.5);
+        @include rem(margin, $threequarter-space, 0);
+        @include rem(padding-left, $threequarter-space);
+    }

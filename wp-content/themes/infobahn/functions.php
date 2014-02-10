@@ -67,7 +67,7 @@ function infobahn_scripts() {
 	wp_enqueue_style( 'infobahn-styles', get_stylesheet_uri() );
 
 	// Load main script
-	// wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
+	wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
 }
 add_action( 'wp_enqueue_scripts', 'infobahn_scripts' );
 
@@ -134,10 +134,32 @@ add_action( 'init', 'create_post_type' );
 
 
 // Show posts of 'infobahn_project' post types on home page
-add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+// add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 
-function add_my_post_types_to_query( $query ) {
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'infobahn_project' ) );
-	return $query;
+// function add_my_post_types_to_query( $query ) {
+// 	if ( is_home() && $query->is_main_query() )
+// 		$query->set( 'post_type', array( 'infobahn_project' ) );
+// 	return $query;
+// }
+
+
+/**
+ * Register the Infobahn widget area.
+ *
+ * @since Infobahn 1.0
+ *
+ * @return void
+ */
+function infobahn_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => __( 'Primary Sidebar', 'infobahn' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Main sidebar that appears at the top.', 'infobahn' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="sidebar__heading">',
+		'after_title'   => '</h1>',
+	) );
 }
+add_action( 'widgets_init', 'infobahn_widgets_init' );

@@ -21,6 +21,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+        <meta property="og:title" content="<?php the_field('meta-title'); ?>" />
+        <meta property="og:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
+        <meta property="og:description" content="<?php the_field('meta-description'); ?>" />
+        <meta property="og:image" content="<?php the_field('meta-image'); ?>" />
+
+        <meta name="twitter:card" content="bovril">
+        <meta name="twitter:site" content="@infobahndesign">
+        <meta name="twitter:creator" content="<?php the_field('meta-creator'); ?>">
+        <meta name="twitter:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+        <meta name="twitter:title" content="<?php the_field('meta-title'); ?>">
+        <meta name="twitter:description" content="<?php the_field('meta-description'); ?>">
+        <meta name="twitter:image" content="<?php the_field('meta-image'); ?>">
+
         <link rel="stylesheet" href="//f.fontdeck.com/s/css/PMeUiPSaOnK4Pgo4RhhzvZAtiDw/localhost/21405.css" type="text/css" />
 
         <script type="text/javascript">

@@ -13,17 +13,35 @@ get_header(); ?>
 
 <div class="stripe stripe--blog">
 
-    <?php echo get_previous_posts_link('Newer posts'); ?>
-    <?php echo get_next_posts_link('Older posts'); ?>
-
     <div class="wrapper">
 
-        <div class="upper-sidebar"><?php get_sidebar(); ?></div>        
+        <div class="upper-sidebar"><?php get_sidebar(); ?></div>
 
         <div class="articles">
 
-        <?php
-            if ( have_posts() ) :
+        <?php if ( have_posts() ) : ?>
+
+            <div class="article">
+
+                <h1 class="section-heading"><?php
+                    if ( is_day() ) :
+                        printf( __( 'Archived posts from %s', 'infobahn' ), get_the_date() );
+
+                    elseif ( is_month() ) :
+                        printf( __( 'Archived posts from %s', 'infobahn' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'infobahn' ) ) );
+
+                    elseif ( is_year() ) :
+                        printf( __( 'Archived posts from %s', 'infobahn' ), get_the_date( _x( 'Y', 'yearly archives date format', 'infobahn' ) ) );
+
+                    else :
+                        _e( 'Archives', 'infobahn' );
+
+                    endif;
+                ?></h1>
+
+            </div>
+
+                <?php
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
 

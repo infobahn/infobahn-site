@@ -45,25 +45,29 @@
     ragadjust('p', 'all');
 
 //  Expand sidebar
-    var btnshowsidebar = document.getElementById('btnShowSidebar'),
-    sidebar = document.getElementById('sidebar'),
+    // var btnshowsidebar = document.getElementById('btnShowSidebar'),
+    // sidebar = document.getElementById('sidebar'),
      
-    hasClass = function (el, cl) {
-        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
-        return !!el.className.match(regex);
-    },
+    // hasClass = function (el, cl) {
+    //     var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+    //     return !!el.className.match(regex);
+    // },
  
-    addClass = function (el, cl) {
-        el.className += ' ' + cl;
-    },
+    // addClass = function (el, cl) {
+    //     el.className += ' ' + cl;
+    // },
  
-    removeClass = function (el, cl) {
-        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
-        el.className = el.className.replace(regex, ' ');
-    },
+    // removeClass = function (el, cl) {
+    //     var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+    //     el.className = el.className.replace(regex, ' ');
+    // },
  
-    toggleClass = function (el, cl) {
-        hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
-    };
+    // toggleClass = function (el, cl) {
+    //     hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
+    // };
 
-    btnshowsidebar.onclick = function()  { toggleClass(sidebar, 'sidebar--is-visible'); };
+    // btnshowsidebar.onclick = function() {
+    //     toggleClass(btnshowsidebar, 'btn--show-sidebar--is-active');
+    //     toggleClass(sidebar, 'sidebar--is-visible');
+    //     return false;
+    // };

@@ -8,7 +8,6 @@
 // -----------------------------------------------------------------------------
 
     .wrapper {
-        clear: both;
         position: relative;
         @include rem(margin, 0, $mid-space);
         @include rem(max-width, 1250px);
@@ -202,27 +201,26 @@
     .articles {
         @include gs-span(cb, all);
 
-        @include breakpoint($medium) {
+        @include breakpoint($mid) {
             @include gs-span(c, 2, 4);
         }
 
         @include breakpoint($large) {
             @include gs-span(c, 2, 4);
         }
+
+        @include rem(padding-left, $base-space);
+        @include rem(padding-right, $base-space);
+
+        @include breakpoint($large) {
+            @include rem(padding-left, 0);
+            @include rem(padding-right, 0);
+        }
+
+        @include breakpoint($large) {
+            @include rem(padding-left, $double-space);
+            @include rem(padding-right, $double-space);
+        }
     }
 
-    // .sidebar {
-    //     @include gs-span(c, all);
-
-    //     @include breakpoint($medium) {
-    //         @include gs-span(cb, 5);
-    //     }
-
-    //     @include breakpoint($mid) {
-    //         padding-left: 0;
-    //     }
-
-    //     @include breakpoint($large) {
-    //         @include gs-span(cb, 5);
-    //     }
-    // }
+    

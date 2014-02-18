@@ -16,6 +16,7 @@
     h1 {
         @include rem(font-size, $h1-size);
         @include rem(margin-bottom, $quarter-space);
+        line-height: $base-line-height * 0.75;
     }
 
     h2 {

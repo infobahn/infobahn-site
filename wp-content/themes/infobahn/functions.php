@@ -163,3 +163,21 @@ function infobahn_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'infobahn_widgets_init' );
+
+/**
+ * Add classes to blog pagination links
+ *
+ * @since Infobahn 1.0
+ *
+ * @return void
+ */
+add_filter('next_posts_link_attributes', 'next_posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'previous_posts_link_attributes');
+
+function previous_posts_link_attributes() {
+    return 'class="btn article__next"';
+}
+
+function next_posts_link_attributes() {
+    return 'class="btn article__prev"';
+}

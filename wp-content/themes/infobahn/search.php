@@ -13,17 +13,21 @@ get_header(); ?>
 
 <div class="stripe stripe--blog">
 
-    <?php echo get_previous_posts_link('Newer posts'); ?>
-    <?php echo get_next_posts_link('Older posts'); ?>
-
     <div class="wrapper">
 
-        <div class="upper-sidebar"><?php get_sidebar(); ?></div>        
+        <div class="upper-sidebar"><?php get_sidebar(); ?></div>
 
         <div class="articles">
 
-        <?php
-            if ( have_posts() ) :
+        <?php if ( have_posts() ) : ?>
+
+            <div class="stripe__content">
+
+                <h1 class="section-heading"><?php printf( __( 'Search Results for &ldquo;%s&rdquo;', 'infobahn' ), get_search_query() ); ?></h1>
+
+            </div>
+
+                <?php
                 // Start the Loop.
                 while ( have_posts() ) : the_post();
 

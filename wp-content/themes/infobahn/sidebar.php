@@ -12,15 +12,15 @@
 
     	<div class="sidebar" id="sidebar" role="complementary">
 
-            <div class="wrapper media">
+            <!-- <div class="wrapper media"> -->
 
-                <div class="media__img sidebar__widgets">
+                <div class="sidebar__widgets">
 
                     <?php dynamic_sidebar( 'sidebar-1' ); ?>
 
                 </div>
 
-                <div class="media__bd sidebar__related-posts">
+                <!-- <div class="media__bd sidebar__related-posts">
 
                     <h3 class="sidebar__heading">Viewing posts filed as <em>extra-curricular</em></h3>
 
@@ -60,9 +60,9 @@
 
                     <a href="#" class="related-posts__see-all">See all posts in this category</a>
 
-                </div>
+                </div> -->
 
-            </div>
+            <!-- </div> -->
            
     	</div>
 

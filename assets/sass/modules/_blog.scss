@@ -3,6 +3,7 @@
 // ============================================================================
 
     .stripe--blog {
+        position: relative;
         background-color: #f8f8f8;
         border-top: 1px solid $color-divider;
         text-align: left;
@@ -10,12 +11,12 @@
     }
 
     .article {
-        @include rem(padding, $mid-space + $base-space, $double-space);
+        @include rem(padding, $base-space, 0);
     }
 
         .article__title {
             @include pimlico;
-            text-align: center;
+            // text-align: center;
         }
 
             .article__permalink {
@@ -27,8 +28,12 @@
             @include ptsans;
             @include rem(font-size, $mini-size);
             color: $color-subtext;
-            @include rem(margin, -$quarter-space, 0, $base-space, 0);
-            text-align: center;
+            @include rem(margin, 0, 0, $base-space, 0);
+            // text-align: center;
+            // border-color: $color-divider;
+            // border-style: solid;
+            // border-width: 1px 0;
+            // @include rem(padding, $quarter-space, 0);
         }
 
             .article__category {
@@ -39,12 +44,38 @@
             text-align: left;
         }
 
-        .article__footer {
+        .article__next,
+        .article__prev {
+            position: fixed;
+            top: 50%;
+            @include rem(height, $mid-space);
+            @include rem(line-height, $mid-space);
+            background: #ededed;
+            color: $color-text !important;
+            @include rem(border-radius, $border-radius * 2);
+            padding-top: 0;
+            padding-bottom: 0;
+            @include rem(margin-top, -$mid-space/2);
 
+            &:hover {
+                background: #ddd;
+            }
+        }
+
+        .article__next {
+            @include rem(right, -$mid-space);
+            @include rem(padding-right, $double-space);
+        }
+
+        .article__prev {
+            @include rem(left, -$mid-space);
+            @include rem(padding-left, $double-space);
         }
 
         .article__comment-request {
+            clear: both;
             @include rem(padding-top, $half-space);
             @include rem(margin-top, $mid-space);
+            @include rem(margin-bottom, $super-space);
             border-top: 2px solid $color-divider;
         }

@@ -3,12 +3,13 @@
 // ============================================================================
 
     .header {
-        // position: fixed;
+        position: relative;
         // top: 0;
         // width: 100%;
-        // @include rem(height, 90px);
+        @include rem(height, 90px);
         @extend %cf;
-        // background-color: $color-body;
+        background-color: $color-body;
+        z-index: 200;
     }
 
         .site-name {

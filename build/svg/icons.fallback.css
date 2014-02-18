@@ -1,2 +1,8 @@
-.icon-loading { background-image: url('png/loading.png'); background-repeat: no-repeat; }
-
+.icon-pattern {
+	background-image: url('png/pattern.png');
+	background-repeat: no-repeat;
+}
+.icon-search {
+	background-image: url('png/search.png');
+	background-repeat: no-repeat;
+}

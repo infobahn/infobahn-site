@@ -33,13 +33,7 @@
 				<?php the_content( __( '', 'infobahn' ) ); ?>
 
 			</div>
-			
-			<?php the_tags( '<div class="article__footer"><span class="article__tags">', '', '</span></div>' ); ?>
 
-			<?php if ( is_single() ) : ?>
-
-				<p class="article__comment-request">Want to join the discussion? <a href="http://twitter.com/infobahndesign/">Comment on Twitter</a>.</p>
-
-			<?php endif; ?>
+			<p class="article__comment-request">Want to join the discussion? <a href="http://twitter.com/infobahndesign/">Comment on Twitter</a>.</p>
 
 		</div>

@@ -2,63 +2,60 @@
 //  Sidebar
 // ============================================================================
 
-    .btn--show-sidebar {
-        position: absolute;
-        @include rem(top, $base-space);
-        right: 0;
-        border: 2px solid $pink !important;
-        background: none;
-        color: $pink !important;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        @include rem(font-size, $micro-size);
-        @include rem(border-radius, $border-radius);
+    .sidebar {
+        clear: both;
+        width: 100%;
+        border-color: $color-divider;
+        border-style: solid;
+        border-width: 1px 0 0 0;
+        @include rem(margin-bottom, $double-space);
+        @extend %cf;
+        @include rem(padding, 0, $base-space, $quarter-space, $base-space);
 
-        &:hover {
-            background: none;
+        .upper-sidebar & {
+            display: none;
+        }
+
+        @include breakpoint($medium) {
+            padding-left: 0;
+            padding-right: 0;
+
+            .upper-sidebar & {
+                display: block;
+                border-width: 0 0 1px 0;
+            }
+
+            .lower-sidebar & {
+                display: none;
+            }
         }
     }
 
-    .btn--show-sidebar--is-active {
-        border-color: white !important;
-        color: white !important;
-    }
-
-    .sidebar {
-        background: #444;
-        color: white !important;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: all $base-duration ease;
-    }
-
-    .sidebar--is-visible,
-    #sidebar:focus {
-        max-height: 900px;
-        @include rem(padding, $base-space, 0);
-        transition: all $base-duration ease;
-    }
-
         .sidebar__heading {
-            // @extend %ib;
-            // @include pimlico;
             @include ptsans;
             @include rem(font-size, $base-font-size);
             color: $color-subtext;
             @include rem(margin, 0, $half-space, 0, 0);
+            line-height: $base-line-height;
         }
 
         .sidebar__widgets {
-            width: gs-width(c, 1, 1, false, true);
-            border-right: 1px solid #666;
-            @include rem(padding-right, $base-space);
-            // @include rem(margin-right, $double-space);
+            width: 100%;
             margin: 0;
+            padding: 0;
+            @include rem(margin-bottom, $base-space);
         }
 
             .widget {
+                float: left;
+                width: 100%;
                 @include rem(padding, $half-space, 0);
+                
+                @include breakpoint($medium) {
+                    width: 33.3333%;
+                    @include rem(padding-left, $base-space);
+                    @include rem(padding-right, $base-space);
+                }
 
                 ul {
                     @include rem(margin, $quarter-space, 0, 0, 0);
@@ -74,13 +71,6 @@
                     width: 100%;
                 }
             }
-
-        .sidebar__related-posts {
-            width: gs-width(c, 2, 4, false, true);
-            @include rem(padding, $half-space, $double-space);
-        }
-
-            
 
 
 //  Search widget
@@ -105,91 +95,5 @@
 
         input[type=submit] {
             display: none;
-            @include rem(margin-left, -$base-space);
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
         }
-    }
-
-        // .searchform {
-        //     @extend %ib;
-        // }
-
-
-//  Archive widget
-// ----------------------------------------------------------------------------
-
-    .widget_archive {
-        select {
-            @include rem(margin-top, $quarter-space);
-        }
-    }
-
-//  Categories widget
-// ----------------------------------------------------------------------------
-
-    .widget_categories {
-
-        select {
-            @include rem(margin-top, $quarter-space/1);
-        }
-    }
-
-
-//  Posts list
-// ----------------------------------------------------------------------------
-
-    .post-list {
-        list-style: none;
-        margin-left: 0;
-    }
-
-        .post-list__post {
-            float: left;
-            // width: gs-width(cb, 1, 1, false, true);
-            // margin-left: gs-width(cb, 2, 2, false, true);
-            // width: 45%;
-            // margin-left: 5%;
-        }
-
-        .post-list__post:first-of-type {
-            margin-left: 0;
-        }
-
-        .post-list__post-link {
-            display: block;
-            background-color: #4c4c4c;
-            @include rem(font-size, $mini-size);
-            @include rem(margin, 0, 0, $half-space, 0);
-
-            &:hover {
-                background-color: #4f4f4f;
-            }
-        }
-
-        .post-list__post__title {
-            @include pimlico;
-            margin: 0;
-            @include rem(padding, $quarter-space, $half-space, 0, $half-space);
-        }
-
-        .post-list__post__meta {
-            display: block;
-            @include rem(font-size, $micro-size);
-            @include rem(margin-bottom, $half-space);
-            color: $color-subtext;
-            @include rem(padding, 0, $half-space);
-        }
-
-        .post-list__post__excerpt {
-            color: $color-subtext;
-            // @include rem(font-size, $mini-size);
-            @include rem(padding, 0, $half-space, $half-space, $half-space);
-            margin-bottom: 0;
-            // background: #f4f4f4;
-        }
-
-    .related-posts__see-all {
-        @include rem(font-size, $mini-size);
-        @include rem(margin-top, $double-space);
     }

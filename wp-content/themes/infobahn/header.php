@@ -33,7 +33,18 @@
         <meta name="msapplication-TileImage" content="<?php echo esc_url( home_url( '/' ) ); ?>win8-pinned.png"/>
         <meta name="msapplication-TileColor" content="#cb1f41"/>
 
-        <!-- <link rel="stylesheet" href="//f.fontdeck.com/s/css/lBC1FIj9YT14YAKkFNY9gaIn880/<?php echo $_SERVER['SERVER_NAME']; ?>/21405.css" type="text/css" /> -->
+        <meta property="og:title" content="<?php the_field('meta-title'); ?>" />
+        <meta property="og:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" />
+        <meta property="og:description" content="<?php the_field('meta-description'); ?>" />
+        <meta property="og:image" content="<?php the_field('meta-image'); ?>" />
+
+        <meta name="twitter:card" content="bovril">
+        <meta name="twitter:site" content="@infobahndesign">
+        <meta name="twitter:creator" content="<?php the_field('meta-creator'); ?>">
+        <meta name="twitter:url" content="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+        <meta name="twitter:title" content="<?php the_field('meta-title'); ?>">
+        <meta name="twitter:description" content="<?php the_field('meta-description'); ?>">
+        <meta name="twitter:image" content="<?php the_field('meta-image'); ?>">
 
         <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
         <script type="text/javascript">

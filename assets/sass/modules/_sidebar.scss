@@ -32,7 +32,7 @@
     }
 
         .sidebar__heading {
-            @include ptsans;
+            @include freight-sans;
             @include rem(font-size, $base-font-size);
             color: $color-subtext;
             @include rem(margin, 0, $half-space, 0, 0);

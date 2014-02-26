@@ -10,6 +10,29 @@
         padding: 0;
     }
 
+    .archive-heading {
+        // @include pimlico;
+        @include freight-sans;
+        color: $color-subtext;
+        @include rem(font-size, $mini-size);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        @include rem(margin, $mid-space, 0, $base-space, 0);
+        @include rem(padding, $half-space, 0);
+        // border-bottom: 1px solid $color-divider;
+        // @include rem(text-indent, $half-space);
+        text-align: center;
+
+        strong {
+            color: $color-text;
+            font-weight: 400;
+        }
+
+        @include breakpoint($medium) {
+            @include rem(margin-top, -$half-space);
+        }
+    }
+
     .article {
         @include rem(padding, $base-space, 0);
     }
@@ -25,7 +48,7 @@
 
         .article__meta {
             display: block;
-            @include ptsans;
+            @include freight-sans;
             @include rem(font-size, $mini-size);
             color: $color-subtext;
             @include rem(margin, 0, 0, $base-space, 0);
@@ -59,6 +82,14 @@
 
             &:hover {
                 background: #ddd;
+            }
+        }
+
+        .prevnext__text {
+            display: none;
+
+            @include breakpoint($mid2) {
+                display: inline;
             }
         }
 

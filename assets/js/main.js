@@ -42,7 +42,7 @@
     // });
 
 //  Clean up typography
-    ragadjust('p', 'all');
+    // ragadjust('p', 'all');
 
 //  Expand sidebar
     // var btnshowsidebar = document.getElementById('btnShowSidebar'),
@@ -71,3 +71,37 @@
     //     toggleClass(sidebar, 'sidebar--is-visible');
     //     return false;
     // };
+
+ // Expand sidebar
+    var showMenu = document.getElementById('showMenu'),
+    hideMenu = document.getElementById('hideMenu'),
+    menu = document.getElementById('menu'),
+     
+    hasClass = function (el, cl) {
+        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+        return !!el.className.match(regex);
+    },
+ 
+    addClass = function (el, cl) {
+        el.className += ' ' + cl;
+    },
+ 
+    removeClass = function (el, cl) {
+        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+        el.className = el.className.replace(regex, ' ');
+    },
+ 
+    toggleClass = function (el, cl) {
+        hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
+    };
+
+    showMenu.onclick = function() {
+        toggleClass(menu, 'nav--main--is-visible');
+        return false;
+    };
+
+    hideMenu.onclick = function() {
+        removeClass(menu, 'nav--main--is-visible');
+        return false;
+    };
+

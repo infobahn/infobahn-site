@@ -8,7 +8,7 @@
  */
 ?>
 
-<form role="search" method="get" id="searchform" class="searchform" action="http://localhost/infobahn/">
+<form role="search" method="get" id="searchform" class="searchform" action="http://www.infobahndesign.com/">
     <label class="screen-reader-text" for="s">Search the site</label>
     <input type="text" placeholder="Search the site" value="" name="s" id="s">
     <input type="submit" id="searchsubmit" value="Search">

@@ -1,0 +1,139 @@
+// ============================================================================
+//  Nav
+// ============================================================================
+
+    .show-menu {
+        display: block;
+        float: right;
+        border: 1px solid #ddd;
+        @include rem(padding, $quarter-space, $threequarter-space);
+        @include rem(margin-top, $threequarter-space);
+        @include rem(border-radius, $border-radius);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: all $base-duration*2 ease;
+        z-index: 1001;
+
+        &:hover {
+            border-color: $color-link-hover;
+            transition: all $base-duration*2 ease;
+        }
+
+        @include breakpoint($medium) {
+            display: none;
+        }
+    }
+
+    .nav--main {
+        position: absolute;
+        @include rem(top, 90px);
+        left: 0;
+        width: 100%;
+        margin: 0;
+        border-top: 1px solid $color-divider;
+        transform: translateX(100%);
+        transition: all $base-duration ease;
+        z-index: 1000;
+
+        @include breakpoint($medium) {
+            position: relative;
+            top: auto;
+            left: auto;
+            width: auto;
+            border: 0;
+            transform: translateX(0);
+            float: right;
+            @include rem(margin, $base-space, 0);
+        }
+
+        .nav__item {
+            clear: left;
+            float: left;
+            width: 100%;
+
+            @include breakpoint($medium) {
+                clear: none;
+                float: none;
+                width: auto;
+                @include rem(margin-left, $half-space);
+            }
+        }
+
+            .nav__link {
+                float: left;
+                width: 100%;
+                background: white;
+                @include rem(padding, $half-space);
+                border-bottom: 1px solid $color-divider;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: lighten($blue, 55);
+                }
+
+                @include breakpoint($medium) {
+                    float: none;
+                    width: auto;
+                    background: transparent !important;
+                    border: 0;
+                    @include rem(font-size, $mini-size);
+                    @include rem(padding, 0, $quarter-space);
+                }
+            }
+
+            .hide-menu {
+                display: none;
+                position: relative;
+                
+                a {
+                    position: absolute;
+                    top: -101em;
+                    bottom: -101em;
+                    left: 0;
+                    right: 0;
+                    background: transparent;
+                    border: 0;
+                    text-indent: -999em;
+                    z-index: 0;
+                }
+            }
+    }
+
+    .nav--main--is-visible {
+        transform: translateX(0);
+        transition: all $base-duration ease;
+        z-index: 1001;
+
+        .nav__link {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hide-menu {
+            display: block;
+        }
+    }
+
+
+
+
+
+    // .nav--main {
+    //     float: right;
+    //     display: none;
+    //     @include rem(margin, $base-space, 0);
+
+    //     @include breakpoint($medium) {
+    //         display: block;
+    //     }
+    
+    //     .nav__item {
+    //         @include rem(margin-left, $half-space);
+    //     }
+
+    //         .nav__link {
+    //             @include rem(font-size, $mini-size);
+    //             @include rem(padding, 0, $quarter-space);
+    //         }
+    // }

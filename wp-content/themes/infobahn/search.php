@@ -21,11 +21,7 @@ get_header(); ?>
 
         <?php if ( have_posts() ) : ?>
 
-            <div class="stripe__content">
-
-                <h1 class="section-heading"><?php printf( __( 'Search Results for &ldquo;%s&rdquo;', 'infobahn' ), get_search_query() ); ?></h1>
-
-            </div>
+            <h1 class="archive-heading"><?php printf( __( 'Search Results for &ldquo;<strong>%s</strong>&rdquo;', 'infobahn' ), get_search_query() ); ?></h1>
 
                 <?php
                 // Start the Loop.

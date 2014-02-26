@@ -56,7 +56,7 @@
                     text-align: left;
                     color: $color-subtext;
                     // @include pimlico;
-                    @include ptsans;
+                    @include freight-sans;
                     @include rem(font-size, $mini-size);
                     @include rem(margin-bottom, $quarter-space);
                     @include rem(margin-left, $quarter-space);

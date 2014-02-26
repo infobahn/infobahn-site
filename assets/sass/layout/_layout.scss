@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------------
 
     .wrapper {
-        position: relative;
+        // position: relative;
         @include rem(margin, 0, $mid-space);
         @include rem(max-width, 1250px);
         @extend %cf;
@@ -200,17 +200,24 @@
 
     .articles {
         @include gs-span(cb, all);
+        @include rem(padding-left, $base-space);
+        @include rem(padding-right, $base-space);
 
         @include breakpoint($mid) {
-            @include gs-span(c, 2, 4);
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        @include breakpoint($mid2) {
+            @include rem(padding-left, $super-space*2);
+            @include rem(padding-right, $super-space*2);
         }
 
         @include breakpoint($large) {
             @include gs-span(c, 2, 4);
-        }
-
-        @include rem(padding-left, $base-space);
-        @include rem(padding-right, $base-space);
+            @include rem(padding-left, $base-space);
+            @include rem(padding-right, $base-space);
+        }        
 
         @include breakpoint($large) {
             @include rem(padding-left, 0);

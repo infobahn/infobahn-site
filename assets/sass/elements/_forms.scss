@@ -3,7 +3,7 @@
 // ============================================================================
 
     input[type=text] {
-        @include ptsans;
+        @include freight-sans;
         border: 1px solid $color-divider;
         @include rem(padding, $quarter-space/1.5, $quarter-space);
         color: $color-subtext;

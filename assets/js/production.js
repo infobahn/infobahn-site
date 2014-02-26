@@ -1,62 +1,3 @@
-/*!
- *  Echo v1.4.0
- *  Lazy-loading with data-* attributes, offsets and throttle options
- *  Project: https://github.com/toddmotto/echo
- *  by Todd Motto: http://toddmotto.com
- *  Copyright. MIT licensed.
- */
-window.Echo = (function (window, document, undefined) {
-
-  'use strict';
-
-  var store = [], offset, throttle, poll;
-
-  var _inView = function (el) {
-    var coords = el.getBoundingClientRect();
-    return ((coords.top >= 0 && coords.left >= 0 && coords.top) <= (window.innerHeight || document.documentElement.clientHeight) + parseInt(offset));
-  };
-
-  var _pollImages = function () {
-    for (var i = store.length; i--;) {
-      var self = store[i];
-      if (_inView(self)) {
-        self.src = self.getAttribute('data-echo');
-        // self.style.backgroundImage = 'url(' + self.getAttribute('data-echo') + ')';
-        store.splice(i, 1);
-      }
-    }
-  };
-
-  var _throttle = function () {
-    clearTimeout(poll);
-    poll = setTimeout(_pollImages, throttle);
-  };
-
-  var init = function (obj) {
-    var nodes = document.querySelectorAll('[data-echo]');
-    var opts = obj || {};
-    offset = opts.offset || 0;
-    throttle = opts.throttle || 250;
-
-    for (var i = 0; i < nodes.length; i++) {
-      store.push(nodes[i]);
-    }
-
-    _throttle();
-
-    if (document.addEventListener) {
-      window.addEventListener('scroll', _throttle, false);
-    } else {
-      window.attachEvent('onscroll', _throttle);
-    }
-  };
-
-  return {
-    init: init,
-    render: _throttle
-  };
-
-})(window, document);
 /**
  * Prism: Lightweight, robust, elegant syntax highlighting
  * MIT license http://www.opensource.org/licenses/mit-license.php/
@@ -72,53 +13,6 @@ Prism.languages.php=Prism.languages.extend("clike",{keyword:/\b(and|or|xor|array
 Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
 ;
 
-ragadjust = function (s, method) {
-    
-    if (document.querySelectorAll) {
-    
-        var eles = document.querySelectorAll(s),
-                elescount = eles.length;
-        
-        while (elescount-- > 0) {
-            
-            var preps = /(\s|^|>)((aboard|about|above|across|after|against|along|amid|among|anti|around|before|behind|below|beneath|beside|besides|between|beyond|concerning|considering|despite|down|during|except|excepting|excluding|following|from|inside|into|like|minus|near|onto|opposite|outside|over|past|plus|regarding|round|save|since|than|that|this|through|toward|towards|under|underneath|unlike|until|upon|versus|with|within|without|-|–|—)?\s)+/gi,
-            
-                    smallwords = /(\s|^)(([a-zA-Z-_(]{1,2}('|’)*[a-zA-Z-_,;]?\s)+)/gi, // words with 3 or less characters
-                    
-                    emphasis = /(<(strong|em|b|i)>)(([^\s]+\s*){2,3})?(<\/(strong|em|b|i)>)/gi,
-            
-                    ele = eles[elescount],
-                    
-                    elehtml = ele.innerHTML;
-            
-            if (method == 'small-words' || method == 'all') 
-                
-                // replace small words
-                elehtml = elehtml.replace(smallwords, function(contents, p1, p2) {
-                return p1 + p2.replace(/\s/g, '&nbsp;');
-            }); 
-            
-            if (method == 'prepositions' || method == 'all') 
-            
-                // replace prepositions (greater than 3 characters)
-                elehtml = elehtml.replace(preps, function(contents, p1, p2) {
-                        return p1 + p2.replace(/\s/gi, '&nbsp;');
-                    });
-            
-            if (method == 'emphasis' || method == 'all') 
-            
-                // emphasized text
-                elehtml = elehtml.replace(emphasis, function(contents, p1, p2, p3, p4, p5) {
-                        return p1 + p3.replace(/\s/gi, '&nbsp;') + p5;
-                    });
-            
-            ele.innerHTML = elehtml;
-            
-        }
-    
-    }
-    
-};
 // $(function() {
 
 //     $('.project__link').click(function(e) {
@@ -163,7 +57,7 @@ ragadjust = function (s, method) {
     // });
 
 //  Clean up typography
-    ragadjust('p', 'all');
+    // ragadjust('p', 'all');
 
 //  Expand sidebar
     // var btnshowsidebar = document.getElementById('btnShowSidebar'),
@@ -192,3 +86,37 @@ ragadjust = function (s, method) {
     //     toggleClass(sidebar, 'sidebar--is-visible');
     //     return false;
     // };
+
+ // Expand sidebar
+    var showMenu = document.getElementById('showMenu'),
+    hideMenu = document.getElementById('hideMenu'),
+    menu = document.getElementById('menu'),
+     
+    hasClass = function (el, cl) {
+        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+        return !!el.className.match(regex);
+    },
+ 
+    addClass = function (el, cl) {
+        el.className += ' ' + cl;
+    },
+ 
+    removeClass = function (el, cl) {
+        var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
+        el.className = el.className.replace(regex, ' ');
+    },
+ 
+    toggleClass = function (el, cl) {
+        hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
+    };
+
+    showMenu.onclick = function() {
+        toggleClass(menu, 'nav--main--is-visible');
+        return false;
+    };
+
+    hideMenu.onclick = function() {
+        removeClass(menu, 'nav--main--is-visible');
+        return false;
+    };
+

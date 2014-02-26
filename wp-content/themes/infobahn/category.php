@@ -21,11 +21,7 @@ get_header(); ?>
 
         <?php if ( have_posts() ) : ?>
 
-            <div class="stripe__content">
-
-                <h1 class="section-heading"><?php printf( __( 'Posts categorised as &ldquo;%s&rdquo;', 'infobahn' ), single_cat_title( '', false ) ); ?></h1>
-
-            </div>
+            <h1 class="archive-heading"><?php printf( __( 'Posts categorised as &ldquo;<strong>%s</strong>&rdquo;', 'infobahn' ), single_cat_title( '', false ) ); ?></h1>
 
                 <?php
                 // Start the Loop.

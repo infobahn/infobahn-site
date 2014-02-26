@@ -77,10 +77,14 @@
             
                 <a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>">Infobahn</a>
 
-                <ul class="nav nav--main" role="navigation">
+                <a href="#nav" class="show-menu" id="showMenu">Menu</a>
+
+                <ul class="nav nav--main" id="menu" role="navigation">
+                    <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>blog" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#us" class="nav__link">Us</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" class="nav__link">Contact</a></li>
+                    <li class="hide-menu"><a id="hideMenu" href="#">Close menu</a></li>
                 </ul>
 
             </div>

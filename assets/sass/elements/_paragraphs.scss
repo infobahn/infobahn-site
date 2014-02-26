@@ -11,11 +11,24 @@
         color: $color-subtext;
     }
 
+    em {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    q {
+        font-style: italic;
+    }
+
     blockquote {
-        @include ptsans-italic;
+        @include freight-sans-italic;
         border-style: solid;
         border-color: $color-divider;
         @include rem(border-width, 0, 0, 0, $quarter-space / 1.5);
         @include rem(margin, $threequarter-space, 0);
         @include rem(padding-left, $threequarter-space);
     }
+

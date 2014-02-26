@@ -10,36 +10,46 @@
 
     h1, h2, h3, h4, h5, h6 {
         color: $color-heading;
-        @include pimlico-bold;
+        @include pimlico;
     }
 
     h1 {
         @include rem(font-size, $h1-size);
         @include rem(margin-bottom, $quarter-space);
-        line-height: $base-line-height * 0.75;
+        line-height: $base-line-height * 0.8;
     }
 
     h2 {
         @include rem(font-size, $h2-size);
         @include rem(margin-bottom, $half-space);
+        margin: 0;
+        @include rem(margin, $mid-space, 0, $quarter-space, 0);
     }
 
     h3 {
         @include rem(font-size, $h3-size);
+        @include rem(margin, $threequarter-space, 0, 0, 0);
 
     }
 
     h4 {
         @include rem(font-size, $h4-size);
+        @include rem(margin, $threequarter-space, 0, 0, 0);
 
     }
 
     h5 {
         @include rem(font-size, $h5-size);
+        margin: 0;
 
     }
 
     h6 {
         @include rem(font-size, $h6-size);
+        margin: 0;
 
+    }
+
+    .section-heading {
+        @include pimlico-bold;
     }

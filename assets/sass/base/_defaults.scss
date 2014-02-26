@@ -19,7 +19,7 @@
     $base-font-size                     : 19px;
     $base-line-height                   : $ratio;
 
-    $base-font-family                   : $ptsans;
+    $base-font-family                   : $freight-sans;
     
     $base-duration                      : .4s;
 
@@ -71,6 +71,7 @@
     $small                              : max-width 24em;
     $medium                             : 35.5em, 'no-query' '.no-mq';
     $mid                                : 700px, 'no-query' '.no-mq';
+    $mid2                               : 900px, 'no-query' '.no-mq';
     $large                              : 64em, 'no-query' '.no-mq';
     $larger                             : 80em;
     $xl                                 : 91em;

@@ -74,7 +74,7 @@
 
 //  Indent certain elements by a consistent amount.
 
-    ul, ol, dd {
+    ul, ol {
         padding: 0;
         @include rem(margin-left, $double-space);
     }

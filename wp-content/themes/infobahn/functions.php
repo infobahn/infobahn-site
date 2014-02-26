@@ -142,6 +142,27 @@ add_action( 'init', 'create_post_type' );
 // 	return $query;
 // }
 
+/**
+ * Amend the search to just posts
+ * @since  Infobahn 1.0
+ * 
+ * @param string $query The actual search query
+ *
+ * @return  string $query the amended query
+ */
+function SearchFilter( $query ) {
+
+    if ( $query->is_search ) {
+
+        $query->set('post_type', 'post');
+
+    }
+
+    return $query;
+
+}
+
+add_filter('pre_get_posts', 'SearchFilter');
 
 /**
  * Register the Infobahn widget area.

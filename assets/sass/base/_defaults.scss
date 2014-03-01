@@ -66,9 +66,9 @@
 // ----------------------------------------------------------------------------
 
 //  Values to pass to Breakpoint for use in media queries. Browsers that don't
-//  support media queries will receive $larger styles by default.
+//  support media queries will receive $large styles by default.
 
-    $small                              : max-width 24em;
+    $small                              : max-width 450px;
     $medium                             : 35.5em, 'no-query' '.no-mq';
     $mid                                : 700px, 'no-query' '.no-mq';
     $mid2                               : 900px, 'no-query' '.no-mq';

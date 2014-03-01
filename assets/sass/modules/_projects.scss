@@ -60,6 +60,11 @@
                     @include rem(font-size, $mini-size);
                     @include rem(margin-bottom, $quarter-space);
                     @include rem(margin-left, $quarter-space);
+                    margin-top: 0;
+
+                    @include breakpoint($small) {
+                        font-size: 1rem;
+                    }
                 }
 
 

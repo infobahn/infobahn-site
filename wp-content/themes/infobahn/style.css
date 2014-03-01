@@ -255,7 +255,7 @@ html {
   font-size: 100%;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   html {
     font-size: 87.5%;
   }
@@ -350,6 +350,35 @@ h6 {
   font-family: "FS Pimlico Web Bold", 'Trebuchet MS', sans-serif;
   font-weight: bold;
   font-style: normal;
+}
+
+@media (max-width: 60em) {
+  h1 {
+    font-size: 30.742px;
+    font-size: 1.618rem;
+    line-height: 1.3753;
+    margin: 61.484px 0 7.6855px 0;
+    margin: 3.236rem 0 0.4045rem 0;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 23.0565px;
+    font-size: 1.2135rem;
+    line-height: 1.3753;
+    margin: 30.742px 0 7.6855px 0;
+    margin: 1.618rem 0 0.4045rem 0;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0;
+  }
 }
 
 p {
@@ -605,7 +634,7 @@ input[type=submit]:active {
   max-width: 65.78947rem;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .wrapper {
     margin: 0 30.742px;
     margin: 0 1.618rem;
@@ -842,7 +871,7 @@ input[type=submit]:active {
   margin-left: 2.68359%;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .project-1,
   .project-2,
   .project-3,
@@ -873,7 +902,7 @@ input[type=submit]:active {
   width: 45.56591%;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .person--james,
   .person--sam {
     clear: both;
@@ -1051,7 +1080,7 @@ input[type=submit]:active {
   margin-top: 1.2135rem;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .site-name {
     margin-top: 15.371px;
     margin-top: 0.809rem;
@@ -1287,7 +1316,7 @@ input[type=submit]:active {
   *line-height: 2.427;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .intro__btn {
     display: block;
     text-align: center;
@@ -1355,7 +1384,7 @@ input[type=submit]:active {
   transition: all 0.4s ease;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .project__link {
     text-align: center;
   }
@@ -1390,6 +1419,13 @@ input[type=submit]:active {
   margin-bottom: 0.4045rem;
   margin-left: 7.6855px;
   margin-left: 0.4045rem;
+  margin-top: 0;
+}
+
+@media (max-width: 60em) {
+  .project__tagline {
+    font-size: 1rem;
+  }
 }
 
 .case-study {
@@ -1449,7 +1485,7 @@ input[type=submit]:active {
   *display: none;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .case-study__prev,
   .case-study__next {
     display: none;
@@ -1631,7 +1667,7 @@ input[type=submit]:active {
   margin-top: 0.809rem;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .person {
     margin-top: 30.742px;
     margin-top: 1.618rem;
@@ -1672,7 +1708,7 @@ input[type=submit]:active {
   margin-top: 1.618rem;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .person__name {
     margin-top: 23.0565px;
     margin-top: 1.2135rem;
@@ -1698,7 +1734,7 @@ input[type=submit]:active {
   *display: none;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 60em) {
   .and {
     display: none;
   }

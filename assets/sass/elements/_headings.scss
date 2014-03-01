@@ -53,3 +53,23 @@
     .section-heading {
         @include pimlico-bold;
     }
+
+    @include breakpoint($small) {
+        h1 {
+            @include rem(font-size, $h2-size);
+            line-height: $base-line-height * 0.85;
+            @include rem(margin, $double-space, 0, $quarter-space, 0);
+        }
+
+        h2, h3, h4, h5, h6 {
+            @include rem(font-size, $h3-size);
+            line-height: $base-line-height * 0.85;
+            @include rem(margin, $base-space, 0, $quarter-space, 0);
+        }
+
+        h3, h4, h5, h6 {
+            margin-bottom: 0;
+        }
+    }
+
+    // Check how the above affects headers on the home page!

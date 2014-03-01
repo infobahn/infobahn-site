@@ -50,4 +50,8 @@
             margin-bottom: 0;
             @include rem(margin-top, $double-space);
         }
+
+        img {
+            @include rem(max-width, 475px);
+        }
     }

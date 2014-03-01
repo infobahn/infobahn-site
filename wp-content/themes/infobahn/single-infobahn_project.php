@@ -48,11 +48,32 @@ get_header(); ?>
                  
                     <?php while( have_rows('images') ): the_row(); ?>
                  
+                        <!-- 
                         <img src="<?php the_sub_field('image'); ?>" alt="<?php the_title(); ?>" class="case-study__screenshot">
+                         -->
+
+                        <span data-picture data-alt="<?php the_title(); ?>">
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-small.jpg"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-medium.jpg"        data-media="(min-width: 400px)"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-medium-x2.jpg"     data-media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-large.jpg"         data-media="(min-width: 800px)"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-large-x2.jpg"      data-media="(min-width: 800px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+
+                            <!--[if (lt IE 9) & (!IEMobile)]>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-large.jpg"></span>
+                            <![endif]-->
+
+                            <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                            <noscript>
+                                <img class="case-study__screenshot" src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-small.jpg" alt="<?php the_title(); ?>">
+                            </noscript>
+                        </span>
 
                     <?php endwhile; ?>
 
                 <?php endif; ?>
+
+
 
             </div>
 

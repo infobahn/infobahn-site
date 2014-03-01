@@ -81,6 +81,10 @@
         @include rem(padding, $super-space, 0);
         // @include rem(margin-bottom, $double-space);
         // transition: all $base-duration ease;
+
+        .wrapper {
+            position: relative;
+        }
     }
 
     // .case-study--is-visible {
@@ -96,6 +100,10 @@
             clear: both;
             // @include rem(margin-bottom, $threequarter-space);
             box-shadow: 0 1px 12px 0 rgba(black, 0.2);
+
+            img {
+                display: block;
+            }
         }
 
         .case-study__title {

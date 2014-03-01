@@ -502,7 +502,9 @@ tr:nth-child(even) {
 
 img {
   max-width: 100%;
-  translateZ: 0;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .no-js [data-echo] {
@@ -1126,15 +1128,15 @@ input[type=submit]:active {
   position: absolute;
   top: 90px;
   top: 4.73684rem;
-  left: 0;
+  left: 100%;
   width: 100%;
   margin: 0;
   border-top: 1px solid #ddd;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
   z-index: 1000;
 }
 
@@ -1249,11 +1251,11 @@ input[type=submit]:active {
 }
 
 .nav--main--is-visible {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
   z-index: 1001;
 }
 
@@ -1349,6 +1351,11 @@ input[type=submit]:active {
   margin-top: 3.236rem;
 }
 
+.main-illustration img {
+  max-width: 475px;
+  max-width: 25rem;
+}
+
 .projects__intro {
   margin-bottom: 30.742px;
   margin-bottom: 1.618rem;
@@ -1437,11 +1444,19 @@ input[type=submit]:active {
   padding: 4.854rem 0;
 }
 
+.case-study .wrapper {
+  position: relative;
+}
+
 .case-study__screenshot {
   float: left;
   clear: both;
   -webkit-box-shadow: 0 1px 12px 0 rgba(0,0,0,0.2);
   box-shadow: 0 1px 12px 0 rgba(0,0,0,0.2);
+}
+
+.case-study__screenshot img {
+  display: block;
 }
 
 .case-study__title {

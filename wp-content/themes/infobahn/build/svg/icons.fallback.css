@@ -1,5 +1,8 @@
-.stripe--patterned {
-	background-image: url('png/pattern.png');
+.stripe--pink {
+	background-image: url('png/pattern-pink.png');
+}
+.stripe--blue {
+    background-image: url('png/pattern-blue.png');
 }
 .icon-search {
 	background-image: url('png/search.png');

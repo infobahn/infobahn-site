@@ -502,9 +502,6 @@ tr:nth-child(even) {
 
 img {
   max-width: 100%;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 .no-js [data-echo] {

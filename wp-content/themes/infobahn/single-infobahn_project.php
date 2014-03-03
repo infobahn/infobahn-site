@@ -18,16 +18,16 @@ get_header(); ?>
 
                 <?php if ( !empty( $prev_post ) ) : ?>
 
-                    <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="btn case-study__prev">
-                        Prev<span class="chevron-left"></span>
+                    <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="btn btn--prev">
+                        &laquo;<span class="prevnext__text"> Prev</span>
                     </a>
 
                 <?php endif; ?>
 
                 <?php if ( !empty( $next_post ) ) : ?>  
                     
-                    <a href="<?php echo get_permalink( $next_post->ID ); ?>" class="btn case-study__next">
-                        Next<span class="chevron-right"></span>
+                    <a href="<?php echo get_permalink( $next_post->ID ); ?>" class="btn btn--next">
+                        <span class="prevnext__text">Next </span>&raquo;
                     </a>
 
                 <?php endif; ?>

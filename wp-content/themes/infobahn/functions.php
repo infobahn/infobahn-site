@@ -196,9 +196,9 @@ add_filter('next_posts_link_attributes', 'next_posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'previous_posts_link_attributes');
 
 function previous_posts_link_attributes() {
-    return 'class="btn article__next"';
+    return 'class="btn btn--next"';
 }
 
 function next_posts_link_attributes() {
-    return 'class="btn article__prev"';
+    return 'class="btn btn--prev"';
 }

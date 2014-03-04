@@ -36,13 +36,7 @@
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            _gaq.push(['_setCustomVar',
-                  1,                // This custom var is set to slot #1.  Required parameter.
-                  'Pixel Ratio',    // The name of the custom variable.  Required parameter.
-                  pixelRatio,        // The value of the custom variable.  Required parameter.
-                                    //  (possible values might be Free, Bronze, Gold, and Platinum)
-                  1                 // Sets the scope to visitor-level.  Optional parameter.
-             ]); 
+            ga('set', 'dimension1', pixelRatio);
             ga('create', 'UA-24587494-1', 'infobahndesign.com');
             ga('send', 'pageview');
         </script>

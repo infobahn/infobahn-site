@@ -2,6 +2,25 @@
 //  Nav
 // ============================================================================
 
+    .container {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .pusher {
+        position: relative;
+        left: 0;
+        z-index: 99;
+        height: 100%;
+        transition: transform 0.5s;
+    }
+
+    .nav--main--is-open .pusher {
+        transform: translate3d(-80%, 0, 0);
+    }
+    
+
     .show-menu {
         display: block;
         float: right;
@@ -26,14 +45,25 @@
 
     .nav--main {
         position: absolute;
-        @include rem(top, 90px);
-        left: 100%;
-        width: 100%;
+        // @include rem(top, 90px);
+        // left: 100%;
+        // width: 100%;
         margin: 0;
         border-top: 1px solid $color-divider;
-        transform: translateX(0);
-        transition: transform $base-duration ease;
+        // transform: translateX(0);
+        // transition: transform $base-duration ease;
         z-index: 1000;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        height: 100%;
+        transition: all $base-duration;
+        visibility: hidden;
+        // z-index: 100;
+        transform: translate3d(100%, 0, 0);
+        @include rem(padding-top, 90px);
+        background: $blue;
 
         @include breakpoint($medium) {
             position: relative;
@@ -62,14 +92,16 @@
             .nav__link {
                 float: left;
                 width: 100%;
-                background: white;
+                // background: white;
+                color: white;
                 @include rem(padding, $half-space);
-                border-bottom: 1px solid $color-divider;
+                border-bottom: 1px solid darken($blue, 4);
 
                 &:hover,
                 &:focus,
                 &:active {
-                    background: lighten($blue, 55);
+                    // background: lighten($blue, 55);
+                    background: darken($blue, 4);
                 }
 
                 @include breakpoint($medium) {
@@ -90,8 +122,8 @@
                     position: absolute;
                     top: -101em;
                     bottom: -101em;
-                    left: 0;
-                    right: 0;
+                    left: -101em;
+                    right: -101em;
                     background: transparent;
                     border: 0;
                     text-indent: -999em;
@@ -101,9 +133,13 @@
     }
 
     .nav--main--is-visible {
-        transform: translateX(-100%);
-        transition: transform $base-duration ease;
+        // transform: translateX(-100%);
+        // transition: transform $base-duration ease;
         z-index: 1001;
+
+        visibility: visible;
+        transition: transform $base-duration;
+
 
         .nav__link {
             position: relative;

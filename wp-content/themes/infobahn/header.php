@@ -71,6 +71,8 @@
 
     <body <?php body_class(); ?>>
 
+        <div class="container" id="container"><div class="pusher">
+
 		<div class="header" role="banner">
 
             <div class="wrapper">
@@ -90,3 +92,4 @@
             </div>
 
         </div>
+

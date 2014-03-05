@@ -3,7 +3,7 @@
 // ============================================================================
 
     .header {
-        position: relative;
+        // position: relative;
         @include rem(height, 90px);
         @extend %cf;
         background-color: $color-body;

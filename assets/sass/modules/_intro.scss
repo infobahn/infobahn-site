@@ -53,5 +53,6 @@
 
         img {
             @include rem(max-width, 475px);
+            width: 100%;
         }
     }

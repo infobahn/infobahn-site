@@ -68,7 +68,7 @@
 //  treatment regarding vertical rhythm.
 
     hr {
-        @include rem(margin-bottom, $base-space - 2px);
+        @include rem(margin-bottom, $base-space);
     }
 
 

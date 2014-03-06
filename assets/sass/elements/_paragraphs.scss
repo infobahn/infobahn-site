@@ -32,3 +32,10 @@
         @include rem(padding-left, $threequarter-space);
     }
 
+    hr {
+        width: 60%;
+        border-style: solid;
+        border-color: $color-divider;
+        border-width: 1px 0 0 0;
+        @include rem(margin, $double-space, auto);
+    }

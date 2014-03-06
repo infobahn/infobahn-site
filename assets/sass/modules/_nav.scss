@@ -2,6 +2,10 @@
 //  Nav
 // ============================================================================
 
+    $item-height:           $double-space * $base-font-size;
+    $number-items:          4;
+    $nav-height:            $item-height * $number-items;
+
     .container {
         position: relative;
         overflow: hidden;
@@ -17,7 +21,7 @@
     }
 
     .nav--main--is-open .pusher {
-        transform: translate3d(-80%, 0, 0);
+        transform: translate3d(0, $nav-height, 0);
     }
     
 
@@ -45,35 +49,29 @@
 
     .nav--main {
         position: absolute;
-        // @include rem(top, 90px);
-        // left: 100%;
-        // width: 100%;
+        @include rem(top, 90px);
         margin: 0;
         border-top: 1px solid $color-divider;
-        // transform: translateX(0);
-        // transition: transform $base-duration ease;
-        z-index: 1000;
-        top: 0;
+        z-index: 1;
         right: 0;
         bottom: 0;
-        width: 80%;
-        height: 100%;
+        width: 100%;
+        height: $nav-height; // Height of link * number of links
         transition: all $base-duration;
-        visibility: hidden;
-        // z-index: 100;
-        transform: translate3d(100%, 0, 0);
-        @include rem(padding-top, 90px);
         background: $blue;
+        box-shadow: inset 1px 0 .75em rgba(0, 0, 0, 0.15);
 
         @include breakpoint($medium) {
             position: relative;
             top: auto;
             left: auto;
             width: auto;
+            height: auto;
             border: 0;
-            transform: translateX(0);
+            box-shadow: none;
             float: right;
             @include rem(margin, $base-space, 0);
+            background: transparent;
         }
 
         .nav__item {
@@ -92,15 +90,16 @@
             .nav__link {
                 float: left;
                 width: 100%;
-                // background: white;
                 color: white;
-                @include rem(padding, $half-space);
+                @include rem(padding, 0, $half-space);
+                height: $item-height;
+                line-height: $item-height;
                 border-bottom: 1px solid darken($blue, 4);
+                @include rem(font-size, $h3-size);
 
                 &:hover,
                 &:focus,
                 &:active {
-                    // background: lighten($blue, 55);
                     background: darken($blue, 4);
                 }
 
@@ -109,46 +108,36 @@
                     width: auto;
                     background: transparent !important;
                     border: 0;
+                    color: $color-link;
+                    height: auto;
+                    line-height: inherit;
                     @include rem(font-size, $mini-size);
                     @include rem(padding, 0, $quarter-space);
                 }
             }
+    }
 
-            .hide-menu {
-                display: none;
-                position: relative;
-                
-                a {
-                    position: absolute;
-                    top: -101em;
-                    bottom: -101em;
-                    left: -101em;
-                    right: -101em;
-                    background: transparent;
-                    border: 0;
-                    text-indent: -999em;
-                    z-index: 0;
-                }
-            }
+    #hideMenu {
+        display: none;
+        position: relative;
+        
+        .nav--main--is-open & {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: -101em;
+            left: 0;
+            right: 0;
+            background: transparent;
+            border: 0;
+            text-indent: -999em;
+            z-index: 99;
+        }
     }
 
     .nav--main--is-visible {
-        // transform: translateX(-100%);
-        // transition: transform $base-duration ease;
-        z-index: 1001;
-
-        visibility: visible;
+        z-index: 98;
         transition: transform $base-duration;
-
-
-        .nav__link {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hide-menu {
-            display: block;
-        }
     }
 
 

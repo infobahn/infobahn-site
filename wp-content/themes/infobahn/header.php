@@ -71,7 +71,7 @@
 
     <body <?php body_class(); ?>>
 
-        <div class="container" id="container"><div class="pusher">
+        <div class="container" id="container">
 
 		<div class="header" role="banner">
 
@@ -86,10 +86,14 @@
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#us" class="nav__link">Us</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" class="nav__link">Contact</a></li>
-                    <li class="hide-menu"><a id="hideMenu" href="#">Close menu</a></li>
                 </ul>
 
             </div>
 
         </div>
 
+        <div class="pusher">
+
+            <a id="hideMenu" href="#">Close menu</a>
+
+            

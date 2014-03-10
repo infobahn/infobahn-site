@@ -3,7 +3,6 @@
 // ============================================================================
 
     .header {
-        position: relative;
         @include rem(height, 90px);
         @extend %cf;
     }
@@ -13,10 +12,5 @@
             @include pimlico-bold;
             color: palette(pink);
             @include rem(font-size, $h2-size);
-            @include rem(margin-top, $threequarter-space);
-
-            @include breakpoint($small) {
-                @include rem(margin-top, $half-space);
-                @include rem(margin-bottom, $half-space);
-            }
+            @include rem(line-height, 90px);
         }

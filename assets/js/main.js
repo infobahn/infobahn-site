@@ -76,6 +76,7 @@
     var showMenu = document.getElementById('showMenu'),
     hideMenu = document.getElementById('hideMenu'),
     menu = document.getElementById('menu'),
+    container = document.getElementById('container'),
      
     hasClass = function (el, cl) {
         var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
@@ -97,11 +98,13 @@
 
     showMenu.onclick = function() {
         toggleClass(menu, 'nav--main--is-visible');
+        toggleClass(container, 'nav--main--is-open');
         return false;
     };
 
     hideMenu.onclick = function() {
         removeClass(menu, 'nav--main--is-visible');
+        removeClass(container, 'nav--main--is-open');
         return false;
     };
 

@@ -48,7 +48,6 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
         <script type="text/javascript">
-            document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
 
             WebFont.load({
                 fontdeck: {
@@ -59,17 +58,15 @@
                 }
             });
 
-            /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-            window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-            grunticon( [ "<?php echo get_template_directory_uri(); ?>/build/svg/icons.data.svg.css", "<?php echo get_template_directory_uri(); ?>/build/svg/icons.data.png.css", "<?php echo get_template_directory_uri(); ?>/build/svg/icons.fallback.css" ] );
         </script>
-        <noscript><link href="<?php echo get_template_directory_uri(); ?>/build/svg/icons.fallback.css" rel="stylesheet"></noscript>
 
 		<?php wp_head(); ?>
 
     </head>
 
     <body <?php body_class(); ?>>
+
+        <div class="container" id="container">
 
 		<div class="header" role="banner">
 
@@ -84,9 +81,14 @@
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#us" class="nav__link">Us</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" class="nav__link">Contact</a></li>
-                    <li class="hide-menu"><a id="hideMenu" href="#">Close menu</a></li>
                 </ul>
 
             </div>
 
         </div>
+
+        <div class="pusher">
+
+            <a id="hideMenu" href="#">Close menu</a>
+
+            

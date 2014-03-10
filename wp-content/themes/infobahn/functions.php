@@ -66,6 +66,9 @@ function infobahn_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'infobahn-styles', get_stylesheet_uri() );
 
+	// Load modernizr
+	wp_enqueue_script( 'infobahn-modernizr', get_template_directory_uri() . '/build/js/modernizr.js', array(), '20140308', false );
+
 	// Load main script
 	wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
 }

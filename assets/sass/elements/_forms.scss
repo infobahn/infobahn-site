@@ -4,14 +4,14 @@
 
     input[type=text] {
         @include freight-sans;
-        border: 1px solid $color-divider;
+        border: 1px solid palette(grey, light);
         @include rem(padding, $quarter-space/1.5, $quarter-space);
-        color: $color-subtext;
+        color: palette(grey);
         @include rem(border-radius, $border-radius);
 
         &:focus {
-            color: $color-text;
+            color: palette(grey, dark);
             outline: none;
-            border: 1px solid $blue;
+            border: 1px solid palette(blue);
         }
     }

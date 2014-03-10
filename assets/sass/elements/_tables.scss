@@ -4,11 +4,10 @@
 
     table {
         width: 100%;
-        border-color: $color-divider;
+        border-color: palette(grey, light);
         border-style: solid;
-        // border-width: 1px 0 0 1px;
         border-width: 1px;
-        background: white;
+        background: $color-base-body;
         @include rem(margin, $base-space, 0);
     }
 
@@ -17,20 +16,17 @@
     }
 
     th, td {
-        // border-color: $color-divider;
-        // border-style: solid;
-        // border-width: 0 1px 1px 0;
         text-align: left;
         @include rem(padding, $quarter-space, $half-space);
     }
 
     th {
-        background-color: rgba($blue, 0.3);
-        background-color: #eee;
-        border-bottom: 1px solid $color-divider;
+        background-color: rgba(palette(blue), 0.3);
+        background-color: palette(grey, mid-light);
+        border-bottom: 1px solid palette(grey, light);
         font-weight: 400;
     }
 
     tr:nth-child(even) {
-        background: rgba($blue, 0.04);
+        background: rgba(palette(blue), 0.04);
     }

@@ -19,22 +19,22 @@
         }
 
     .stripe--pink {
-        background-color: $pink;
+        background-color: palette(pink);
     }
 
     .stripe--blue {
-        background-color: $blue;
+        background-color: palette(blue);
     }
 
     .stripe--patterned {
-        color: #fff !important;
+        color: palette(white) !important;
     
         h1, h2, h3, h4, h5, h6, small {
-            color: #fff;
+            color: palette(white);
         }
 
         a, a:visited, a:hover, a:focus, a:active {
-            color: #fff;
-            border-bottom: 1px solid #fff;
+            color: palette(white);
+            border-bottom: 1px solid palette(white);
         }
     }

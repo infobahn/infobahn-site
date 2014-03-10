@@ -25,14 +25,14 @@
 // ----------------------------------------------------------------------------
     
     ::-moz-selection {
-        background: $color-selection-bg;
-        color: $color-selection;
+        background: palette(pink, light);
+        color: palette(pink, dark);
     }
 
     ::selection {
-        background: $color-selection-bg;
-        color: $color-selection;
-        }
+        background: palette(pink, light);
+        color: palette(pink, dark);
+    }
     
     
 

@@ -12,7 +12,6 @@
     }
 
         .intro__heading {
-            // color: #fff;  //                        <----  Abstract
             @include pimlico;
             font-weight: normal;
             @include rem(font-size, $uber-size);

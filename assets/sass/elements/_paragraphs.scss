@@ -8,7 +8,7 @@
 
     small {
         @include rem(font-size, $micro-size);
-        color: $color-subtext;
+        color: palette(grey);
     }
 
     em {
@@ -26,7 +26,7 @@
     blockquote {
         @include freight-sans-italic;
         border-style: solid;
-        border-color: $color-divider;
+        border-color: palette(grey, light);
         @include rem(border-width, 0, 0, 0, $quarter-space / 1.5);
         @include rem(margin, $threequarter-space, 0);
         @include rem(padding-left, $threequarter-space);
@@ -35,7 +35,7 @@
     hr {
         width: 60%;
         border-style: solid;
-        border-color: $color-divider;
+        border-color: palette(grey, light);
         border-width: 1px 0 0 0;
         @include rem(margin, $double-space, auto);
     }

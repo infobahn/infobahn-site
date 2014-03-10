@@ -5,7 +5,7 @@
     .sidebar {
         clear: both;
         width: 100%;
-        border-color: $color-divider;
+        border-color: palette(grey, light);
         border-style: solid;
         border-width: 1px 0 0 0;
         @include rem(margin-bottom, $double-space);
@@ -34,7 +34,7 @@
         .sidebar__heading {
             @include freight-sans;
             @include rem(font-size, $base-font-size);
-            color: $color-subtext;
+            color: palette(grey);
             @include rem(margin, 0, $half-space, 0, 0);
             line-height: $base-line-height;
         }

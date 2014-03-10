@@ -47,7 +47,7 @@
         @include rem(font-size, $base-font-size*7);
         @include rem(margin-top, $base-space);
         @include pimlico-bold;
-        color: rgba(white, 0.25);
+        color: rgba($color-base-body, 0.25);
         color: #4EB5C5\9;
         *display: none;
 

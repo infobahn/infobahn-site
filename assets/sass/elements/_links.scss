@@ -3,22 +3,22 @@
 // ============================================================================
 
     a {
-        color: $color-link;
+        color: palette(blue);
         text-decoration: none;
     }
 
     a:visited {
-        color: $color-link-visited;
+        color: palette(blue);
     }
 
     a:hover {
-        color: $color-link-hover;
+        color: palette(blue, dark);
     }
 
     a:focus {
-        color: $color-link-focus;
+        color: palette(blue, dark);
     }
 
     a:active {
-      color: $color-link-active;  
+      color: palette(blue, light);  
     }

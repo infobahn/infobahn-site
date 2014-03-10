@@ -28,7 +28,7 @@
     .show-menu {
         display: block;
         float: right;
-        border: 1px solid #ddd;
+        border: 1px solid palette(grey, light);
         @include rem(padding, $quarter-space, $threequarter-space);
         @include rem(margin-top, $threequarter-space);
         @include rem(border-radius, $border-radius);
@@ -38,7 +38,7 @@
         z-index: 1001;
 
         &:hover {
-            border-color: $color-link-hover;
+            border-color: palette(blue, dark);
             transition: all $base-duration*2 ease;
         }
 
@@ -51,14 +51,14 @@
         position: absolute;
         @include rem(top, 90px);
         margin: 0;
-        border-top: 1px solid $color-divider;
+        border-top: 1px solid palette(grey, light);
         z-index: 1;
         right: 0;
         bottom: 0;
         width: 100%;
         height: $nav-height; // Height of link * number of links
         transition: all $base-duration;
-        background: $blue;
+        background: palette(blue);
         box-shadow: inset 1px 0 .75em rgba(0, 0, 0, 0.15);
 
         @include breakpoint($medium) {
@@ -90,17 +90,17 @@
             .nav__link {
                 float: left;
                 width: 100%;
-                color: white;
+                color: palette(white);
                 @include rem(padding, 0, $half-space);
                 height: $item-height;
                 line-height: $item-height;
-                border-bottom: 1px solid darken($blue, 4);
+                border-bottom: 1px solid darken(palette(blue), 4);
                 @include rem(font-size, $h3-size);
 
                 &:hover,
                 &:focus,
                 &:active {
-                    background: darken($blue, 4);
+                    background: darken(palette(blue), 4);
                 }
 
                 @include breakpoint($medium) {
@@ -108,11 +108,17 @@
                     width: auto;
                     background: transparent !important;
                     border: 0;
-                    color: $color-link;
+                    color: palette(blue);
                     height: auto;
                     line-height: inherit;
                     @include rem(font-size, $mini-size);
                     @include rem(padding, 0, $quarter-space);
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: palette(blue, dark);
+                    }
                 }
             }
     }
@@ -139,26 +145,3 @@
         z-index: 98;
         transition: transform $base-duration;
     }
-
-
-
-
-
-    // .nav--main {
-    //     float: right;
-    //     display: none;
-    //     @include rem(margin, $base-space, 0);
-
-    //     @include breakpoint($medium) {
-    //         display: block;
-    //     }
-    
-    //     .nav__item {
-    //         @include rem(margin-left, $half-space);
-    //     }
-
-    //         .nav__link {
-    //             @include rem(font-size, $mini-size);
-    //             @include rem(padding, 0, $quarter-space);
-    //         }
-    // }

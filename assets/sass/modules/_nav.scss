@@ -20,6 +20,10 @@
         transition: transform 0.5s;
     }
 
+    .pusher--no-transition {
+        transition: none;
+    }
+
     .nav--main--is-open .pusher {
         transform: translate3d(0, $nav-height, 0);
     }

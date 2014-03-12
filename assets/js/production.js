@@ -206,6 +206,7 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     menu = document.getElementById('menu'),
     container = document.getElementById('container'),
     links = document.getElementById('menu').getElementsByTagName('a'),
+    pusher = document.getElementById('pusher'),
      
     hasClass = function (el, cl) {
         var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
@@ -242,8 +243,11 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     }
 
     function linkClick() {
+        addClass(pusher, 'pusher--no-transition');
         removeClass(menu, 'nav--main--is-visible');
         removeClass(container, 'nav--main--is-open');
-        return false;
+        pusher.offsetWidth = pusher.offsetWidth;
+        removeClass(pusher, 'pusher--no-transition');
+        // setTimeout(removeClass(pusher, 'pusher--no-transition'), 2000);
     };
 

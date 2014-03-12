@@ -9,6 +9,10 @@
         @include rem(padding, $double-space, 0);
         @extend %cf;
 
+        @include breakpoint($small) {
+            @include rem(padding, $base-space, 0);
+        }
+
         @include breakpoint($large) {
             @include rem(padding, $super-space, 0);
         }

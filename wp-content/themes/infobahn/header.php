@@ -87,7 +87,7 @@
 
         </div>
 
-        <div class="pusher">
+        <div class="pusher" id="pusher">
 
             <a id="hideMenu" href="#">Close menu</a>
 

@@ -200,11 +200,12 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     //     return false;
     // };
 
- // Expand sidebar
+//  Expand sidebar
     var showMenu = document.getElementById('showMenu'),
     hideMenu = document.getElementById('hideMenu'),
     menu = document.getElementById('menu'),
     container = document.getElementById('container'),
+    links = document.getElementById('menu').getElementsByTagName('a'),
      
     hasClass = function (el, cl) {
         var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
@@ -231,6 +232,16 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     };
 
     hideMenu.onclick = function() {
+        removeClass(menu, 'nav--main--is-visible');
+        removeClass(container, 'nav--main--is-open');
+        return false;
+    };
+
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', linkClick, false);
+    }
+
+    function linkClick() {
         removeClass(menu, 'nav--main--is-visible');
         removeClass(container, 'nav--main--is-open');
         return false;

@@ -7,7 +7,8 @@
 
         @include breakpoint($large) {
             text-align: left;
-            @include rem(margin-top, $super-space*1.25);
+            // @include rem(margin-top, $super-space*1.25);
+            @include rem(margin-top, $double-space);
         }
     }
 
@@ -58,7 +59,7 @@
 
         @include breakpoint($large) {
             margin-bottom: 0;
-            @include rem(margin-top, $double-space);
+            // @include rem(margin-top, $double-space);
         }
 
         img {

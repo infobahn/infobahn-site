@@ -248,6 +248,5 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
         removeClass(container, 'nav--main--is-open');
         pusher.offsetWidth = pusher.offsetWidth;
         removeClass(pusher, 'pusher--no-transition');
-        // setTimeout(removeClass(pusher, 'pusher--no-transition'), 2000);
     };
 

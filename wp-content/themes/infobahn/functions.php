@@ -67,7 +67,7 @@ function infobahn_scripts() {
 	wp_enqueue_style( 'infobahn-styles', get_stylesheet_uri() );
 
 	// Load modernizr
-	wp_enqueue_script( 'infobahn-modernizr', get_template_directory_uri() . '/build/js/modernizr.js', array(), '20140308', false );
+	// wp_enqueue_script( 'infobahn-modernizr', get_template_directory_uri() . '/build/js/modernizr.js', array(), '20140308', false );
 
 	// Load main script
 	wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
@@ -180,6 +180,16 @@ function infobahn_widgets_init() {
 		'name'          => __( 'Primary Sidebar', 'infobahn' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Main sidebar that appears at the top.', 'infobahn' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="sidebar__heading">',
+		'after_title'   => '</h1>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Mobile Sidebar', 'infobahn' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Sidebar that shows up on mobile.', 'infobahn' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h1 class="sidebar__heading">',

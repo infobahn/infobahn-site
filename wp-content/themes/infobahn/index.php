@@ -20,7 +20,7 @@ get_header(); ?>
 
     <div class="wrapper">
 
-    	<div class="upper-sidebar"><?php get_sidebar(); ?></div>
+    	<div class="upper-sidebar"><?php include( TEMPLATEPATH . '/upper-sidebar.php'); ?></div>
 
         <div class="articles">
 
@@ -47,7 +47,7 @@ get_header(); ?>
 
 		</div>
 
-        <div class="lower-sidebar"><?php include( TEMPLATEPATH . '/sidebar.php'); ?></div>
+        <div class="lower-sidebar"><?php include( TEMPLATEPATH . '/lower-sidebar.php'); ?></div>
 
     </div>
 

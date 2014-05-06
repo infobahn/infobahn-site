@@ -16,7 +16,7 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Infobahn - We design websites for people</title>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <meta name="description" content="We are James Burnett and Sam Roberts, more commonly known as Infobahn. We design and build websites from our homes in the UK and the Isle of Man.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

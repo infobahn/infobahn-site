@@ -99,7 +99,7 @@ function infobahn_wp_title( $title, $sep ) {
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
+		$title = "$title";
 	}
 
 	// Add a page number if necessary.
@@ -107,7 +107,7 @@ function infobahn_wp_title( $title, $sep ) {
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'infobahn' ), max( $paged, $page ) );
 	}
 
-	return $title;
+	return $title . ' - ' . $site_description;
 }
 add_filter( 'wp_title', 'infobahn_wp_title', 10, 2 );
 

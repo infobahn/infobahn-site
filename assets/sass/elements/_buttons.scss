@@ -50,6 +50,13 @@
         }
     }
 
+    .btn--large {
+        // @include pimlico;
+        @include rem(border-radius, $border-radius);
+        @include rem(margin-top, $quarter-space);
+        @include rem(padding, $quarter-space, $half-space);
+    }
+
 
 //  Next/prev buttons
 // ----------------------------------------------------------------------------

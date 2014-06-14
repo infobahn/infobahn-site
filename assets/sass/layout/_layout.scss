@@ -56,7 +56,7 @@
 //  Intro
 // -----------------------------------------------------------------------------
 
-    .main-illustration {
+    .illustration {
         @include gs-span(c, all);
         clear: none;
 
@@ -65,7 +65,7 @@
         }
     }
 
-    .intro {
+    .offset-content {
         clear: left;
         @include gs-span(c, all);
 

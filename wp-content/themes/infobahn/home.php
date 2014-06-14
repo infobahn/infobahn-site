@@ -11,7 +11,7 @@ get_header(); ?>
 
 
 
-<div class="stripe stripe--blog">
+<div class="stripe stripe--grey stripe--blog">
 
     <?php echo get_previous_posts_link('<span class="prevnext__text">Newer posts </span>&raquo;'); ?>
     <?php echo get_next_posts_link('&laquo;<span class="prevnext__text"> Older posts</span>'); ?>

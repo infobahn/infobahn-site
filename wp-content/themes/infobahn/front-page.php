@@ -13,7 +13,7 @@ get_header(); ?>
 
 		    <div class="wrapper">
 
-		        <div class="main-illustration">
+		        <div class="illustration main-illustration">
 
                     <span data-picture data-alt="Illustration of things relating to web design">
                         <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/main-small.png"></span>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 		        </div>
 
-		        <div class="intro">
+		        <div class="offset-content intro">
 		            
 		            <h1 class="intro__heading"><?php the_field('headline'); ?></h1>
 

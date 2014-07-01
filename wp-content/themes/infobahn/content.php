@@ -10,15 +10,6 @@
  */
 ?>
 
-	<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=1415281452092898&version=v2.0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
 		<div class="article">
 	
 			<h1 class="article__title">
@@ -38,11 +29,9 @@
 			<span class="article__meta"><?php the_author(); ?> posted this on <?php the_date(); ?> under <span class="article__category"><?php the_category(' '); ?></span></span>
 
 			<ul class="nav nav--share">
-				<li class="nav__item"><a class="btn btn--share btn--twitter" href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=infobahndesign">&nbsp;<span class="hide-small">Share on Twitter</span>&nbsp;</a></li>
-				<li class="nav__item"><div class="btn btn--share btn--facebook fb-share-button" data-href="<?php the_permalink(); ?>" data-type="link">&nbsp;<span class="hide-small">Share on Facebook</span>&nbsp;</div></li>
-
-				<li class="nav__item"><a class="btn btn--share btn--facebook" href="https://www.facebook.com/dialog/share?app_id=1415281452092898&display=page&href=<?php the_permalink(); ?>&redirect_uri=<?php the_permalink(); ?>">&nbsp;<span class="hide-small">Share on Facebook</span>&nbsp;</a></li>
-				<li class="nav__item"><a class="btn btn--share btn--linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=<?php echo esc_url( home_url() ); ?>">&nbsp;<span class="hide-small">Share on LinkedIn</span>&nbsp;</a></li>
+				<li class="nav__item"><a id="twitterBtn" class="btn btn--share btn--twitter" href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=infobahndesign">&nbsp;<span class="hide-small">Share on Twitter</span>&nbsp;</a></li>
+				<li class="nav__item"><a id="facebookBtn" class="btn btn--share btn--facebook" href="https://www.facebook.com/dialog/share?app_id=1415281452092898&display=page&href=<?php the_permalink(); ?>&redirect_uri=<?php the_permalink(); ?>">&nbsp;<span class="hide-small">Share on Facebook</span>&nbsp;</a></li>
+				<li class="nav__item"><a id="linkedinBtn" class="btn btn--share btn--linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=<?php echo esc_url( home_url() ); ?>">&nbsp;<span class="hide-small">Share on LinkedIn</span>&nbsp;</a></li>
 			</ul>
 
 			<div class="article__content">

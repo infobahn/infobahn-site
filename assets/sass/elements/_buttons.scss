@@ -50,6 +50,10 @@
         }
     }
 
+    .btn--cta {
+        @include rem(padding, $quarter-space, $mid-space);
+    }
+
 
 //  Next/prev buttons
 // ----------------------------------------------------------------------------
@@ -99,7 +103,7 @@
     }
 
     .btn--share {
-        border-radius: 0;
+        border-radius: 0.25em;
         padding-top: 0;
         padding-bottom: 0;
         @include rem(padding-left, $half-space);
@@ -185,6 +189,10 @@
             background-color: darken(#cc2127, 10);
         }
 
+        span {
+            padding-left: 1.8em;
+        }
+
         .no-svg & span,
         .no-js & span {
             background-image: url('build/img/pinterest.png');
@@ -200,6 +208,10 @@
 
         &:hover {
             background-color: darken(#ff0084, 10);
+        }
+
+        span {
+            padding-left: 3.25em;
         }
 
         .no-svg & span,

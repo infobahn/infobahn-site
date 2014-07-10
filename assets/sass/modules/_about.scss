@@ -4,6 +4,7 @@
 
     .person {
         @include rem(margin-top, $half-space);
+        text-align: left;
 
         @include breakpoint($small) {
             @include rem(margin-top, $base-space);
@@ -30,6 +31,7 @@
         .person__name {
             @include pimlico;
             @include rem(margin-top, $base-space);
+            text-align: center;
 
             @include breakpoint($small) {
                 @include rem(margin-top, $threequarter-space);

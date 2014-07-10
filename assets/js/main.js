@@ -127,8 +127,13 @@
     var twitterBtn = document.getElementById('twitterBtn'),
         facebookBtn = document.getElementById('facebookBtn'),
         linkedinBtn = document.getElementById('linkedinBtn'),
+        twitterLinkBtn = document.getElementById('twitterLinkBtn'),
+        facebookLinkBtn = document.getElementById('facebookLinkBtn'),
+        linkedinLinkBtn = document.getElementById('linkedinLinkBtn'),
+        pinterestLinkBtn = document.getElementById('pinterestLinkBtn'),
         pageUrl = document.URL;
 
+//  Share buttons
     addListener(twitterBtn, 'click', function() {
       ga('send', 'social', 'twitter', 'share', pageUrl);
     });
@@ -139,6 +144,23 @@
 
     addListener(linkedinBtn, 'click', function() {
       ga('send', 'social', 'linkedin', 'share', pageUrl);
+    });
+
+//  Profile buttons
+    addListener(twitterLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'twitter button');
+    });
+
+    addListener(facebookLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'facebook button');
+    });
+
+    addListener(linkedinLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'linkedin button');
+    });
+
+    addListener(pinterestLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'pinterest button');
     });
 
 

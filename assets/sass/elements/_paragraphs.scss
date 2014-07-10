@@ -3,7 +3,7 @@
 // ============================================================================
 
     p {
-        @include rem(margin-bottom, $half-space);
+        @include rem(margin-bottom, $threequarter-space);
     }
 
     small {

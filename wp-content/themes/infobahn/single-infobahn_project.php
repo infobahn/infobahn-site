@@ -73,7 +73,11 @@ get_header(); ?>
 
                 <?php endif; ?>
 
+                <hr>
 
+                <p>Do you have a similar project coming up? We&rsquo;d love to work with you.</p>
+
+                <a href="" class="btn btn--cta">Hire us</a>
 
             </div>
 

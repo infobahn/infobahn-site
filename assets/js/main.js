@@ -79,6 +79,7 @@
     container = document.getElementById('container'),
     links = document.getElementById('menu').getElementsByTagName('a'),
     pusher = document.getElementById('pusher'),
+    
      
     hasClass = function (el, cl) {
         var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');

@@ -22,6 +22,14 @@
             
         }
 
+        .left-aligned {
+            text-align: left;
+
+            h1 {
+                text-align: center;
+            }
+        }
+
     .stripe--pink {
         background-color: palette(pink);
     }

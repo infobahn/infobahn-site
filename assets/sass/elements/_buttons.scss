@@ -52,6 +52,9 @@
 
     .btn--cta {
         @include rem(padding, $quarter-space, $mid-space);
+        @include rem(border-radius, $border-radius);
+        @include rem(margin-top, $quarter-space);
+        @include rem(padding, $quarter-space, $half-space);
     }
 
 

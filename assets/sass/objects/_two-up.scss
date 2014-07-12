@@ -1,0 +1,31 @@
+// =============================================================================
+//  Two-up
+// =============================================================================
+
+    .col {
+        float: left;
+        // @include rem(padding, 0, $half-space);
+    }
+    
+
+    .two-up {
+        text-align: left;
+
+        .col {
+            width: 50%;
+            @include rem(padding-right, $base-space);
+
+            &:last-child {
+                padding-right: 0;
+                @include rem(padding-left, $base-space);
+            }
+        }
+    }
+
+    .three-up {
+        text-align: left;
+
+        .col {
+            width: 33.3333%;
+        }
+    }

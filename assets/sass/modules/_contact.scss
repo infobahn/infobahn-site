@@ -1,0 +1,37 @@
+// =============================================================================
+//  Contact
+// =============================================================================
+
+    
+        .contact,
+        .address {
+
+            @include breakpoint($large) {
+                text-align: left;
+            }
+        }
+
+    
+
+
+
+
+//  Social media links
+// -----------------------------------------------------------------------------
+
+    .social {
+        list-style: none;
+    }
+
+        .social__item {
+            @extend %ib;
+            border-style: solid;
+            border-color: palette(grey, x-light);
+            border-width: 1px 0;
+            @include rem(padding, $quarter-space);
+            @include rem(margin, 0, $quarter-space);
+        }
+
+            .social__link {
+
+            }

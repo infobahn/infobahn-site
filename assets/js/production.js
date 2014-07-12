@@ -207,6 +207,7 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     container = document.getElementById('container'),
     links = document.getElementById('menu').getElementsByTagName('a'),
     pusher = document.getElementById('pusher'),
+    
      
     hasClass = function (el, cl) {
         var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
@@ -255,8 +256,13 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     var twitterBtn = document.getElementById('twitterBtn'),
         facebookBtn = document.getElementById('facebookBtn'),
         linkedinBtn = document.getElementById('linkedinBtn'),
+        twitterLinkBtn = document.getElementById('twitterLinkBtn'),
+        facebookLinkBtn = document.getElementById('facebookLinkBtn'),
+        linkedinLinkBtn = document.getElementById('linkedinLinkBtn'),
+        pinterestLinkBtn = document.getElementById('pinterestLinkBtn'),
         pageUrl = document.URL;
 
+//  Share buttons
     addListener(twitterBtn, 'click', function() {
       ga('send', 'social', 'twitter', 'share', pageUrl);
     });
@@ -267,6 +273,23 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
 
     addListener(linkedinBtn, 'click', function() {
       ga('send', 'social', 'linkedin', 'share', pageUrl);
+    });
+
+//  Profile buttons
+    addListener(twitterLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'twitter button');
+    });
+
+    addListener(facebookLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'facebook button');
+    });
+
+    addListener(linkedinLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'linkedin button');
+    });
+
+    addListener(pinterestLinkBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'pinterest button');
     });
 
 

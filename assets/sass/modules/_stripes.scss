@@ -22,12 +22,26 @@
             
         }
 
+        .left-aligned {
+            text-align: left;
+
+            h1 {
+                text-align: center;
+            }
+        }
+
     .stripe--pink {
         background-color: palette(pink);
     }
 
     .stripe--blue {
         background-color: palette(blue);
+    }
+
+    .stripe--grey {
+        background-color: palette(grey, x-light);
+        border-top: 1px solid palette(grey, light);
+        border-bottom: 1px solid palette(grey, light);
     }
 
     .stripe--patterned {

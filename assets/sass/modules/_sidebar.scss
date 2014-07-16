@@ -43,7 +43,7 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            @include rem(margin-bottom, $base-space);
+            // @include rem(margin-bottom, $base-space);
         }
 
             .widget {
@@ -89,8 +89,8 @@
 
         #s { // Wordpress search input
             width: 100%;
-            @include rem(font-size, $mini-size);
-            border: 0;
+            // @include rem(font-size, $mini-size);
+            // border: 0;
         }
 
         input[type=submit] {

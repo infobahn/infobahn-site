@@ -2,10 +2,62 @@
 //  Forms
 // ============================================================================
 
+    .contact-form {
+        margin: 0;
+        padding: 0;
+        @include rem(margin, -165px, 0, 0, 0);
+    }
+
+        fieldset {
+            background: palette(grey, mid-light);
+            border: 0;
+            margin: 0;
+            @include rem(padding, $mid-space);
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+        }
+
+            .form {
+                text-align: left;
+                margin: 0;
+            }
+
+                .form__item {
+                    position: relative;
+                    list-style: none;
+                    @include rem(margin, 0, 0, $threequarter-space, 0);
+                }
+
+                // .controls {
+                //     float: left;
+                //     width: 50%;
+                // }
+
+
+//  Form elements
+
+    label {
+        position: absolute;
+        z-index: 1;
+        @include rem(top, $quarter-space*1.25);
+        @include rem(left, $half-space);
+
+        &:hover {
+            cursor: pointer;
+        }
+        // float: left;
+        // width: 50%;
+    }
+
+    
+
     input[type=text],
-    input[type=email] {
+    input[type=email],
+    textarea {
+        position: relative;
         @include freight-sans;
-        border: 1px solid palette(grey, light);
+        border: 1px solid transparent;
+        // border: 0;
+        @include rem(font-size, $mini-size);
         @include rem(padding, $quarter-space/1.5, $quarter-space);
         color: palette(grey);
         @include rem(border-radius, $border-radius);
@@ -13,6 +65,16 @@
         &:focus {
             color: palette(grey, dark);
             outline: none;
-            border: 1px solid palette(blue);
+            border: 1px solid palette(blue, light);
+            z-index: 2;
         }
+
+        .contact-form & {
+            @include rem(padding, $quarter-space * 1.5, $quarter-space);
+            width: 100%;
+        }
+    }
+
+    textarea {
+        height: 8em;
     }

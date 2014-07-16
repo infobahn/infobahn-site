@@ -73,17 +73,27 @@ get_header(); ?>
 
                 <?php endif; ?>
 
-                <hr>
+            </div>
 
-                <p>Do you have a similar project coming up? We&rsquo;d love to work with you.</p>
+        </div>
 
-                <a href="" class="btn btn--cta">Hire us</a>
+        <div class="stripe stripe--patterned stripe--blue">
+
+            <div class="wrapper">
+
+                <div class="stripe__content">
+
+                    <p>Do you have a similar project coming up? We&rsquo;d love to work with you.</p>
+
+                    <a href="" class="btn btn--rev btn--cta">Hire us</a>
+
+                </div>
 
             </div>
 
         </div>
 
-		<div class="stripe" id="work">
+		<!-- <div class="stripe" id="work">
 
             <div class="wrapper">
 
@@ -137,6 +147,6 @@ get_header(); ?>
 
             </div>
 
-        </div>
+        </div> -->
 
 <?php get_footer(); ?>

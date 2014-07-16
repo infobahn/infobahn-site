@@ -21,8 +21,8 @@
 
     h2 {
         @include rem(font-size, $h2-size);
-        @include rem(margin-bottom, $half-space);
-        margin: 0;
+        // @include rem(margin-bottom, $half-space);
+        // margin: 0;
         @include rem(margin, $mid-space, 0, $quarter-space, 0);
     }
 
@@ -52,6 +52,23 @@
 
     .section-heading {
         @include pimlico-bold;
+    }
+
+    .lede {
+        @include rem(font-size, $h2-size);
+        line-height: $base-line-height;
+        margin: 0;
+        text-align: left;
+    }
+
+    .lede-hr {
+        // float: left;
+        border-width: 5px 0 0 0;
+        border-color: white;
+        width: 6.5em;
+        margin: 0;
+        @include rem(margin-bottom, $half-space);
+        // clear: both;
     }
 
     @include breakpoint($small) {

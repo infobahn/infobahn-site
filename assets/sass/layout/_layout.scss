@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------------
 
     .wrapper {
-        // position: relative;
+        position: relative;
         @include rem(margin, 0, $mid-space);
         @include rem(max-width, 1250px);
         @extend %cf;

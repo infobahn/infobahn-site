@@ -3,8 +3,7 @@
 // ============================================================================
 
     .btn,
-    button,
-    input[type=submit] {
+    button {
         @extend %ib;
         background-color: palette(blue);
         color: palette(white) !important;
@@ -32,21 +31,25 @@
 
     .btn--rev {
         background-color: palette(white) !important;
-        color: palette(pink) !important;
+        
+        .stripe--blue & {
+            color: palette(blue) !important;    
+        }
+
+        .stripe--pink & {
+            color: palette(pink) !important;
+        }
 
         &:hover {
             background-color: palette(white);
-            color: palette(pink);
         }
 
         &:focus {
             background-color: palette(white);
-            color: palette(pink);
         }
 
         &:active {
             background-color: palette(white);
-            color: palette(pink);
         }
     }
 
@@ -57,14 +60,26 @@
         @include rem(padding, $quarter-space, $half-space);
     }
 
+    .btn--full {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn--large {
+        // @include rem(font-size, $h3-size);
+        @include rem(padding-top, $half-space);
+        @include rem(padding-bottom, $half-space);
+    }
+
 
 //  Next/prev buttons
 // ----------------------------------------------------------------------------
 
     .btn--next,
     .btn--prev {
-        position: fixed;
-        top: 50%;
+        position: absolute;
+        top: 1.5em;
         @include rem(height, $mid-space);
         @include rem(line-height, $mid-space);
         background: palette(grey, mid-light);
@@ -88,13 +103,15 @@
     }
 
     .btn--next {
-        @include rem(right, -$mid-space);
-        @include rem(padding-right, $double-space);
+        right: 0;
+        // @include rem(right, -$mid-space);
+        // @include rem(padding-right, $double-space);
     }
 
     .btn--prev {
-        @include rem(left, -$mid-space);
-        @include rem(padding-left, $double-space);
+        left: 0;
+        // @include rem(left, -$mid-space);
+        // @include rem(padding-left, $double-space);
     }
 
 

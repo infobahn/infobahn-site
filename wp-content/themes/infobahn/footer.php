@@ -12,7 +12,7 @@
 
         <?php $homepage = 2; ?>
 
-		<div class="stripe <?php if ( !is_front_page() ) { echo 'stripe--patterned stripe--blue '; } ?>footer" id="contact">
+		<div class="stripe footer" id="contact">
 
             <div class="wrapper">
 

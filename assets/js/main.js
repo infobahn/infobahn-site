@@ -205,22 +205,44 @@
         display: 'You have filled in the hidden file',
         rules: 'max_length[0]'
     }], function(errors, event) {
+
+        var previousErrors = getElementsByClassName("validation-error");
+
+
+        for ( var i = 0; i < previousErrors.length; i++ ) {
+
+            previousErrors[i].parentNode.removeChild(previousErrors[i]);
+
+        }
+
+
         if (errors.length > 0) {
             for( var i = 0; i < errors.length; i++ ) {
 
                 var refNode = document.getElementById( errors[i].id ),
-                    span = document.createElement('span');
+                    span = document.createElement('span'),
+                    errorNode = refNode.nextSibling;
 
-                span.addClass("validation-error");
+                span.className = "validation-error";
 
-                span.innerHTML = errors[i].message;
+                if ( !errorNode || errorNode.nodeType != 1 ) {
 
-                refNode.parentNode.insertBefore(span, refNode.nextSibling );
+                    span.innerHTML = errors[i].message;
+
+                    refNode.parentNode.insertBefore(span, errorNode );
+
+                } else {
+
+                    errorNode.innerHTML = errors[i].message;
+
+                }
 
             }
         }
     });
 
+
+    
     // console.log("Hello");
 
     // function processForm(e) {

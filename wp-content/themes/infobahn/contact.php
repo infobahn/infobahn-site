@@ -111,7 +111,7 @@ get_header(); ?>
 
                 <div class="illustration">
                     
-                    <img src="../assets/img/code-editor.png" alt="" style="float:right;margin-left: 2em;margin-top: 1em;">
+                    <img src="../assets/img/map.png" alt="" style="float:right;margin-left: 2em;margin-top: 1em;">
 
                 </div>
 

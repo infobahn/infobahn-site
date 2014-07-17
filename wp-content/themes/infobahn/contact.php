@@ -49,7 +49,7 @@ get_header(); ?>
                     
                     <br> -->
 
-                    <form action="" class="contact-form">
+                    <form action="http://www.google.co.uk" class="contact-form" name="contact-form">
                         <fieldset>
                             <ul class="form">
                                 <li class="form__item">
@@ -78,6 +78,7 @@ get_header(); ?>
                                 </li>
 
                                 <li class="form__item">
+                                    <input type="text"  class="special-field" name="website" id="website">
                                     <input type="submit" class="btn btn--large btn--full" value="Send us your message">
                                 </li>
 

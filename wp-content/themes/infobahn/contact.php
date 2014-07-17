@@ -49,35 +49,51 @@ get_header(); ?>
                     
                     <br> -->
 
-                    <form action="" class="contact-form">
+                    <?php if ( $_POST ) : ?> 
+
+                        <?php $response = infobahn_send_mail( $_POST ); ?>
+
+                        <span class="form-message"> <?php echo $response['global'] ?> </span>
+
+                    <?php endif; ?>
+
+
+                    <form action="" class="contact-form" name="contact-form" method="POST">
                         <fieldset>
                             <ul class="form">
                                 <li class="form__item">
                                     <label for="personName">Name</label>
-                                    <input type="text" name="personName" id="personName">
+                                    <input type="text" name="personName" id="personName" value="<?php echo $_POST ? $_POST['personName'] : ''?>">
+                                    <?php if ( $_POST ) : if ( isset( $response['personName'] ) ) : echo '<span class="validation-error"> ' . $response['personName'] . ' </span>'; endif; endif;?>
                                 </li>
 
                                 <li class="form__item">
                                     <label for="email">Email address</label>
-                                    <input type="text" name="email" id="email">
+                                    <input type="text" name="email" id="email" value="<?php echo $_POST ? $_POST['email'] : ''?>">
+                                    <?php if ( $_POST ) : if ( isset( $response['email'] ) ) : echo '<span class="validation-error"> ' . $response['email'] . ' </span>'; endif; endif;?>
                                 </li>
 
                                 <li class="form__item">
                                     <label for="companyName">Company name</label>
-                                    <input type="text" name="companyName" id="companyName">
+                                    <input type="text" name="companyName" id="companyName" value="<?php echo $_POST ? $_POST['companyName'] : ''?>">
+                                    <?php if ( $_POST ) : if ( isset( $response['companyName'] ) ) : echo '<span class="validation-error"> ' . $response['companyName'] . ' </span>'; endif; endif;?>
                                 </li>
 
                                 <li class="form__item">
                                     <label for="budget">Approx budget</label>
-                                    <input type="text" name="budget" id="budget">
+                                    <input type="text" name="budget" id="budget" value="<?php echo $_POST ? $_POST['budget'] : ''?>">
+                                    <?php if ( $_POST ) : if ( isset( $response['budget'] ) ) : echo '<span class="validation-error"> ' . $response['budget'] . ' </span>'; endif; endif;?>
                                 </li>
 
                                 <li class="form__item">
                                     <label for="comments">Tell us about your project</label>
-                                    <textarea name="comments" id="comments"></textarea>
+                                    <textarea name="comments" id="comments"><?php echo $_POST ? $_POST['comments'] : ''?></textarea>
+                                    <?php if ( $_POST ) : if ( isset( $response['comments'] ) ) : echo '<span class="validation-error"> ' . $response['comments'] . ' </span>'; endif; endif;?>
                                 </li>
 
                                 <li class="form__item">
+                                    <input type="text"  class="special-field" name="website" id="website" value="<?php echo $_POST ? $_POST['website'] : ''?>">
+                                    <?php if ( $_POST ) : if ( isset( $response['website'] ) ) : echo '<span class="validation-error"> ' . $response['website'] . ' </span>'; endif; endif;?>
                                     <input type="submit" class="btn btn--large btn--full" value="Send us your message">
                                 </li>
 

@@ -180,3 +180,103 @@
             else if (element.attachEvent) element.attachEvent('on' + type, callback);
         }
     }
+
+    var validator = new FormValidator('contact-form', [{
+        name: 'personName',
+        display: 'Name',    
+        rules: 'required'
+    }, {
+        name: 'email',
+        display: 'Email',
+        rules: 'required|valid_email'
+    }, {
+        name: 'companyName',
+        display: 'Company name',
+        rules: 'required'
+    }, {
+        name: 'budget',
+        display: 'budget',
+        rules: 'required|numeric'
+    }, {
+        name: 'comments',
+        display: 'comments'
+    }, {
+        name: 'website',
+        display: 'You have filled in the hidden file',
+        rules: 'max_length[0]'
+    }], function(errors, event) {
+
+        var previousErrors = getElementsByClassName("validation-error");
+
+
+        for ( var i = 0; i < previousErrors.length; i++ ) {
+
+            previousErrors[i].parentNode.removeChild(previousErrors[i]);
+
+        }
+
+
+        if (errors.length > 0) {
+            for( var i = 0; i < errors.length; i++ ) {
+
+                var refNode = document.getElementById( errors[i].id ),
+                    span = document.createElement('span'),
+                    errorNode = refNode.nextSibling;
+
+                span.className = "validation-error";
+
+                if ( !errorNode || errorNode.nodeType != 1 ) {
+
+                    span.innerHTML = errors[i].message;
+
+                    refNode.parentNode.insertBefore(span, errorNode );
+
+                } else {
+
+                    errorNode.innerHTML = errors[i].message;
+
+                }
+
+            }
+        }
+    });
+
+
+    
+    // console.log("Hello");
+
+    // function processForm(e) {
+    //     if (e.preventDefault) e.preventDefault();
+    //     /* do what you want with the form */
+
+    //     var personName = form.personName.value,
+    //         email = form.email.value,
+    //         companyName = form.companyName.value,
+    //         budget = form.budget.value,
+    //         comments = form.comments.value,
+    //         specialField = form.website.value;
+
+    //     console.log( specialField );
+
+    //     if ( specialField != '' ) {
+
+    //         return false;
+
+    //     } else {
+
+    //         return true;
+
+    //     }
+
+       
+
+    //     // You must return false to prevent the default form behavior
+    //     return false;
+    // }
+
+    // var form = document.getElementById('contact-form');
+    // if (form.attachEvent) {
+    //     form.attachEvent("submit", processForm);
+    // } else {
+    //     form.addEventListener("submit", processForm);
+    // }

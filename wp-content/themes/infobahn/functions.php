@@ -215,3 +215,171 @@ function previous_posts_link_attributes() {
 function next_posts_link_attributes() {
     return 'class="btn btn--prev"';
 }
+
+Class infobahn_validation {
+
+    private $post,
+            $personName,
+            $email,
+            $companyName,
+            $website,
+            $validated,
+            $error_counter;
+
+    function __construct( $post ) {
+
+        $this->post = $post;
+
+        $this->error_counter = 0;
+
+        $this->validate( $this->post );
+
+    }
+
+    private function validate() {
+
+        if  ( $this->post['personName'] == '' ) {
+
+            $this->error_counter++;
+
+            $this->personName = "The Name field must be filled in";
+
+        } 
+
+        if  ( $this->post['email'] == '' && !filter_var( $this->post['email'], FILTER_VALIDATE_EMAIL ) ) {
+
+            $this->error_counter++;
+
+            if ( $this->post['email'] == '' ) {
+
+                $this->email = "The Email field must be filled in";
+
+            } else {
+
+                $this->email = "The Email field must be a valid email";
+
+            }
+
+        }
+
+        if  ( $this->post['companyName'] == '' ) {
+
+            $this->error_counter++;
+
+            $this->companyName = "The Company Name field must be filled in";
+
+        }
+
+        if  ( $this->post['budget'] == '' || !is_numeric( $this->post['budget'] ) ) {
+
+            $this->error_counter++;
+
+            if ( $this->post['budget'] == '' ) {
+
+                $this->budget = "The Budget field must be filled in";
+
+            } else {
+
+                $this->budget = "The Budget field must be numeric only";
+
+            }
+
+        }
+
+        if  ( $this->post['website'] !== '' ) {
+
+            $this->error_counter++;
+
+            $this->website = "This is a bot catcher field. If you are human please do not fill it in";
+
+        }
+
+    }
+
+    public function validated() {
+
+        if ( $this->error_counter > 0 ) {
+
+            return false;
+
+        } else {
+
+            return true;
+
+        }
+
+    }
+
+    public function error_messages() {
+
+        $messages = array();
+
+        $messages['global'] = "Sorry you had some validation issues, see below!";
+        $messages['personName'] = $this->personName;
+        $messages['email'] = $this->email;
+        $messages['companyName'] = $this->companyName;
+        $messages['budget'] = $this->budget;
+        $messages['website'] = $this->website;
+
+        return $messages;
+
+    }
+
+
+
+
+}
+
+function infobahn_build_message( $post ) {
+
+    $message = '';
+
+    $message .= ' Name: ' . $post['personName'] . "\n";
+
+    $message .= ' Email: ' . $post['email'] . "\n";
+
+    $message .= ' Company: ' . $post['companyName'] . "\n";
+
+    $message .= ' Budget: ' . $post['budget'] . "\n";
+
+    $message .= ' Comments: ' . $post['comments'] . "\n";
+
+    return $message;
+
+}
+
+
+function infobahn_send_mail( $post ) {
+
+    $validation = new infobahn_validation( $post );
+
+    if ( $validation->validated() ) {
+
+        $to = "james@infobahndesign.com";
+
+        $subject = "New Message from Contact Form";
+
+        $message = infobahn_build_message( $post );
+
+        $headers = 'From: admin@infobahndesign.com rn Reply-To: ' . $post['email'] . 'rn';
+
+        $send = mail( $to, $subject, $message, $headers );
+
+        if ( $send ) {
+
+            return array("global" => "Message sent");
+
+        } else {
+
+            return array("global" => "There was a problem with sending the contact form at this time, please try again later.");
+
+        }
+
+
+    } else {
+
+        return $validation->error_messages();
+
+    }
+
+}

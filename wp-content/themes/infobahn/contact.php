@@ -58,7 +58,7 @@ get_header(); ?>
                     <?php endif; ?>
 
 
-                    <form action="" class="contact-form" name="contact-form1" method="POST">
+                    <form action="" class="contact-form" name="contact-form" method="POST">
                         <fieldset>
                             <ul class="form">
                                 <li class="form__item">

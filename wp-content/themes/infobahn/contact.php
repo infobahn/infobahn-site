@@ -61,39 +61,39 @@ get_header(); ?>
                     <form action="" class="contact-form" name="contact-form" method="POST">
                         <fieldset>
                             <ul class="form">
-                                <li class="form__item">
+                                <li class="form__item <?php echo ( $_POST && isset( $response['personName'] ) ) ? 'validation-bad' : ''; ?>">
                                     <label for="personName">Name</label>
                                     <input type="text" name="personName" id="personName" value="<?php echo $_POST ? $_POST['personName'] : ''?>">
-                                    <?php if ( $_POST ) : if ( isset( $response['personName'] ) ) : echo '<span class="validation-error"> ' . $response['personName'] . ' </span>'; endif; endif;?>
+                                    <span class="validation-error"><?php if ( $_POST && isset( $response['personName'] ) ) : echo $response['personName']; endif; ?></span>
                                 </li>
 
-                                <li class="form__item">
+                                <li class="form__item <?php echo ( $_POST && isset( $response['email'] ) ) ? 'validation-bad' : ''; ?>">
                                     <label for="email">Email address</label>
                                     <input type="text" name="email" id="email" value="<?php echo $_POST ? $_POST['email'] : ''?>">
-                                    <?php if ( $_POST ) : if ( isset( $response['email'] ) ) : echo '<span class="validation-error"> ' . $response['email'] . ' </span>'; endif; endif;?>
+                                    <span class="validation-error"><?php if ( $_POST && isset( $response['email'] ) ) : echo $response['email']; endif; ?></span>
                                 </li>
 
-                                <li class="form__item">
+                                <li class="form__item <?php echo ( $_POST && isset( $response['companyName'] ) ) ? 'validation-bad' : ''; ?>">
                                     <label for="companyName">Company name</label>
                                     <input type="text" name="companyName" id="companyName" value="<?php echo $_POST ? $_POST['companyName'] : ''?>">
-                                    <?php if ( $_POST ) : if ( isset( $response['companyName'] ) ) : echo '<span class="validation-error"> ' . $response['companyName'] . ' </span>'; endif; endif;?>
+                                    <span class="validation-error"><?php if ( $_POST && isset( $response['companyName'] ) ) : echo $response['companyName']; endif; ?></span>
                                 </li>
 
-                                <li class="form__item">
+                                <li class="form__item <?php echo ( $_POST && isset( $response['budget'] ) ) ? 'validation-bad' : ''; ?>">
                                     <label for="budget">Approx budget</label>
                                     <input type="text" name="budget" id="budget" value="<?php echo $_POST ? $_POST['budget'] : ''?>">
-                                    <?php if ( $_POST ) : if ( isset( $response['budget'] ) ) : echo '<span class="validation-error"> ' . $response['budget'] . ' </span>'; endif; endif;?>
+                                    <span class="validation-error"><?php if ( $_POST && isset( $response['budget'] ) ) : echo $response['budget']; endif; ?></span>
                                 </li>
 
-                                <li class="form__item">
+                                <li class="form__item <?php echo ( $_POST && isset( $response['comments'] ) ) ? 'validation-bad' : ''; ?>">
                                     <label for="comments">Tell us about your project</label>
                                     <textarea name="comments" id="comments"><?php echo $_POST ? $_POST['comments'] : ''?></textarea>
-                                    <?php if ( $_POST ) : if ( isset( $response['comments'] ) ) : echo '<span class="validation-error"> ' . $response['comments'] . ' </span>'; endif; endif;?>
+                                    <span class="validation-error"><?php if ( $_POST && isset( $response['comments'] ) ) : echo $response['comments']; endif; ?></span>
                                 </li>
 
-                                <li class="form__item">
+                                <li class="form__item <?php echo ( $_POST && isset( $response['website'] ) ) ? 'validation-bad' : ''; ?>">
                                     <input type="text"  class="special-field" name="website" id="website" value="<?php echo $_POST ? $_POST['website'] : ''?>">
-                                    <?php if ( $_POST ) : if ( isset( $response['website'] ) ) : echo '<span class="validation-error"> ' . $response['website'] . ' </span>'; endif; endif;?>
+                                    <span class="validation-error"><?php if ( $_POST && isset( $response['website'] ) ) : echo $response['website']; endif; ?></span>
                                     <input type="submit" class="btn btn--large btn--full" value="Send us your message">
                                 </li>
 

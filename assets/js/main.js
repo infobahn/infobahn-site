@@ -206,12 +206,17 @@
         rules: 'max_length[0]'
     }], function(errors, event) {
 
-        var previousErrors = getElementsByClassName("validation-error");
 
+        // for ( var i = 0; i < previousErrors.length; i++ ) {
 
-        for ( var i = 0; i < previousErrors.length; i++ ) {
+        //     previousErrors[i].parentNode.removeChild(previousErrors[i]);
 
-            previousErrors[i].parentNode.removeChild(previousErrors[i]);
+        // }
+        var lis = document.getElementsByTagName("form")[0].getElementsByTagName("li");
+
+        for ( var i = 0; i < lis.length; i++ ) {
+
+            lis[i].className = lis[i].className.replace(/(^|\s)validation-bad/ ,'');
 
         }
 
@@ -220,22 +225,14 @@
             for( var i = 0; i < errors.length; i++ ) {
 
                 var refNode = document.getElementById( errors[i].id ),
-                    span = document.createElement('span'),
-                    errorNode = refNode.nextSibling;
+                    errorNode = refNode.parentNode.getElementsByTagName("span")[0],
+                    parentLi = refNode.parentNode;
 
-                span.className = "validation-error";
+                // console.log(errorNode);
 
-                if ( !errorNode || errorNode.nodeType != 1 ) {
+                errorNode.innerHTML = errors[i].message;
 
-                    span.innerHTML = errors[i].message;
-
-                    refNode.parentNode.insertBefore(span, errorNode );
-
-                } else {
-
-                    errorNode.innerHTML = errors[i].message;
-
-                }
+                parentLi.className = parentLi.className + ' validation-bad';
 
             }
         }

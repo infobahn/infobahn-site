@@ -25,6 +25,7 @@
                     position: relative;
                     list-style: none;
                     @include rem(margin, 0, 0, $threequarter-space, 0);
+                    overflow: hidden;
                 }
 
                 // .controls {
@@ -34,8 +35,11 @@
 
 
 //  Form elements
+// -----------------------------------------------------------------------------
 
     label {
+        display: block;
+        @include rem(padding-bottom, $quarter-space);
         position: absolute;
         z-index: 1;
         @include rem(top, $quarter-space*1.25);
@@ -46,6 +50,12 @@
         }
         // float: left;
         // width: 50%;
+
+        @include breakpoint($small) {
+            position: relative;
+            top: auto;
+            left: auto;
+        }
     }
 
     
@@ -66,15 +76,50 @@
             color: palette(grey, dark);
             outline: none;
             border: 1px solid palette(blue, light);
-            z-index: 2;
+            // z-index: 2;
         }
 
         .contact-form & {
             @include rem(padding, $quarter-space * 1.5, $quarter-space);
             width: 100%;
+            @include rem(padding-left, 230px);
         }
     }
 
     textarea {
         height: 8em;
     }
+
+    .contact-form .btn {
+        @include rem(margin-top, $quarter-space);
+    }
+
+    .special-field {
+        visibility: hidden;
+        display: none !important;
+    }
+
+
+//  Validation
+// -----------------------------------------------------------------------------
+
+    .validation-error {
+        display: block;
+        background-color: palette(pink);
+        color: palette(white);
+        @include rem(padding, $quarter-space, $half-space);
+    }
+
+    .validation-error--is-visible {
+        
+    }
+
+
+
+
+
+
+
+
+
+

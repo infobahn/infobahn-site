@@ -11,6 +11,13 @@
             }
         }
 
+        .address {
+            @include rem(padding, 0, $base-space, $half-space, $base-space);
+            background-color: rgba(black, 0.5);
+            background-color: rgba(palette(blue), 0.9);
+            box-shadow: 0 1px 2px 0 rgba(black, 0.3);
+        }
+
     
 
 

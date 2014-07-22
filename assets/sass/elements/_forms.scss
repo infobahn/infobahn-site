@@ -14,6 +14,7 @@
             margin: 0;
             @include rem(padding, $mid-space);
             box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+            border-radius: $border-radius;
         }
 
             .form {
@@ -24,40 +25,39 @@
                 .form__item {
                     position: relative;
                     list-style: none;
-                    @include rem(margin, 0, 0, $threequarter-space, 0);
-                    overflow: hidden;
+                    @include rem(margin, 0, 0, $base-space, 0);
                 }
 
-                // .controls {
-                //     float: left;
-                //     width: 50%;
-                // }
+                .controls {
+                    overflow: hidden;
+                }
 
 
 //  Form elements
 // -----------------------------------------------------------------------------
 
     label {
-        display: block;
-        @include rem(padding-bottom, $quarter-space);
-        position: absolute;
-        z-index: 1;
-        @include rem(top, $quarter-space*1.25);
-        @include rem(left, $half-space);
+        float: left;
+        @include rem(width, 240px);
+        @include rem(padding, $quarter-space, 0);
 
         &:hover {
             cursor: pointer;
         }
-        // float: left;
-        // width: 50%;
 
         @include breakpoint($small) {
-            position: relative;
-            top: auto;
-            left: auto;
+            width: 100%;
+        }
+
+        .form__item--is-invalid & {
+            color: palette(pink) !important;
         }
     }
-
+    
+    .required {
+        color: palette(pink);
+        @include rem(font-size, $micro-size);
+    }
     
 
     input[type=text],
@@ -70,19 +70,24 @@
         @include rem(font-size, $mini-size);
         @include rem(padding, $quarter-space/1.5, $quarter-space);
         color: palette(grey);
-        @include rem(border-radius, $border-radius);
+        @include rem(border-radius, $border-radius / 2);
+        z-index: 2;
+        margin-bottom: 1px;
 
         &:focus {
             color: palette(grey, dark);
             outline: none;
-            border: 1px solid palette(blue, light);
-            // z-index: 2;
+            border-color: palette(blue, light);
         }
 
         .contact-form & {
             @include rem(padding, $quarter-space * 1.5, $quarter-space);
             width: 100%;
-            @include rem(padding-left, 230px);
+        }
+
+        .form__item--is-invalid & {
+            border-color: palette(pink);
+            background-color: palette(pink, light);
         }
     }
 
@@ -105,21 +110,26 @@
 
     .validation-error {
         display: block;
-        background-color: palette(pink);
-        color: palette(white);
-        @include rem(padding, $quarter-space, $half-space);
+        // background-color: palette(pink);
+        // color: palette(white);
+        text-align: right;
+        color: palette(pink);
+        @include rem(padding, $quarter-space, 0);
+        transform: translateZ(-100%);
+        @include rem(margin-bottom, -$mid-space);
+        z-index: 0;
+        transition: all .2s ease-in-out;
+
+        .form__item--is-invalid & {
+            tranform: translateZ(0);
+            margin-bottom: 0;
+        }
     }
 
-    .validation-error--is-visible {
-        
+    .form-message {
+        background-color: palette(blue, x-light);
+        color: palette(blue);
+        border: 1px solid palette(blue, light);
+        @include rem(padding, $half-space);
+        @include rem(margin-bottom, $base-space);
     }
-
-
-
-
-
-
-
-
-
-

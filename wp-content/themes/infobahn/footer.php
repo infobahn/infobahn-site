@@ -32,12 +32,11 @@
                     <span style="font-size: 1.6em;"><strong>01234&nbsp;567&nbsp;890</strong></span>&nbsp;(UK) or 
                     <span style="font-size: 1.6em;"><strong>01234&nbsp;567&nbsp;890</strong></span>&nbsp;(IOM)</p>
                     
-                    <p style="margin-top: -0.5em;">Or email us at &nbsp; <a class="" href="">team@infobahndesign.com</a></p>
+                    <p style="margin-top: -0.5em;">Or email us at <a class="" href="mailto:team@infobahndesign.com">team@infobahndesign.com</a></p>
 
                     <hr>
 
                     <h3>Follow us on social media</h3><br>
-                    <!-- <a href="">Facebook</a> | <a href="">Twitter</a> | <a href="">LinkedIn</a> | <a href="">Pinterest</a> | <a href="">Flickr</a></p> -->
 
                     <ul class="nav nav--share">
                         <li class="nav__item"><a id="twitterLinkBtn" class="btn btn--share btn--twitter" href="https://twitter.com/infobahndesign">&nbsp;<span class="hide-small">Twitter</span>&nbsp;</a></li>

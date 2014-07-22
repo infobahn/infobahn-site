@@ -733,80 +733,6 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
 
 })(window, document);
 
-// $(function() {
-
-//     $('.project__link').click(function(e) {
-//         var href = $(this).attr('href');
-//         var id   = href.split('.').shift().split('/').pop();
-
-//         $('.project__link').removeClass('project__link--is-selected');
-//         $('.case-study').removeClass('case-study--is-visible');
-//         $('#' + id).addClass('case-study--is-visible');
-//         $(this).addClass('project__link--is-selected');
-
-//         e.preventDefault();
-//     });
-
-// });
-
-//  Allow for selecting elements by data attribute
-
-    // function getAllElementsWithAttribute(attribute) {
-    //     var matchingElements = [];
-    //     var allElements = document.getElementsByTagName('*');
-
-    //     for ( var i = 0; i < allElements.length; i++ ) {
-
-    //         if ( typeof allElements[i].getAttribute(attribute) != null ) {
-    //             // Element exists with attribute. Add to array.
-    //             matchingElements.push(allElements[i]);
-    //         }
-
-    //     }
-
-    //     return matchingElements;
-    // }
-
-    // getAllElementsWithAttribute('data-echo');
-
-
-//  Lazy load images
-    // Echo.init({
-    //     offset: 100,
-    //     throttle: 250
-    // });
-
-//  Clean up typography
-    // ragadjust('p', 'all');
-
-//  Expand sidebar
-    // var btnshowsidebar = document.getElementById('btnShowSidebar'),
-    // sidebar = document.getElementById('sidebar'),
-     
-    // hasClass = function (el, cl) {
-    //     var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
-    //     return !!el.className.match(regex);
-    // },
- 
-    // addClass = function (el, cl) {
-    //     el.className += ' ' + cl;
-    // },
- 
-    // removeClass = function (el, cl) {
-    //     var regex = new RegExp('(?:\\s|^)' + cl + '(?:\\s|$)');
-    //     el.className = el.className.replace(regex, ' ');
-    // },
- 
-    // toggleClass = function (el, cl) {
-    //     hasClass(el, cl) ? removeClass(el, cl) : addClass(el, cl);
-    // };
-
-    // btnshowsidebar.onclick = function() {
-    //     toggleClass(btnshowsidebar, 'btn--show-sidebar--is-active');
-    //     toggleClass(sidebar, 'sidebar--is-visible');
-    //     return false;
-    // };
-
 //  Expand sidebar
     var showMenu = document.getElementById('showMenu'),
     hideMenu = document.getElementById('hideMenu'),
@@ -867,6 +793,10 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
         facebookLinkBtn = document.getElementById('facebookLinkBtn'),
         linkedinLinkBtn = document.getElementById('linkedinLinkBtn'),
         pinterestLinkBtn = document.getElementById('pinterestLinkBtn'),
+        homeCtaBtn = document.getElementById('homeCtaBtn'),
+        projectCtaBtn = document.getElementById('projectCtaBtn'),
+        servicesCtaBtn = document.getElementById('servicesCtaBtn'),
+        formSubmitBtn = document.getElementById('formSubmitBtn'),
         pageUrl = document.URL;
 
 //  Share buttons
@@ -899,6 +829,22 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
         ga('send', 'event', 'button', 'click', 'pinterest button');
     });
 
+//  CTA buttons
+    addListener(homeCtaBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'homepage cta button');
+    });
+
+    addListener(projectCtaBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'project cta button');
+    });
+
+    addListener(servicesCtaBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'services cta button');
+    });
+
+    addListener(formSubmitBtn, 'click', function() {
+        ga('send', 'event', 'button', 'click', 'contact form submit button');
+    });
 
     /**
      * Utility to wrap the different behaviors between W3C-compliant browsers
@@ -916,6 +862,9 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
         }
     }
 
+
+//  Contact form validation
+
     var validator = new FormValidator('contact-form', [{
         name: 'personName',
         display: 'Name',    
@@ -926,12 +875,11 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
         rules: 'required|valid_email'
     }, {
         name: 'companyName',
-        display: 'Company name',
-        rules: 'required'
+        display: 'Company name'
     }, {
         name: 'budget',
         display: 'budget',
-        rules: 'required|numeric'
+        rules: 'required'
     }, {
         name: 'comments',
         display: 'comments'
@@ -942,16 +890,11 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
     }], function(errors, event) {
 
 
-        // for ( var i = 0; i < previousErrors.length; i++ ) {
-
-        //     previousErrors[i].parentNode.removeChild(previousErrors[i]);
-
-        // }
         var lis = document.getElementsByTagName("form")[0].getElementsByTagName("li");
 
         for ( var i = 0; i < lis.length; i++ ) {
 
-            lis[i].className = lis[i].className.replace(/(^|\s)validation-bad/ ,'');
+            lis[i].className = lis[i].className.replace(/(^|\s)form__item--is-invalid/ ,'');
 
         }
 
@@ -961,54 +904,12 @@ Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\
 
                 var refNode = document.getElementById( errors[i].id ),
                     errorNode = refNode.parentNode.getElementsByTagName("span")[0],
-                    parentLi = refNode.parentNode;
-
-                // console.log(errorNode);
+                    parentLi = refNode.parentNode.parentNode;
 
                 errorNode.innerHTML = errors[i].message;
 
-                parentLi.className = parentLi.className + ' validation-bad';
+                parentLi.className = parentLi.className + ' form__item--is-invalid';
 
             }
         }
     });
-
-
-    
-    // console.log("Hello");
-
-    // function processForm(e) {
-    //     if (e.preventDefault) e.preventDefault();
-    //     /* do what you want with the form */
-
-    //     var personName = form.personName.value,
-    //         email = form.email.value,
-    //         companyName = form.companyName.value,
-    //         budget = form.budget.value,
-    //         comments = form.comments.value,
-    //         specialField = form.website.value;
-
-    //     console.log( specialField );
-
-    //     if ( specialField != '' ) {
-
-    //         return false;
-
-    //     } else {
-
-    //         return true;
-
-    //     }
-
-       
-
-    //     // You must return false to prevent the default form behavior
-    //     return false;
-    // }
-
-    // var form = document.getElementById('contact-form');
-    // if (form.attachEvent) {
-    //     form.attachEvent("submit", processForm);
-    // } else {
-    //     form.addEventListener("submit", processForm);
-    // }

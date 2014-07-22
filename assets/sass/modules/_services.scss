@@ -19,8 +19,15 @@
                 width: 45%;
                 @include rem(padding, $quarter-space, 0);
                 margin: 0 2.5%;
-                // @include rem(margin-bottom, $mid-space);
+                @include rem(height, $double-space * 3);
                 text-align: left;
+
+                @include breakpoint($small) {
+                    width: 100%;
+                    margin: 0;
+                    height: auto;
+                    @include rem(margin-bottom, $half-space);
+                }
 
                 @include breakpoint($mid2) {
                     width: 28.3333%;    
@@ -36,7 +43,11 @@
                 }
 
                 .js .services-list__description {
-                    // display: none;
+                    @include rem(border-width, 2px, 0, 0, 0);
+                    border-style: solid;
+                    border-color: palette(grey, light);
+                    @include rem(padding-top, $quarter-space);
+                    @include rem(margin-top, $quarter-space);
                 }
 
                 .services-list__description--is-visible {

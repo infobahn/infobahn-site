@@ -270,19 +270,11 @@ Class infobahn_validation {
 
         }
 
-        if  ( $this->post['budget'] == '' || !is_numeric( $this->post['budget'] ) ) {
+        if  ( $this->post['budget'] == '' ) {
 
             $this->error_counter++;
 
-            if ( $this->post['budget'] == '' ) {
-
-                $this->budget = "The Budget field must be filled in";
-
-            } else {
-
-                $this->budget = "The Budget field must be numeric only";
-
-            }
+            $this->budget = "The Budget field must be filled in";
 
         }
 
@@ -314,7 +306,7 @@ Class infobahn_validation {
 
         $messages = array();
 
-        $messages['global'] = "Sorry you had some validation issues, see below!";
+        $messages['global'] = "I'm sorry to have to report that there was a problem with your submission.<br>Please see below for details.";
         $messages['personName'] = $this->personName;
         $messages['email'] = $this->email;
         $messages['companyName'] = $this->companyName;
@@ -367,7 +359,7 @@ function infobahn_send_mail( $post ) {
 
         if ( $send ) {
 
-            return array("global" => "Message sent");
+            return array("global" => "Thank you for your message.");
 
         } else {
 

@@ -44,6 +44,34 @@
         border-bottom: 1px solid palette(grey, light);
     }
 
+    .stripe--img {
+        position: relative;
+        color: palette(white) !important;
+        overflow: hidden;
+        
+        h1, h2, h3, h4, h5, h6, small {
+            color: palette(white);
+        }
+
+        a, a:visited, a:hover, a:focus, a:active {
+            color: palette(white);
+            border-bottom: 1px solid palette(white);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    // .stripe--psm {
+    //     background: url('build/img/psm.jpg') no-repeat center -100px fixed;
+    //     background-size: cover;
+    // }
+
     .stripe--patterned {
         color: palette(white) !important;
     

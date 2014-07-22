@@ -85,7 +85,7 @@ get_header(); ?>
 
                     <p>Do you have a similar project coming up? We&rsquo;d love to work with you.</p>
 
-                    <a href="" class="btn btn--rev btn--cta">Hire us</a>
+                    <a href="contact-us" class="btn btn--rev btn--cta" id="projectCtaBtn">Hire us</a>
 
                 </div>
 

@@ -347,7 +347,7 @@ function infobahn_send_mail( $post ) {
 
     if ( $validation->validated() ) {
 
-        $to = "james@infobahndesign.com";
+        $to = "team@infobahndesign.com";
 
         $subject = "New Message from Contact Form";
 

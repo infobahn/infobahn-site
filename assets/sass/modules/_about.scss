@@ -4,6 +4,7 @@
 
     .person {
         @include rem(margin-top, $half-space);
+        text-align: left;
 
         @include breakpoint($small) {
             @include rem(margin-top, $base-space);
@@ -30,6 +31,7 @@
         .person__name {
             @include pimlico;
             @include rem(margin-top, $base-space);
+            text-align: center;
 
             @include breakpoint($small) {
                 @include rem(margin-top, $threequarter-space);
@@ -47,7 +49,7 @@
         @include rem(font-size, $base-font-size*7);
         @include rem(margin-top, $base-space);
         @include pimlico-bold;
-        color: rgba(white, 0.25);
+        color: rgba($color-base-body, 0.25);
         color: #4EB5C5\9;
         *display: none;
 

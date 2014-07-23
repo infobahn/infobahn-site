@@ -1,0 +1,44 @@
+// =============================================================================
+//  Contact
+// =============================================================================
+
+    
+        .contact,
+        .address {
+
+            @include breakpoint($large) {
+                text-align: left;
+            }
+        }
+
+        .address {
+            @include rem(padding, 0, $base-space, $half-space, $base-space);
+            background-color: rgba(black, 0.5);
+            background-color: rgba(palette(blue), 0.9);
+            box-shadow: 0 1px 2px 0 rgba(black, 0.3);
+        }
+
+    
+
+
+
+
+//  Social media links
+// -----------------------------------------------------------------------------
+
+    .social {
+        list-style: none;
+    }
+
+        .social__item {
+            @extend %ib;
+            border-style: solid;
+            border-color: palette(grey, x-light);
+            border-width: 1px 0;
+            @include rem(padding, $quarter-space);
+            @include rem(margin, 0, $quarter-space);
+        }
+
+            .social__link {
+
+            }

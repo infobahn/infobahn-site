@@ -66,6 +66,9 @@ function infobahn_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'infobahn-styles', get_stylesheet_uri() );
 
+	// Load modernizr
+	// wp_enqueue_script( 'infobahn-modernizr', get_template_directory_uri() . '/build/js/modernizr.js', array(), '20140308', false );
+
 	// Load main script
 	wp_enqueue_script( 'infobahn-scripts', get_template_directory_uri() . '/build/js/production.min.js', array(), '20131209', true );
 }
@@ -96,7 +99,7 @@ function infobahn_wp_title( $title, $sep ) {
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
+		$title = "$title";
 	}
 
 	// Add a page number if necessary.
@@ -104,7 +107,7 @@ function infobahn_wp_title( $title, $sep ) {
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'infobahn' ), max( $paged, $page ) );
 	}
 
-	return $title;
+	return $title . ' - ' . $site_description;
 }
 add_filter( 'wp_title', 'infobahn_wp_title', 10, 2 );
 
@@ -182,6 +185,16 @@ function infobahn_widgets_init() {
 		'before_title'  => '<h1 class="sidebar__heading">',
 		'after_title'   => '</h1>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Mobile Sidebar', 'infobahn' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Sidebar that shows up on mobile.', 'infobahn' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="sidebar__heading">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'infobahn_widgets_init' );
 
@@ -196,9 +209,169 @@ add_filter('next_posts_link_attributes', 'next_posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'previous_posts_link_attributes');
 
 function previous_posts_link_attributes() {
-    return 'class="btn article__next"';
+    return 'class="btn btn--next"';
 }
 
 function next_posts_link_attributes() {
-    return 'class="btn article__prev"';
+    return 'class="btn btn--prev"';
+}
+
+Class infobahn_validation {
+
+    private $post,
+            $personName,
+            $email,
+            $companyName,
+            $website,
+            $validated,
+            $error_counter;
+
+    function __construct( $post ) {
+
+        $this->post = $post;
+
+        $this->error_counter = 0;
+
+        $this->validate( $this->post );
+
+    }
+
+    private function validate() {
+
+        if  ( $this->post['personName'] == '' ) {
+
+            $this->error_counter++;
+
+            $this->personName = "The Name field must be filled in";
+
+        } 
+
+        if  ( $this->post['email'] == '' && !filter_var( $this->post['email'], FILTER_VALIDATE_EMAIL ) ) {
+
+            $this->error_counter++;
+
+            if ( $this->post['email'] == '' ) {
+
+                $this->email = "The Email field must be filled in";
+
+            } else {
+
+                $this->email = "The Email field must be a valid email";
+
+            }
+
+        }
+
+        if  ( $this->post['companyName'] == '' ) {
+
+            $this->error_counter++;
+
+            $this->companyName = "The Company Name field must be filled in";
+
+        }
+
+        if  ( $this->post['budget'] == '' ) {
+
+            $this->error_counter++;
+
+            $this->budget = "The Budget field must be filled in";
+
+        }
+
+        if  ( $this->post['website'] !== '' ) {
+
+            $this->error_counter++;
+
+            $this->website = "This is a bot catcher field. If you are human please do not fill it in";
+
+        }
+
+    }
+
+    public function validated() {
+
+        if ( $this->error_counter > 0 ) {
+
+            return false;
+
+        } else {
+
+            return true;
+
+        }
+
+    }
+
+    public function error_messages() {
+
+        $messages = array();
+
+        $messages['global'] = "I'm sorry to have to report that there was a problem with your submission.<br>Please see below for details.";
+        $messages['personName'] = $this->personName;
+        $messages['email'] = $this->email;
+        $messages['companyName'] = $this->companyName;
+        $messages['budget'] = $this->budget;
+        $messages['website'] = $this->website;
+
+        return $messages;
+
+    }
+
+
+
+
+}
+
+function infobahn_build_message( $post ) {
+
+    $message = '';
+
+    $message .= ' Name: ' . $post['personName'] . "\n";
+
+    $message .= ' Email: ' . $post['email'] . "\n";
+
+    $message .= ' Company: ' . $post['companyName'] . "\n";
+
+    $message .= ' Budget: ' . $post['budget'] . "\n";
+
+    $message .= ' Comments: ' . $post['comments'] . "\n";
+
+    return $message;
+
+}
+
+
+function infobahn_send_mail( $post ) {
+
+    $validation = new infobahn_validation( $post );
+
+    if ( $validation->validated() ) {
+
+        $to = "team@infobahndesign.com";
+
+        $subject = "New Message from Contact Form";
+
+        $message = infobahn_build_message( $post );
+
+        $headers = 'From: admin@infobahndesign.com rn Reply-To: ' . $post['email'] . 'rn';
+
+        $send = mail( $to, $subject, $message, $headers );
+
+        if ( $send ) {
+
+            return array("global" => "Thank you for your message.");
+
+        } else {
+
+            return array("global" => "There was a problem with sending the contact form at this time, please try again later.");
+
+        }
+
+
+    } else {
+
+        return $validation->error_messages();
+
+    }
+
 }

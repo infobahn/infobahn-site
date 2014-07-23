@@ -13,13 +13,26 @@ get_header(); ?>
 
 		    <div class="wrapper">
 
-		        <div class="main-illustration">
-		            
-		            <img src="<?php echo get_template_directory_uri(); ?>/build/img/main-illustration.png" alt="">
+		        <div class="illustration main-illustration">
+
+                    <span data-picture data-alt="Illustration of things relating to web design">
+                        <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/main-small.png"></span>
+                        <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/main-large.png" data-media="(min-width: 400px)"></span>
+                        <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/main-large-x2.png" data-media="(min-width: 800px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+
+                        <!--[if (lt IE 9) & (!IEMobile)]>
+                        <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/main-large.png"></span>
+                        <![endif]-->
+
+                        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                        <noscript>
+                            <img src="<?php echo get_template_directory_uri(); ?>/build/img/main-small.png" alt="Illustration of things relating to web design">
+                        </noscript>
+                    </span>
 
 		        </div>
 
-		        <div class="intro">
+		        <div class="offset-content intro">
 		            
 		            <h1 class="intro__heading"><?php the_field('headline'); ?></h1>
 
@@ -98,7 +111,22 @@ get_header(); ?>
                 <div class="person person--sam">
 
                     <div class="person__img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" alt="Sam Roberts">
+
+                        <span data-picture data-alt="Sam Roberts">
+                            <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam-small.jpg"></span>
+                            <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" data-media="(min-width: 450px)"></span>
+
+                            <!--[if (lt IE 9) & (!IEMobile)]>
+                            <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg"></span>
+                            <![endif]-->
+
+                            <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                            <noscript>
+                                <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" alt="Sam Roberts">
+                            </noscript>
+                        </span>
+
+                        <!-- <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/sam.jpg" alt="Sam Roberts"> -->
                     </div>
 
                     <h2 class="person__name"><?php the_field('sam-heading'); ?></h2>
@@ -110,7 +138,22 @@ get_header(); ?>
                 <div class="person person--james">
 
                     <div class="person__img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" alt="James Burnett">
+                        <span data-picture data-alt="James Burnett">
+                            <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/people/james-small.jpg"></span>
+                            <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" data-media="(min-width: 450px)"></span>
+
+                            <!--[if (lt IE 9) & (!IEMobile)]>
+                            <span data-src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg"></span>
+                            <![endif]-->
+
+                            <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                            <noscript>
+                                <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" alt="James Burnett">
+                            </noscript>
+                        </span>
+
+
+                        <!-- <img src="<?php echo get_template_directory_uri(); ?>/build/img/people/james.jpg" alt="James Burnett"> -->
                     </div>
 
                     <h2 class="person__name"><?php the_field('james-heading'); ?></h2>

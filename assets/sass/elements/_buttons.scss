@@ -3,49 +3,243 @@
 // ============================================================================
 
     .btn,
-    button,
-    input[type=submit] {
+    button {
         @extend %ib;
-        background-color: $color-btn-bg;
-        color: $color-btn !important;
+        background-color: palette(blue);
+        color: palette(white) !important;
         border: 0 !important;
-        @include rem(border-radius, $border-radius * 4);
+        @include rem(border-radius, $border-radius);
         @include rem(padding, $quarter-space / 1.25, $threequarter-space);
         transition: background-color $base-duration ease;
 
         &:hover {
-            background-color: $color-btn-hover-bg;
-            color: $color-btn-hover;
+            background-color: palette(pink);
+            color: palette(white);
             transition: background-color $base-duration ease;
         }
 
         &:focus {
-            background-color: $color-btn-focus-bg;
-            color: $color-btn-focus;
+            background-color: palette(blue);
+            color: palette(white);
         }
 
         &:active {
-            background-color: $color-btn-active-bg;
-            color: $color-btn-active;
+            background-color: palette(blue);
+            color: palette(white);
         }
     }
 
     .btn--rev {
-        background-color: $color-btn-rev-bg !important;
-        color: $color-btn-rev !important;
+        background-color: palette(white) !important;
+        
+        .stripe--blue & {
+            color: palette(blue) !important;    
+        }
+
+        .stripe--pink & {
+            color: palette(pink) !important;
+        }
 
         &:hover {
-            background-color: $color-btn-rev-hover-bg;
-            color: $color-btn-rev-hover;
+            background-color: palette(white);
         }
 
         &:focus {
-            background-color: $color-btn-rev-focus-bg;
-            color: $color-btn-rev-focus;
+            background-color: palette(white);
         }
 
         &:active {
-            background-color: $color-btn-rev-active-bg;
-            color: $color-btn-rev-active;
+            background-color: palette(white);
+        }
+    }
+
+    .btn--cta {
+        @include rem(padding, $quarter-space, $mid-space);
+        @include rem(border-radius, $border-radius);
+        @include rem(margin-top, $quarter-space);
+        @include rem(padding, $quarter-space, $half-space);
+    }
+
+    .btn--full {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn--large {
+        // @include rem(font-size, $h3-size);
+        @include rem(padding-top, $half-space);
+        @include rem(padding-bottom, $half-space);
+    }
+
+
+//  Next/prev buttons
+// ----------------------------------------------------------------------------
+
+    .btn--next,
+    .btn--prev {
+        position: absolute;
+        top: 1.5em;
+        @include rem(height, $mid-space);
+        @include rem(line-height, $mid-space);
+        background: palette(grey, mid-light);
+        color: palette(grey, dark) !important;
+        @include rem(border-radius, $border-radius * 2);
+        padding-top: 0;
+        padding-bottom: 0;
+        @include rem(margin-top, -$mid-space/2);
+
+        &:hover {
+            background: palette(grey, light);
+        }
+    }
+
+    .prevnext__text {
+        display: none;
+
+        @include breakpoint($mid2) {
+            display: inline;
+        }
+    }
+
+    .btn--next {
+        right: 0;
+        // @include rem(right, -$mid-space);
+        // @include rem(padding-right, $double-space);
+    }
+
+    .btn--prev {
+        left: 0;
+        // @include rem(left, -$mid-space);
+        // @include rem(padding-left, $double-space);
+    }
+
+
+//  Share buttons
+// ----------------------------------------------------------------------------
+
+    .nav--share {
+        @include rem(margin, 0, 0, $mid-space, 0);
+    }
+
+    .btn--share {
+        border-radius: 0.25em;
+        padding-top: 0;
+        padding-bottom: 0;
+        @include rem(padding-left, $half-space);
+        @include rem(padding-right, $half-space);
+        @include rem(font-size, $micro-size);
+        line-height: 1;
+
+        span {
+            display: block;
+            line-height: 1.2;
+            // margin: 0.25em 0;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .btn--facebook {
+        background-color: #3b5998;
+
+        &:hover {
+            background-color: darken(#3b5998, 10);
+        }
+
+        span {
+            padding-left: 1.5em;
+        }
+
+        .no-svg & span,
+        .no-js & span {
+            background-image: url('build/img/facebook.png');
+        }
+
+        .svg & span {
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%2014.8%2031.8%22%20enable-background%3D%22new%200%200%2014.8%2031.8%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22facebook%22%3E%0D%0A%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M9.7%2C10.3V7c0-1.2%2C0.8-1.5%2C1.4-1.5c0.6%2C0%2C3.5%2C0%2C3.5%2C0V0L9.8%2C0C4.4%2C0%2C3.1%2C4.1%2C3.1%2C6.7v3.6H0v5.6h3.1%0D%0A%09%09c0%2C7.2%2C0%2C15.9%2C0%2C15.9h6.6c0%2C0%2C0-8.8%2C0-15.9h4.4l0.6-5.6H9.7z%22/%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+        }
+    }
+
+    .btn--linkedin {
+        background-color: #0976b4;
+
+        &:hover {
+            background-color: darken(#0976b4, 10);
+        }
+
+        span {
+            padding-left: 2em;
+        }
+
+        .no-svg & span,
+        .no-js & span {
+            background-image: url('build/img/linkedin.png');
+        }
+
+        .svg & span {
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%2030.3%2027.8%22%20enable-background%3D%22new%200%200%2030.3%2027.8%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22linkedin%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Crect%20x%3D%220.8%22%20y%3D%228.9%22%20fill%3D%22%23FFFFFF%22%20width%3D%225.9%22%20height%3D%2218.9%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M22.8%2C8.7c-3.4%2C0-5.5%2C1.8-5.9%2C3.1v-3h-6.6c0.1%2C1.6%2C0%2C18.9%2C0%2C18.9h6.6V17.6c0-0.6%2C0-1.1%2C0.1-1.5%0D%0A%09%09%09c0.5-1.1%2C1.4-2.3%2C3.2-2.3c2.3%2C0%2C3.3%2C1.7%2C3.3%2C4.3v9.8h6.7V17.3C30.3%2C11.4%2C27%2C8.7%2C22.8%2C8.7z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M3.6%2C0C1.4%2C0%2C0%2C1.4%2C0%2C3.3c0%2C1.8%2C1.4%2C3.3%2C3.5%2C3.3h0c2.2%2C0%2C3.6-1.4%2C3.6-3.3C7.1%2C1.4%2C5.8%2C0%2C3.6%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+        }
+    }
+
+    .btn--twitter {
+        background-color: #55acee;
+
+        &:hover {
+            background-color: darken(#55acee, 10);
+        }
+
+        span {
+            padding-left: 2em;
+        }
+
+        .no-svg & span,
+        .no-js & span {
+            background-image: url('build/img/twitter.png');
+        }
+
+        .svg & span {
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%2031.9%2027.9%22%20enable-background%3D%22new%200%200%2031.9%2027.9%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22twitter%22%3E%0D%0A%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M31.9%2C3.3c-1.2%2C0.6-2.4%2C0.9-3.8%2C1.1c1.4-0.9%2C2.4-2.2%2C2.9-3.9c-1.3%2C0.8-2.7%2C1.4-4.2%2C1.7%0D%0A%09%09C25.7%2C0.9%2C23.9%2C0%2C22.1%2C0c-3.6%2C0-6.5%2C3.1-6.5%2C7c0%2C0.5%2C0.1%2C1.1%2C0.2%2C1.6C10.3%2C8.4%2C5.4%2C5.5%2C2.2%2C1.3c-0.6%2C1-0.9%2C2.2-0.9%2C3.5%0D%0A%09%09c0%2C2.4%2C1.2%2C4.6%2C2.9%2C5.9c-1.1%2C0-2.1-0.3-3-0.9c0%2C0%2C0%2C0.1%2C0%2C0.1c0%2C3.4%2C2.3%2C6.2%2C5.2%2C6.9C6%2C17%2C5.4%2C17%2C4.8%2C17c-0.4%2C0-0.8%2C0-1.2-0.1%0D%0A%09%09c0.8%2C2.8%2C3.2%2C4.8%2C6.1%2C4.9c-2.2%2C1.9-5.1%2C3-8.1%2C3c-0.5%2C0-1.1%2C0-1.6-0.1c2.9%2C2%2C6.3%2C3.2%2C10%2C3.2c12%2C0%2C18.6-10.7%2C18.6-20%0D%0A%09%09c0-0.3%2C0-0.6%2C0-0.9C29.9%2C6%2C31%2C4.7%2C31.9%2C3.3z%22/%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+        }
+    }
+
+    .btn--pinterest {
+        background-color: #cc2127;
+
+        &:hover {
+            background-color: darken(#cc2127, 10);
+        }
+
+        span {
+            padding-left: 1.8em;
+        }
+
+        .no-svg & span,
+        .no-js & span {
+            background-image: url('build/img/pinterest.png');
+        }
+
+        .svg & span {
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%2030.3%2030.3%22%20enable-background%3D%22new%200%200%2030.3%2030.3%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22pinterest%22%3E%0D%0A%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M15.2%2C0C6.8%2C0%2C0%2C6.8%2C0%2C15.2C0%2C21.4%2C3.7%2C26.7%2C9.1%2C29c0-1.1%2C0-2.3%2C0.3-3.5c0.3-1.2%2C2-8.3%2C2-8.3%0D%0A%09%09s-0.5-1-0.5-2.4c0-2.2%2C1.3-3.9%2C2.9-3.9c1.4%2C0%2C2%2C1%2C2%2C2.3c0%2C1.4-0.9%2C3.5-1.3%2C5.4c-0.4%2C1.6%2C0.8%2C2.9%2C2.4%2C2.9c2.9%2C0%2C4.8-3.7%2C4.8-8.1%0D%0A%09%09c0-3.3-2.2-5.8-6.3-5.8c-4.6%2C0-7.5%2C3.4-7.5%2C7.3c0%2C1.3%2C0.4%2C2.3%2C1%2C3c0.3%2C0.3%2C0.3%2C0.5%2C0.2%2C0.8C9%2C19%2C8.8%2C19.7%2C8.8%2C20%0D%0A%09%09c-0.1%2C0.4-0.4%2C0.5-0.8%2C0.4c-2.1-0.9-3.1-3.2-3.1-5.8c0-4.3%2C3.6-9.5%2C10.8-9.5c5.8%2C0%2C9.6%2C4.2%2C9.6%2C8.7c0%2C5.9-3.3%2C10.4-8.2%2C10.4%0D%0A%09%09c-1.6%2C0-3.2-0.9-3.7-1.9c0%2C0-0.9%2C3.5-1.1%2C4.2c-0.3%2C1.2-1%2C2.3-1.5%2C3.2c1.4%2C0.4%2C2.8%2C0.6%2C4.3%2C0.6c8.4%2C0%2C15.2-6.8%2C15.2-15.2%0D%0A%09%09C30.3%2C6.8%2C23.5%2C0%2C15.2%2C0z%22/%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+        }
+    }
+
+    .btn--flickr {
+        background-color: #ff0084;
+
+        &:hover {
+            background-color: darken(#ff0084, 10);
+        }
+
+        span {
+            padding-left: 3.25em;
+        }
+
+        .no-svg & span,
+        .no-js & span {
+            background-image: url('build/img/flickr.png');
+        }
+
+        .svg & span {
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%2031.6%2013.9%22%20enable-background%3D%22new%200%200%2031.6%2013.9%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22flickr%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M31.6%2C7c0%2C3.8-3.1%2C7-7%2C7c-3.9%2C0-7-3.1-7-7c0-3.8%2C3.1-7%2C7-7C28.5%2C0%2C31.6%2C3.1%2C31.6%2C7z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M13.9%2C7c0%2C3.8-3.1%2C7-7%2C7c-3.8%2C0-7-3.1-7-7c0-3.8%2C3.1-7%2C7-7C10.8%2C0%2C13.9%2C3.1%2C13.9%2C7z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
         }
     }

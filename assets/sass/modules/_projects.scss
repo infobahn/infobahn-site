@@ -25,8 +25,8 @@
 
                 &:hover {
                     background-color: rgba(#efeee4, 0.4);
-                    border-color: $color-divider;
-                    border-color: #eee;
+                    border-color: palette(grey, light);
+                    border-color: palette(grey, mid-light);
                     transition: all $base-duration ease;
                 }
 
@@ -37,8 +37,8 @@
 
             .project__link--is-selected {
                 background-color: rgba(#efeee4, 0.4);
-                border-color: $color-divider;
-                border-color: #eee;
+                border-color: palette(grey, light);
+                border-color: palette(grey, mid-light);
                 transition: all $base-duration ease;
             }
 
@@ -54,12 +54,16 @@
 
                 .project__tagline {
                     text-align: left;
-                    color: $color-subtext;
-                    // @include pimlico;
+                    color: palette(grey);
                     @include freight-sans;
                     @include rem(font-size, $mini-size);
                     @include rem(margin-bottom, $quarter-space);
                     @include rem(margin-left, $quarter-space);
+                    margin-top: 0;
+
+                    @include breakpoint($small) {
+                        font-size: 1rem;
+                    }
                 }
 
 
@@ -67,30 +71,24 @@
 // ----------------------------------------------------------------------------
     
     .case-study {
-        // max-height: 0;
-        background-color: $color-case-study-bg;
-        border-color: #ddd;
+        background-color: palette(grey, x-light);
+        border-color: palette(grey, light);
         border-style: solid;
         border-width: 1px 0;
-        // overflow: hidden;
         @include rem(padding, $super-space, 0);
-        // @include rem(margin-bottom, $double-space);
-        // transition: all $base-duration ease;
-    }
 
-    // .case-study--is-visible {
-    //     max-height: 4000px;
-    //     border-width: 1px 0;
-    //     @include rem(padding, $super-space, 0);
-    //     @include rem(margin-bottom, $double-space);
-    //     transition: all $base-duration ease;
-    // }
+        .wrapper {
+            position: relative;
+        }
+    }
 
         .case-study__screenshot {
             float: left;
             clear: both;
-            // @include rem(margin-bottom, $threequarter-space);
-            box-shadow: 0 1px 12px 0 rgba(black, 0.2);
+
+            img {
+                display: block;
+            }
         }
 
         .case-study__title {
@@ -105,7 +103,7 @@
 
         .case-study__divider {
             @include rem(width, $super-space);
-            background-color: $color-divider;
+            background-color: palette(grey, light);
             height: 2px;
             @include rem(margin, 0, auto, $base-space, auto);
             border: 0;
@@ -115,203 +113,4 @@
             @include rem(margin-bottom, $mid-space);
             *float: left;
             *clear: both;
-        }
-
-    //  Next and previous links on project pages
-
-        .case-study__prev,
-        .case-study__next {
-            position: absolute;
-            @extend %ib;
-            height: 44px;
-            line-height: 44px;
-            @include rem(margin-top, $half-space);
-            border-radius: 0;
-            *display: none;
-
-            &:hover {
-                // background-color: $blue;
-                // color: white !important;
-            }
-
-            @include breakpoint($small) {
-                display: none;
-            }
-        }
-
-        .case-study__prev {
-            left: 0;
-            @include rem(padding, 0, $base-space, 0, $threequarter-space);
-
-            &:before {
-                left: 0;
-                border-color: $color-case-study-bg;
-                border-right: 1px solid $color-btn-bg;
-            }
-
-            &:after {
-                right: 0;
-                border-color: $color-btn-bg;
-                border-right: 1px solid $color-case-study-bg;
-            }
-
-            &:before,
-            &:after {
-                display: block;
-                content: "";
-                position: absolute;
-                top: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 22px 11px 22px 0;
-                transition: border-color $base-duration ease;
-            }
-
-            &:hover {
-                &:before {
-                    border-right: 1px solid $color-btn-hover-bg;
-                }
-
-                &:after {
-                    border-color: $color-btn-hover-bg;
-                    border-right: 1px solid $color-case-study-bg;
-                }
-
-                &:before,
-                &:after {
-                    border-width: 22px 11px 22px 0;
-                    transition: border-color $base-duration ease;
-                }
-            }
-        }
-
-        .case-study__next {
-            right: 0;
-            @include rem(padding, 0, $threequarter-space, 0, $base-space);
-
-            &:before {
-                right: 0;
-                border-color: $color-case-study-bg;
-                border-left: 1px solid $color-btn-bg;
-            }
-
-            &:after {
-                left: 0;
-                border-color: $color-btn-bg;
-                border-left: 1px solid $color-case-study-bg;
-            }
-
-            &:before,
-            &:after {
-                display: block;
-                content: "";
-                position: absolute;
-                top: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 22px 0 22px 11px;
-                transition: border-color $base-duration ease;
-            }
-
-            &:hover {
-                &:before {
-                    border-left: 1px solid $color-btn-hover-bg;
-                }
-
-                &:after {
-                    border-color: $color-btn-hover-bg;
-                    border-left: 1px solid $color-case-study-bg;
-                }
-
-                &:before,
-                &:after {
-                    border-width: 22px 0 22px 11px;
-                    transition: border-color $base-duration ease;
-                }
-            }
-        }
-
-
-        .chevron-left {
-            float: left;
-            position: relative;
-            // margin-top: 12px;
-            height: 20px;
-            width: 7px;
-            @include rem(margin, 12px, $threequarter-space, 0, 0);
-            *display: none;
-            display: none\9;
-        }
-
-        .chevron-left:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 51%;
-            width: 100%;
-            background: white;
-            -webkit-transform: skew(-30deg, 0deg);
-            -moz-transform: skew(-30deg, 0deg);
-            -ms-transform: skew(-30deg, 0deg);
-            -o-transform: skew(-30deg, 0deg);
-            transform: skew(-30deg, 0deg);
-        }
-
-        .chevron-left:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 50%;
-            width: 100%;
-            background: white;
-            -webkit-transform: skew(30deg, 0deg);
-            -moz-transform: skew(30deg, 0deg);
-            -ms-transform: skew(30deg, 0deg);
-            -o-transform: skew(30deg, 0deg);
-            transform: skew(30deg, 0deg);
-        }
-
-        .chevron-right {
-            float: right;
-            position: relative;
-            // margin-top: 12px;
-            height: 20px;
-            width: 7px;
-            @include rem(margin, 12px, 0, 0, $threequarter-space);
-            *display: none;
-            display: none\9;
-        }
-
-        .chevron-right:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 51%;
-            width: 100%;
-            background: white;
-            -webkit-transform: skew(30deg, 0deg);
-            -moz-transform: skew(30deg, 0deg);
-            -ms-transform: skew(30deg, 0deg);
-            -o-transform: skew(30deg, 0deg);
-            transform: skew(30deg, 0deg);
-        }
-
-        .chevron-right:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 50%;
-            width: 100%;
-            background: white;
-            -webkit-transform: skew(-30deg, 0deg);
-            -moz-transform: skew(-30deg, 0deg);
-            -ms-transform: skew(-30deg, 0deg);
-            -o-transform: skew(-30deg, 0deg);
-            transform: skew(-30deg, 0deg);
         }

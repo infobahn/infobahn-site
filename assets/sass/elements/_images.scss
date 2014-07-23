@@ -4,13 +4,24 @@
 
     img {
         max-width: 100%;
-        translateZ: 0;
     }
 
-    .no-js [data-echo] {
-        display: none;
-    }
+    // .no-js [data-echo] {
+    //     display: none;
+    // }
 
     // .js [data-echo] {
     //     background-image: url(../svg/png/loading.svg);
     // }
+
+    .illo-left {
+        float: left;
+        @include rem(margin-right, $double-space);
+        @include rem(margin-top, $base-space);
+    }
+
+    .illo-right {
+        float: right;
+        @include rem(margin-left, $double-space);
+        @include rem(margin-top, $base-space);
+    }

@@ -13,9 +13,12 @@ get_header(); ?>
 
 <div class="stripe stripe--blog">
 
+    <?php echo get_previous_posts_link('<span class="prevnext__text">Newer posts </span>&raquo;'); ?>
+    <?php echo get_next_posts_link('&laquo;<span class="prevnext__text"> Older posts</span>'); ?>
+
     <div class="wrapper">
 
-        <div class="upper-sidebar"><?php get_sidebar(); ?></div>
+        <div class="upper-sidebar"><?php include( TEMPLATEPATH . '/upper-sidebar.php'); ?></div>
 
         <div class="articles">
 
@@ -59,7 +62,7 @@ get_header(); ?>
 
         </div>
 
-        <div class="lower-sidebar"><?php include( TEMPLATEPATH . '/sidebar.php'); ?></div>
+        <div class="lower-sidebar"><?php include( TEMPLATEPATH . '/lower-sidebar.php'); ?></div>
 
     </div>
 

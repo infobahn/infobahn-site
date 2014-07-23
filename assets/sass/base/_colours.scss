@@ -2,64 +2,39 @@
 //  Colours
 // ============================================================================
 
-//  Palette
-// ----------------------------------------------------------------------------
-    
-    $pink                               : #cb1f41;
-    $blue                               : #1da4b9;
-
-
-//  Typography
+//  Colour palette method borrowed from Erskine Design, as per:
+//  http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
 // ----------------------------------------------------------------------------
 
-    $color-text                         : #666;
-    $color-subtext                      : #bbb;
-    $color-heading                      : $pink;
-    $color-subheading                   : #999;
+    $color-base-pink:       #cb1f41;
+    $color-base-blue:       #1da4b9;
+    $color-base-body:       #fff;
 
-    $color-selection                    : darken($pink, 20);
-    $color-selection-bg                 : lighten($pink, 51);
+    $palettes: (
+        pink: (
+            base:           $color-base-pink,
+            light:          lighten($color-base-pink, 51),
+            dark:           darken($color-base-pink, 20)
+        ),
+        blue: (
+            base:           $color-base-blue,
+            x-light:        lighten($color-base-blue, 55),
+            light:          lighten($color-base-blue, 10),
+            dark:           darken($color-base-blue, 10)
+        ),
+        grey: (
+            base:           #bbb,
+            x-light:        #f5f5f5,
+            mid-light:      #eee,
+            light:          #ddd,
+            dark:           #666
+        ),
+        white: (
+            base:           #fff
+        )
+    );
 
-
-//  Structure
-// ----------------------------------------------------------------------------
-
-    $color-body                         : #fff;
-    $color-divider                      : #ddd;
-    $color-case-study-bg                : #f5f5f5;
-
-
-//  Links
-// ----------------------------------------------------------------------------
-
-    $color-link                         : $blue;
-    $color-link-visited                 : $blue;
-    $color-link-hover                   : darken($blue, 10);
-    $color-link-focus                   : darken($blue, 10);
-    $color-link-active                  : lighten($blue, 10);
-
-
-//  Buttons
-// ----------------------------------------------------------------------------
-
-    $color-btn                         : #fff;
-    $color-btn-bg                      : $blue;
-    $color-btn-hover                   : #fff;
-    $color-btn-hover-bg                : $pink;
-    $color-btn-focus                   : #fff;
-    $color-btn-focus-bg                : $blue;
-    $color-btn-active                  : #fff;
-    $color-btn-active-bg               : $blue;
-
-    $color-btn-rev                     : $pink;
-    $color-btn-rev-bg                  : #fff;
-    $color-btn-rev-hover               : $pink;
-    $color-btn-rev-hover-bg            : #fff;
-    $color-btn-rev-focus               : $pink;
-    $color-btn-rev-focus-bg            : #fff;
-    $color-btn-rev-active              : $pink;
-    $color-btn-rev-active-bg           : #fff;
-
-
-//  Prev / Next buttons
-// ----------------------------------------------------------------------------
+    // Palette function,
+    @function palette($palette, $tone: 'base') {
+        @return map-get(map-get($palettes, $palette), $tone);
+    }

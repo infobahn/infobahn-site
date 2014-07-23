@@ -18,16 +18,16 @@ get_header(); ?>
 
                 <?php if ( !empty( $prev_post ) ) : ?>
 
-                    <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="btn case-study__prev">
-                        Prev<span class="chevron-left"></span>
+                    <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="btn btn--prev">
+                        &laquo;<span class="prevnext__text"> Prev</span>
                     </a>
 
                 <?php endif; ?>
 
                 <?php if ( !empty( $next_post ) ) : ?>  
                     
-                    <a href="<?php echo get_permalink( $next_post->ID ); ?>" class="btn case-study__next">
-                        Next<span class="chevron-right"></span>
+                    <a href="<?php echo get_permalink( $next_post->ID ); ?>" class="btn btn--next">
+                        <span class="prevnext__text">Next </span>&raquo;
                     </a>
 
                 <?php endif; ?>
@@ -48,7 +48,26 @@ get_header(); ?>
                  
                     <?php while( have_rows('images') ): the_row(); ?>
                  
+                        <!-- 
                         <img src="<?php the_sub_field('image'); ?>" alt="<?php the_title(); ?>" class="case-study__screenshot">
+                         -->
+
+                        <span data-picture data-alt="<?php the_title(); ?>">
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-small.jpg"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-medium.jpg"        data-media="(min-width: 400px)"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-medium-x2.jpg"     data-media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-large.jpg"         data-media="(min-width: 800px)"></span>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-large-x2.jpg"      data-media="(min-width: 800px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+
+                            <!--[if (lt IE 9) & (!IEMobile)]>
+                            <span class="case-study__screenshot" data-src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-large.jpg"></span>
+                            <![endif]-->
+
+                            <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                            <noscript>
+                                <img class="case-study__screenshot" src="<?php echo get_template_directory_uri(); ?>/build/img/projects/<?php the_sub_field('image'); ?>-small.jpg" alt="<?php the_title(); ?>">
+                            </noscript>
+                        </span>
 
                     <?php endwhile; ?>
 
@@ -58,7 +77,23 @@ get_header(); ?>
 
         </div>
 
-		<div class="stripe" id="work">
+        <div class="stripe stripe--patterned stripe--blue">
+
+            <div class="wrapper">
+
+                <div class="stripe__content">
+
+                    <p>Do you have a similar project coming up? We&rsquo;d love to work with you.</p>
+
+                    <a href="contact-us" class="btn btn--rev btn--cta" id="projectCtaBtn">Hire us</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+		<!-- <div class="stripe" id="work">
 
             <div class="wrapper">
 
@@ -112,6 +147,6 @@ get_header(); ?>
 
             </div>
 
-        </div>
+        </div> -->
 
 <?php get_footer(); ?>

@@ -30,6 +30,6 @@
 
     body {
         @include rem(font-size, $base-font-size);
-        color: $color-text;
-        background-color: $color-body;
+        color: palette(grey, dark);
+        background-color: $color-base-body;
     }

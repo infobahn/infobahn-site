@@ -16,7 +16,7 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Infobahn - We design websites for people</title>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
         <meta name="description" content="We are James Burnett and Sam Roberts, more commonly known as Infobahn. We design and build websites from our homes in the UK and the Isle of Man.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -46,9 +46,17 @@
         <meta name="twitter:description" content="<?php the_field('meta-description'); ?>">
         <meta name="twitter:image" content="<?php the_field('meta-image'); ?>">
 
+        <script type="text/javascript">
+
+            /* Modernizr 2.7.1 (Custom Build) | MIT & BSD
+             * Build: http://modernizr.com/download/#-svg-cssclasses
+             */
+            ;window.Modernizr=function(a,b,c){function v(a){j.cssText=a}function w(a,b){return v(prefixes.join(a+";")+(b||""))}function x(a,b){return typeof a===b}function y(a,b){return!!~(""+a).indexOf(b)}function z(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:x(f,"function")?f.bind(d||b):f}return!1}var d="2.7.1",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m={svg:"http://www.w3.org/2000/svg"},n={},o={},p={},q=[],r=q.slice,s,t={}.hasOwnProperty,u;!x(t,"undefined")&&!x(t.call,"undefined")?u=function(a,b){return t.call(a,b)}:u=function(a,b){return b in a&&x(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=r.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(r.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(r.call(arguments)))};return e}),n.svg=function(){return!!b.createElementNS&&!!b.createElementNS(m.svg,"svg").createSVGRect};for(var A in n)u(n,A)&&(s=A.toLowerCase(),e[s]=n[A](),q.push((e[s]?"":"no-")+s));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)u(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},v(""),i=k=null,e._version=d,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+q.join(" "):""),e}(this,this.document);
+
+        </script>
+
         <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
         <script type="text/javascript">
-            document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
 
             WebFont.load({
                 fontdeck: {
@@ -59,17 +67,15 @@
                 }
             });
 
-            /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-            window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
-            grunticon( [ "<?php echo get_template_directory_uri(); ?>/build/svg/icons.data.svg.css", "<?php echo get_template_directory_uri(); ?>/build/svg/icons.data.png.css", "<?php echo get_template_directory_uri(); ?>/build/svg/icons.fallback.css" ] );
         </script>
-        <noscript><link href="<?php echo get_template_directory_uri(); ?>/build/svg/icons.fallback.css" rel="stylesheet"></noscript>
 
 		<?php wp_head(); ?>
 
     </head>
 
     <body <?php body_class(); ?>>
+
+        <div class="container" id="container">
 
 		<div class="header" role="banner">
 
@@ -80,13 +86,19 @@
                 <a href="#nav" class="show-menu" id="showMenu">Menu</a>
 
                 <ul class="nav nav--main" id="menu" role="navigation">
+                    <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>services" class="nav__link">Services</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>blog" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#us" class="nav__link">Us</a></li>
-                    <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" class="nav__link">Contact</a></li>
-                    <li class="hide-menu"><a id="hideMenu" href="#">Close menu</a></li>
+                    <li class="nav__item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>contact" class="nav__link">Contact</a></li>
                 </ul>
 
             </div>
 
         </div>
+
+        <div class="pusher" id="pusher">
+
+            <a id="hideMenu" href="#">Close menu</a>
+
+            

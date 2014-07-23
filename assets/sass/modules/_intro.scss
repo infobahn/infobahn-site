@@ -7,20 +7,24 @@
 
         @include breakpoint($large) {
             text-align: left;
-            @include rem(margin-top, $super-space*1.25);
+            // @include rem(margin-top, $super-space*1.25);
+            // @include rem(margin-top, $double-space);
         }
     }
 
         .intro__heading {
-            // color: #fff;  //                        <----  Abstract
             @include pimlico;
             font-weight: normal;
             @include rem(font-size, $uber-size);
             line-height: $ratio * 0.7;
             @include rem(margin-bottom, $base-space);
 
+            @include breakpoint($small) {
+                @include rem(font-size, $super-size);
+            }
+
             @include breakpoint($large) {
-                @include rem(margin-bottom, $mid-space);
+                @include rem(margin-bottom, $base-space);
             }
         }
 
@@ -35,6 +39,8 @@
                 text-align: center;
                 @include rem(margin-bottom, $half-space);
                 margin-right: 0;
+                @include rem(padding-top, $half-space / 1.25);
+                @include rem(padding-bottom, $half-space / 1.25);
             }
         }
 
@@ -46,8 +52,18 @@
     .main-illustration {
         @include rem(margin-bottom, $mid-space);
 
+        @include breakpoint($small) {
+            @include rem(padding, 0, $base-space);
+            @include rem(margin-bottom, 0);
+        }
+
         @include breakpoint($large) {
             margin-bottom: 0;
-            @include rem(margin-top, $double-space);
+            @include rem(margin-top, $half-space);
+        }
+
+        img {
+            @include rem(max-width, 475px);
+            width: 100%;
         }
     }
